@@ -1,10 +1,16 @@
-body, h1, h2, p, ul, li, a {
+body,
+h1,
+h2,
+p,
+ul,
+li,
+a {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
+  overflow-y: auto;
 }
 
-/* Estilos gerais */
 body {
   background-color: #f8f9fa;
   color: #333;
@@ -12,11 +18,10 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Header */
 header {
-  background-color: #ffffff;
-  padding: 20px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgb(31, 31, 31);
+  padding: 15px 0;
+  box-shadow: 0 2px 4px #f8f9fa3d;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -36,7 +41,7 @@ nav {
 
 nav h1 {
   font-size: 1.5rem;
-  color: #6c5ce7;
+  color: #ffffff;
 }
 
 nav ul {
@@ -46,66 +51,84 @@ nav ul {
 }
 
 nav ul li a {
-  color: #333;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #6c5ce7;
+  color: #28a745;
 }
 
-/* Hero Section */
+.nav-link {
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #28a745;
+  transition: width 1.0s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 .hero {
-  background-color: #ffffff;
+  background-color: rgb(15, 15, 15);
   padding: 100px 0;
   text-align: center;
 }
 
 .hero h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #666;
+  color: #ffffff;
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* Sobre Mim */
 .about {
   padding: 100px 0;
-  background-color: #f8f9fa;
+  background-color: rgb(31, 31, 31);
 }
 
 .about h2 {
   font-size: 2rem;
-  color: #333;
+  color: #ffffff;
   text-align: center;
   margin-bottom: 40px;
 }
 
 .about p {
   font-size: 1.1rem;
-  color: #666;
+  color: #ffffff;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
-/* Habilidades */
 .skills {
   padding: 100px 0;
-  background-color: #ffffff;
+  background-color: rgb(15, 15, 15);
 }
 
 .skills h2 {
   font-size: 2rem;
-  color: #333;
+  color: #ffffff;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -119,7 +142,7 @@ nav ul li a:hover {
 }
 
 .skill {
-  background-color: #f8f9fa;
+  background-color: rgb(31, 31, 31);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -133,24 +156,23 @@ nav ul li a:hover {
 
 .skill h3 {
   font-size: 1.2rem;
-  color: #6c5ce7;
+  color: #28a745;
   margin-bottom: 10px;
 }
 
 .skill p {
   font-size: 1rem;
-  color: #666;
+  color: #ffffff;
 }
 
-/* Projetos */
 .projects {
   padding: 100px 0;
-  background-color: #f8f9fa;
+  background-color: rgb(31, 31, 31);
 }
 
 .projects h2 {
   font-size: 2rem;
-  color: #333;
+  color: #ffffff;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -164,7 +186,7 @@ nav ul li a:hover {
 }
 
 .project {
-  background-color: #ffffff;
+  background-color: rgb(15, 15, 15);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -177,41 +199,56 @@ nav ul li a:hover {
 
 .project h3 {
   font-size: 1.2rem;
-  color: #6c5ce7;
+  color: #28a745;
   margin-bottom: 10px;
 }
 
 .project p {
   font-size: 1rem;
-  color: #666;
+  color: #ffffff;
 }
 
-/* Contato */
 .contact {
   padding: 100px 0;
-  background-color: #ffffff;
+  background-color: rgb(15, 15, 15);
   text-align: center;
 }
 
 .contact h2 {
   font-size: 2rem;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
 .contact a {
-  color: #6c5ce7;
+  color: #28a745;
   text-decoration: none;
   margin: 0 10px;
   font-size: 1.2rem;
-  transition: opacity 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+  transition: opacity color 0.2s ease;
 }
 
 .contact a:hover {
   opacity: 0.8;
 }
 
-/* Rodapé */
+.contact a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #28a745;
+  transition: width 1.0s ease;
+}
+
+.contact a:hover::after {
+  width: 100%;
+}
+
 footer {
   background-color: #333;
   color: white;
@@ -222,4 +259,25 @@ footer {
 footer p {
   margin: 0;
   font-size: 0.9rem;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
 }
