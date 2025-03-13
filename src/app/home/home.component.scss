@@ -8,10 +8,10 @@ a {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  overflow-y: auto;
 }
 
 body {
+  overflow-y: auto;
   background-color: #f8f9fa;
   color: #333;
   line-height: 1.6;
@@ -280,4 +280,120 @@ footer p {
 
 ::-webkit-scrollbar-button {
   display: none;
+}
+
+/* Estilos gerais */
+.slider {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: rgb(31, 31, 31);
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.slides {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+.slide {
+  position: absolute;
+  width: 22%;
+  height: 90%;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.slide h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.slide p {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.certificate-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.certificate-link:hover {
+  background-color: #0056b3;
+}
+
+.slide.active {
+  transform: translateX(0%) scale(1);
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide.left {
+  transform: translateX(-100%) scale(0.8);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.slide.right {
+  transform: translateX(100%) scale(0.8);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.slide.hidden {
+  transform: translateX(0%) scale(0);
+  opacity: 0;
+  z-index: 0;
+}
+
+.prev {
+  left: 80px;
+}
+
+.next {
+  right: 80px;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #000;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 48px;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+  color: #28a745;
 }
