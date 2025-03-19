@@ -292,7 +292,6 @@ footer p {
   background-color: rgb(31, 31, 31);
   padding: 20px;
   margin: 0 auto;
-  touch-action: pan-y; /* Permite o gesto de swipe vertical */
 }
 
 .slides {
@@ -302,7 +301,6 @@ footer p {
   position: relative;
   height: 400px;
   width: 100%;
-  touch-action: pan-y; /* Permite o gesto de swipe vertical */
 }
 
 .slide {
