@@ -292,6 +292,7 @@ footer p {
   background-color: rgb(31, 31, 31);
   padding: 20px;
   margin: 0 auto;
+  touch-action: pan-y; /* Permite o gesto de swipe vertical */
 }
 
 .slides {
@@ -301,11 +302,13 @@ footer p {
   position: relative;
   height: 400px;
   width: 100%;
+  transition: transform 0.5s ease-in-out; /* Adiciona uma transição suave */
 }
 
 .slide {
   position: absolute;
-  width: 22%;
+  min-width: 100%;
+  width: 100%; /* Ajuste para ocupar 100% da largura */
   height: 90%;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   display: flex;
@@ -346,6 +349,7 @@ footer p {
   background-color: #0056b3;
 }
 
+/* Estilos para os slides ativos, à esquerda e à direita */
 .slide.active {
   transform: translateX(0%) scale(1);
   opacity: 1;
@@ -370,14 +374,7 @@ footer p {
   z-index: 0;
 }
 
-.prev {
-  left: 80px;
-}
-
-.next {
-  right: 80px;
-}
-
+/* Botões de navegação */
 .prev,
 .next {
   position: absolute;
@@ -396,4 +393,12 @@ footer p {
 .prev:hover,
 .next:hover {
   color: #28a745;
+}
+
+.prev {
+  left: 10px; /* Ajuste a posição do botão "prev" */
+}
+
+.next {
+  right: 10px; /* Ajuste a posição do botão "next" */
 }

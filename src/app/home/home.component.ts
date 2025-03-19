@@ -1,54 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Importe o CommonModule
 
 @Component({
   selector: 'app-home',
-  standalone: true, // Certifique-se de que o componente é standalone
+  standalone: true,
   imports: [CommonModule], // Adicione o CommonModule aqui
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-
-export class HomeComponent {
-
-  constructor() { }
-
-  ngOnInit(): void {
-    this.setupSmoothScroll();
-    this.setupFadeInAnimations();
-  }
-
-  private setupSmoothScroll(): void {
-    document.querySelectorAll('.nav-link').forEach(anchor => {
-      anchor.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = anchor.getAttribute('href');
-        if (targetId) {
-          const targetSection = document.querySelector(targetId);
-          if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      });
-    });
-  }
-
-  private setupFadeInAnimations(): void {
-    const fadeInElements = document.querySelectorAll('.fade-in');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    fadeInElements.forEach(element => {
-      observer.observe(element);
-    });
-  }
-
+export class HomeComponent implements OnInit {
   slideIndex = 1; // Índice do slide central (destaque)
 
   slides = [
@@ -102,6 +62,91 @@ export class HomeComponent {
     }
   ];
 
+  constructor() { }
+
+  ngOnInit(): void {
+    this.setupSmoothScroll();
+    this.setupFadeInAnimations();
+    this.setupTouchGestures(); // Configura os gestos de toque
+  }
+
+  private setupSmoothScroll(): void {
+    document.querySelectorAll('.nav-link').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = anchor.getAttribute('href');
+        if (targetId) {
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  }
+
+  private setupFadeInAnimations(): void {
+    const fadeInElements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeInElements.forEach(element => {
+      observer.observe(element);
+    });
+  }
+
+  // Configura os gestos de toque
+  private setupTouchGestures(): void {
+    const slider = document.querySelector('.slider');
+    let startX = 0;
+    let isDragging = false;
+
+    if (slider) {
+      slider.addEventListener('touchstart', (e: Event) => {
+        const touchEvent = e as TouchEvent; // Faz a asserção de tipo para TouchEvent
+        startX = touchEvent.touches[0].clientX;
+        isDragging = true;
+      });
+
+      slider.addEventListener('touchmove', (e: Event) => {
+        if (!isDragging) return;
+
+        const touchEvent = e as TouchEvent; // Faz a asserção de tipo para TouchEvent
+        const moveX = touchEvent.touches[0].clientX;
+        const offset = startX - moveX;
+
+        // Aplica o deslocamento ao slider
+        (slider as HTMLElement).style.transform = `translateX(${-offset}px)`;
+      });
+
+      slider.addEventListener('touchend', (e: Event) => {
+        if (!isDragging) return;
+
+        const touchEvent = e as TouchEvent; // Faz a asserção de tipo para TouchEvent
+        const moveX = touchEvent.changedTouches[0].clientX;
+        const offset = startX - moveX;
+
+        if (offset > 50) {
+          // Deslizar para a próxima slide
+          this.moveSlide(1);
+        } else if (offset < -50) {
+          // Deslizar para a slide anterior
+          this.moveSlide(-1);
+        }
+
+        // Retorna o slider à posição inicial
+        (slider as HTMLElement).style.transform = 'translateX(0%)';
+        isDragging = false;
+      });
+    }
+  }
+
   // Função para mover os slides
   moveSlide(n: number): void {
     this.slideIndex = (this.slideIndex + n + this.slides.length) % this.slides.length;
@@ -139,5 +184,4 @@ export class HomeComponent {
       };
     }
   }
-
 }
