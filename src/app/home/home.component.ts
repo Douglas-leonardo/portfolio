@@ -184,4 +184,19 @@ export class HomeComponent implements OnInit {
       };
     }
   }
+  isMenuActive: boolean = false;
+
+
+  toggleMenu() {
+    this.isMenuActive = !this.isMenuActive;
+  }
+
+  // Método para resetar o slider (se necessário)
+  resetSlider() {
+    const slider = document.querySelector('.slider') as HTMLElement;
+    if (slider) {
+      slider.style.transform = 'translateX(0)';
+    }
+  }
+
 }

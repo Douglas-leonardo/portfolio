@@ -409,3 +409,47 @@ footer p {
 .next {
   right: 10px; /* Ajuste a posição do botão "next" */
 }
+
+
+
+
+
+
+/* Estilo padrão para o menu */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.menu-icon {
+  display: none; /* Esconde o ícone do menu por padrão */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilo para telas menores que 1000px */
+@media screen and (max-width: 1000px) {
+  .nav-links {
+    display: none; /* Esconde os links por padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #6b2222;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .nav-links.active {
+    display: flex; /* Mostra os links apenas quando a classe active está presente */
+  }
+
+  .menu-icon {
+    display: block; /* Mostra o ícone do menu */
+  }
+
+
+
+}

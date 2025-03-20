@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <header>
+  <!-- <header>
     <div class="container">
       <nav>
         <h1>D.G</h1>
@@ -21,6 +21,22 @@
         </ul>
       </nav>
     </div>
+  </header> -->
+
+  <header>
+    <nav>
+      <!-- Ícone do menu -->
+      <div class="menu-icon" (click)="toggleMenu()">☰</div>
+
+      <!-- Links de navegação -->
+      <ul class="nav-links" [class.active]="isMenuActive">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section class="hero" id="home">
