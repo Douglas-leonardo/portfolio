@@ -184,11 +184,13 @@ export class HomeComponent implements OnInit {
       };
     }
   }
-  isMenuActive: boolean = false;
 
 
+  isMenuActive: boolean = false; // Variável para controlar o estado do menu
+
+  // Método para alternar a visibilidade do menu
   toggleMenu() {
-    this.isMenuActive = !this.isMenuActive;
+    this.isMenuActive = !this.isMenuActive; // Alterna entre true e false
   }
 
   // Método para resetar o slider (se necessário)

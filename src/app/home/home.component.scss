@@ -37,6 +37,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
+  list-style: none;
 }
 
 nav h1 {
@@ -44,10 +46,12 @@ nav h1 {
   color: #ffffff;
 }
 
-nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
+@media screen and (min-width: 1000px)  {
+   ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
 }
 
 nav ul li a {
@@ -59,27 +63,6 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #28a745;
-}
-
-.nav-link {
-  position: relative;
-  padding: 5px 0;
-  transition: color 0.2s ease;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 1px;
-  background-color: #28a745;
-  transition: width 1.0s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
 }
 
 .hero {
@@ -415,12 +398,32 @@ footer p {
 
 
 
-/* Estilo padrão para o menu */
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 20px;
+.nav-link {
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.2s ease;
 }
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #28a745;
+  transition: width 1.0s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+
+
+
+
 
 .menu-icon {
   display: none; /* Esconde o ícone do menu por padrão */
@@ -428,18 +431,31 @@ footer p {
   cursor: pointer;
 }
 
+/* Estilo padrão para o menu */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+
+}
+
+
+
 /* Estilo para telas menores que 1000px */
 @media screen and (max-width: 1000px) {
+
+
   .nav-links {
     display: none; /* Esconde os links por padrão */
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 76px;
     right: 20px;
-    background-color: #6b2222;
+    background-color: #ca1010;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
+
   }
 
   .nav-links.active {
@@ -453,3 +469,5 @@ footer p {
 
 
 }
+
+
