@@ -156,18 +156,6 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 
-.projects {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
-}
-
-.projects h2 {
-  font-size: 2rem;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
 footer {
   background: linear-gradient(135deg, #161e31 0%, #32384b 100%);
   color: white;
@@ -407,54 +395,6 @@ footer p {
   }
 }
 
-// .contact {
-//   padding: 100px 0;
-//   background-color: rgb(15, 15, 15);
-//   text-align: center;
-// }
-
-// .contact h2 {
-//   font-size: 2rem;
-//   color: #ffffff;
-//   margin-bottom: 20px;
-// }
-
-// .contact a {
-//   color: #28a745;
-//   text-decoration: none;
-//   margin: 0 10px;
-//   font-size: 1.2rem;
-//   position: relative;
-//   padding: 5px 0;
-//   transition: opacity color 0.2s ease;
-// }
-
-// .contact a:hover {
-//   opacity: 0.8;
-// }
-
-// .contact a::after {
-//   content: '';
-//   position: absolute;
-//   left: 0;
-//   bottom: 0;
-//   width: 0;
-//   height: 1px;
-//   background-color: #28a745;
-//   transition: width 1.0s ease;
-// }
-
-// .contact a:hover::after {
-//   width: 100%;
-// }
-
-
-
-
-
-
-
-
 .contact-particles {
   position: relative;
   padding: 120px 0;
@@ -481,7 +421,7 @@ footer p {
 .contact-content h2 {
   font-size: 2.8rem;
   margin-bottom: 20px;
-  background: linear-gradient(90deg, #ffffff, #28a745);
+  background: linear-gradient(90deg, #f7c0c0, #28a745);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -627,7 +567,6 @@ footer p {
   transform: translateY(-3px);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .contact-content h2 {
     font-size: 2.2rem;

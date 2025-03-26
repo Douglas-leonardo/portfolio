@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.setupSmoothScroll();
     this.setupFadeInAnimations();
-    this.setupTouchGestures(); // Configura os gestos de toque
+    this.setupTouchGestures();
   }
 
   private setupSmoothScroll(): void {
@@ -101,7 +101,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  // Configura os gestos de toque
   private setupTouchGestures(): void {
     const slider = document.querySelector('.slider');
     let startX = 0;
@@ -109,7 +108,7 @@ export class HomeComponent implements OnInit {
 
     if (slider) {
       slider.addEventListener('touchstart', (e: Event) => {
-        const touchEvent = e as TouchEvent; // Faz a asserção de tipo para TouchEvent
+        const touchEvent = e as TouchEvent;
         startX = touchEvent.touches[0].clientX;
         isDragging = true;
       });
@@ -117,42 +116,37 @@ export class HomeComponent implements OnInit {
       slider.addEventListener('touchmove', (e: Event) => {
         if (!isDragging) return;
 
-        const touchEvent = e as TouchEvent; // Faz a asserção de tipo para TouchEvent
+        const touchEvent = e as TouchEvent;
         const moveX = touchEvent.touches[0].clientX;
         const offset = startX - moveX;
 
-        // Aplica o deslocamento ao slider
         (slider as HTMLElement).style.transform = `translateX(${-offset}px)`;
       });
 
       slider.addEventListener('touchend', (e: Event) => {
         if (!isDragging) return;
 
-        const touchEvent = e as TouchEvent; // Faz a asserção de tipo para TouchEvent
+        const touchEvent = e as TouchEvent;
         const moveX = touchEvent.changedTouches[0].clientX;
         const offset = startX - moveX;
 
         if (offset > 50) {
-          // Deslizar para a próxima slide
           this.moveSlide(1);
         } else if (offset < -50) {
-          // Deslizar para a slide anterior
           this.moveSlide(-1);
         }
 
-        // Retorna o slider à posição inicial
         (slider as HTMLElement).style.transform = 'translateX(0%)';
         isDragging = false;
       });
     }
   }
 
-  // Função para mover os slides
+
   moveSlide(n: number): void {
     this.slideIndex = (this.slideIndex + n + this.slides.length) % this.slides.length;
   }
 
-  // Função para calcular a posição e o tamanho de cada slide
   getSlideStyle(index: number): any {
     const totalSlides = this.slides.length;
     const previousIndex = (this.slideIndex - 1 + totalSlides) % totalSlides;
@@ -185,20 +179,16 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  isMenuActive: boolean = false;
 
-  isMenuActive: boolean = false; // Variável para controlar o estado do menu
-
-  // Método para alternar a visibilidade do menu
   toggleMenu() {
-    this.isMenuActive = !this.isMenuActive; // Alterna entre true e false
+    this.isMenuActive = !this.isMenuActive;
   }
 
-  // Método para resetar o slider (se necessário)
   resetSlider() {
     const slider = document.querySelector('.slider') as HTMLElement;
     if (slider) {
       slider.style.transform = 'translateX(0)';
     }
   }
-
 }
