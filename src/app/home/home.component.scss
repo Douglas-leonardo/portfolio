@@ -19,12 +19,44 @@ body {
 }
 
 header {
-  background-color: rgb(31, 31, 31);
+  background: linear-gradient(135deg, #161e31 0%, #32384b 100%);
   padding: 15px 0;
   box-shadow: 0 2px 4px #f8f9fa3d;
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.logo-complete {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-tagline {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #28a745;
+  letter-spacing: 1px;
+}
+
+h1[class^="logo-"] {
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+h1[class^="logo-"]:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  h1[class^="logo-"] {
+    font-size: 1.4rem;
+  }
 }
 
 .container {
@@ -66,7 +98,7 @@ nav ul li a:hover {
 }
 
 .hero {
-  background-color: rgb(15, 15, 15);
+  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
   padding: 100px 0;
   text-align: center;
 }
@@ -86,7 +118,7 @@ nav ul li a:hover {
 
 .about {
   padding: 100px 0;
-  background-color: rgb(31, 31, 31);
+  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
 }
 
 .about h2 {
@@ -106,7 +138,7 @@ nav ul li a:hover {
 
 .skills {
   padding: 100px 0;
-  background-color: rgb(15, 15, 15);
+  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
 }
 
 .skills h2 {
@@ -124,33 +156,9 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 
-.skill {
-  background-color: rgb(31, 31, 31);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.skill h3 {
-  font-size: 1.2rem;
-  color: #28a745;
-  margin-bottom: 10px;
-}
-
-.skill p {
-  font-size: 1rem;
-  color: #ffffff;
-}
-
 .projects {
   padding: 100px 0;
-  background-color: rgb(31, 31, 31);
+  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
 }
 
 .projects h2 {
@@ -160,80 +168,8 @@ nav ul li a:hover {
   margin-bottom: 40px;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.project {
-  background-color: rgb(15, 15, 15);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.project:hover {
-  transform: translateY(-10px);
-}
-
-.project h3 {
-  font-size: 1.2rem;
-  color: #28a745;
-  margin-bottom: 10px;
-}
-
-.project p {
-  font-size: 1rem;
-  color: #ffffff;
-}
-
-.contact {
-  padding: 100px 0;
-  background-color: rgb(15, 15, 15);
-  text-align: center;
-}
-
-.contact h2 {
-  font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.contact a {
-  color: #28a745;
-  text-decoration: none;
-  margin: 0 10px;
-  font-size: 1.2rem;
-  position: relative;
-  padding: 5px 0;
-  transition: opacity color 0.2s ease;
-}
-
-.contact a:hover {
-  opacity: 0.8;
-}
-
-.contact a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 1px;
-  background-color: #28a745;
-  transition: width 1.0s ease;
-}
-
-.contact a:hover::after {
-  width: 100%;
-}
-
 footer {
-  background-color: #333;
+  background: linear-gradient(135deg, #161e31 0%, #32384b 100%);
   color: white;
   text-align: center;
   padding: 20px 0;
@@ -265,18 +201,16 @@ footer p {
   display: none;
 }
 
-/* Estilos gerais */
 .slider {
   position: relative;
   width: 90%;
   max-width: 1000px;
   overflow: hidden;
   border-radius: 15px;
-  background-color: rgb(31, 31, 31);
+  background: linear-gradient(135deg, #0a0e17 0%);
   padding: 20px;
   margin: 0 auto;
   touch-action: pan-y;
-  /* Permite o gesto de swipe vertical */
 }
 
 .slides {
@@ -287,7 +221,6 @@ footer p {
   height: 400px;
   width: 100%;
   transition: transform 0.5s ease-in-out;
-  /* Adiciona uma transição suave */
 }
 
 .slide {
@@ -341,7 +274,6 @@ footer p {
   background-color: #0056b3;
 }
 
-/* Estilos para os slides ativos, à esquerda e à direita */
 .slide.active {
   transform: translateX(0%) scale(1);
   opacity: 1;
@@ -366,7 +298,6 @@ footer p {
   z-index: 0;
 }
 
-/* Botões de navegação */
 .prev,
 .next {
   position: absolute;
@@ -389,18 +320,11 @@ footer p {
 
 .prev {
   left: 10px;
-  /* Ajuste a posição do botão "prev" */
 }
 
 .next {
   right: 10px;
-  /* Ajuste a posição do botão "next" */
 }
-
-
-
-
-
 
 .nav-link {
   position: relative;
@@ -423,36 +347,21 @@ footer p {
   width: 100%;
 }
 
-
-
-
-
-
-
 .menu-icon {
   display: none;
-  /* Esconde o ícone do menu por padrão */
   font-size: 24px;
   cursor: pointer;
 }
 
-/* Estilo padrão para o menu */
 .nav-links {
   display: flex;
   list-style: none;
   gap: 20px;
-
 }
 
-
-
-/* Estilo para telas menores que 1000px */
 @media screen and (max-width: 1000px) {
-
-
   .nav-links {
     display: none;
-    /* Esconde os links por padrão */
     flex-direction: column;
     position: fixed;
     right: 7px;
@@ -477,16 +386,8 @@ footer p {
     background: transparent !important;
     border: none !important;
     display: block;
-    /* Mostra o ícone do menu */
   }
-
-
-
 }
-
-
-
-
 
 .text-link {
   display: inline;
@@ -504,6 +405,235 @@ footer p {
   .icon-link {
     display: inline;
   }
+}
+
+// .contact {
+//   padding: 100px 0;
+//   background-color: rgb(15, 15, 15);
+//   text-align: center;
+// }
+
+// .contact h2 {
+//   font-size: 2rem;
+//   color: #ffffff;
+//   margin-bottom: 20px;
+// }
+
+// .contact a {
+//   color: #28a745;
+//   text-decoration: none;
+//   margin: 0 10px;
+//   font-size: 1.2rem;
+//   position: relative;
+//   padding: 5px 0;
+//   transition: opacity color 0.2s ease;
+// }
+
+// .contact a:hover {
+//   opacity: 0.8;
+// }
+
+// .contact a::after {
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   bottom: 0;
+//   width: 0;
+//   height: 1px;
+//   background-color: #28a745;
+//   transition: width 1.0s ease;
+// }
+
+// .contact a:hover::after {
+//   width: 100%;
+// }
 
 
+
+
+
+
+
+
+.contact-particles {
+  position: relative;
+  padding: 120px 0;
+  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.particles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.contact-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.contact-content h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ffffff, #28a745);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.contact-card {
+  background: rgba(31, 31, 31, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(40, 167, 69, 0.2);
+  transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to bottom right,
+      rgba(40, 167, 69, 0.1) 0%,
+      rgba(40, 167, 69, 0) 60%);
+  transform: rotate(30deg);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.contact-card:hover::before {
+  transform: rotate(30deg) translate(20%, 20%);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.contact-card:hover .card-icon {
+  background: #28a745;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.contact-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-card p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px;
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.card-button i {
+  margin-left: 8px;
+  font-size: 0.9rem;
+}
+
+.card-button:hover {
+  background: #28a745;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(40, 167, 69, 0.2);
+}
+
+.card-button.whatsapp {
+  background: rgba(37, 211, 102, 0.1);
+  color: #25d366;
+  border-color: rgba(37, 211, 102, 0.3);
+}
+
+.card-button.whatsapp:hover {
+  background: #25d366;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #28a745;
+  transform: translateY(-3px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contact-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .contact-options {
+    grid-template-columns: 1fr;
+  }
 }
