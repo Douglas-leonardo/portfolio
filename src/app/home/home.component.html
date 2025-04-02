@@ -44,8 +44,6 @@
     </div>
   </header>
 
-
-
   <section class="hero" id="home">
     <div class="container">
       <h2>Transformando Ideias em Realidade</h2>
@@ -66,7 +64,7 @@
 
   <section class="skills" id="habilidades">
     <div class="container">
-      <h2>Projetos</h2>
+      <h2>Certificações</h2>
       <div class="slider">
         <div class="slides">
           <div class="slide" *ngFor="let slide of slides; let i = index" [ngStyle]="getSlideStyle(i)">
@@ -84,26 +82,39 @@
     </div>
   </section>
 
-  <section class="skills" id="habilidades">
-    <div class="container">
-      <h2>Projetos</h2>
-      <div class="slider">
-        <div class="slides">
-          <div class="slide" *ngFor="let slide of slides; let i = index" [ngStyle]="getSlideStyle(i)">
-            <h2>{{ slide.title }}</h2>
-            <p><strong>Instituição:</strong> {{ slide.institution }}</p>
-            <p><strong>Duração:</strong> {{ slide.duration }}</p>
-            <p><strong>Instrutor:</strong> {{ slide.instructor }}</p>
-            <p><strong>Ano de conclusão:</strong> {{ slide.year }}</p>
-            <a [href]="slide.certificateLink" target="_blank" class="certificate-link">Ver Certificado</a>
+  <section class="projects-section" id="projetos">
+    <h2>Meus Projetos em Angular</h2>
+    <p class="subtitle">Confira meus trabalhos mais recentes</p>
+
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let p of displayedProjects">
+        <img [src]="p.image" [alt]="p.title" class="project-image">
+
+        <div class="project-content">
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.description }}</p>
+
+          <div class="project-techs">
+            <span *ngFor="let t of p.technologies">{{ t }}</span>
+          </div>
+
+          <div class="project-actions">
+            <a [href]="p.githubUrl" target="_blank" class="btn github-btn">
+              <i class="fab fa-github"></i> Código
+            </a>
+            <a [href]="p.demoUrl" target="_blank" class="btn demo-btn">
+              <i class="fas fa-external-link-alt"></i> Demo
+            </a>
           </div>
         </div>
-        <button class="prev" (click)="moveSlide(-1)">&#10094;</button>
-        <button class="next" (click)="moveSlide(1)">&#10095;</button>
       </div>
     </div>
-  </section>
 
+    <button class="toggle-projects-btn" (click)="toggleShowAll()" *ngIf="allProjects.length > 3">
+      {{ showAll ? 'Ver menos' : 'Ver mais' }}
+      <i class="fas" [class.fa-chevron-up]="showAll" [class.fa-chevron-down]="!showAll"></i>
+    </button>
+  </section>
 
   <section class="contact-particles" id="contato">
     <div class="particles-background" id="particles-js"></div>
@@ -144,7 +155,6 @@
               </a>
             </div>
           </div>
-
 
           <div class="contact-card" data-tilt data-tilt-scale="1.05">
             <div class="card-icon">

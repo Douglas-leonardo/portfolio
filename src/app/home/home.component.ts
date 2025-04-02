@@ -1,14 +1,113 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Importe o CommonModule
+import { trigger, transition, style, animate, stagger, query, useAnimation } from '@angular/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  projectUrl: string;
+  codeUrl: string;
+  category: string;
+  year: number;
+  technologies: string[];
+  featured?: boolean;
+
+}
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule], // Adicione o CommonModule aqui
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
+
+
 export class HomeComponent implements OnInit {
+
+
+  allProjects = [
+    {
+      title: 'Projeto Angular 1',
+      description: 'Aplicação web desenvolvida com Angular e Firebase',
+      technologies: ['Angular', 'TypeScript', 'Firebase'],
+      githubUrl: 'https://github.com/seu-usuario/projeto1',
+      demoUrl: 'https://demo-projeto1.com',
+      image: 'assets/images/projeto1.jpg'
+    },
+    {
+      title: 'Projeto Angular 2',
+      description: 'Dashboard administrativo com Angular Material',
+      technologies: ['Angular', 'Material', 'RxJS'],
+      githubUrl: 'https://github.com/seu-usuario/projeto2',
+      demoUrl: 'https://demo-projeto2.com',
+      image: 'assets/images/projeto2.jpg'
+    },
+    {
+      title: 'Projeto Angular 3',
+      description: 'E-commerce com carrinho de compras',
+      technologies: ['Angular', 'NgRx', 'SCSS'],
+      githubUrl: 'https://github.com/seu-usuario/projeto3',
+      demoUrl: 'https://demo-projeto3.com',
+      image: 'assets/images/projeto3.jpg'
+    },
+    {
+      title: 'Projeto Angular 4',
+      description: 'Aplicativo de gerenciamento de tarefas',
+      technologies: ['Angular', 'Firebase', 'PWA'],
+      githubUrl: 'https://github.com/seu-usuario/projeto4',
+      demoUrl: 'https://demo-projeto4.com',
+      image: 'assets/images/projeto4.jpg'
+    },
+    {
+      title: 'Projeto Angular 5',
+      description: 'Plataforma de aprendizado online',
+      technologies: ['Angular', 'Node.js', 'MongoDB'],
+      githubUrl: 'https://github.com/seu-usuario/projeto5',
+      demoUrl: 'https://demo-projeto5.com',
+      image: 'assets/images/projeto5.jpg'
+    }
+  ];
+
+  // Variável para controlar se está mostrando todos ou não
+  showAll = false;
+
+  // Getter que retorna os projetos a serem exibidos
+  get displayedProjects() {
+    return this.showAll ? this.allProjects : this.allProjects.slice(0, 3);
+  }
+
+  // Método para alternar entre ver mais/ver menos
+  toggleShowAll() {
+    this.showAll = !this.showAll;
+  }
+
+  ngOnInit(): void {
+    this.setupSmoothScroll();
+    this.setupFadeInAnimations();
+    this.setupTouchGestures();
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
   slideIndex = 1; // Índice do slide central (destaque)
 
   slides = [
@@ -62,13 +161,8 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor() { }
 
-  ngOnInit(): void {
-    this.setupSmoothScroll();
-    this.setupFadeInAnimations();
-    this.setupTouchGestures();
-  }
+
 
   private setupSmoothScroll(): void {
     document.querySelectorAll('.nav-link').forEach(anchor => {
