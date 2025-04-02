@@ -1,7 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { trigger, transition, style, animate, stagger, query, useAnimation } from '@angular/animations';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export interface Project {
   id: number;
