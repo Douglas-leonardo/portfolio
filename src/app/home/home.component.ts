@@ -1,8 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // Importe o CommonModule
+import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate, stagger, query, useAnimation } from '@angular/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 export interface Project {
   id: number;
@@ -15,25 +14,18 @@ export interface Project {
   year: number;
   technologies: string[];
   featured?: boolean;
-
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule], // Adicione o CommonModule aqui
+  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-
-
 export class HomeComponent implements OnInit {
-
-
   allProjects = [
     {
       title: 'Projeto Angular 1',
@@ -77,38 +69,9 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  // Variável para controlar se está mostrando todos ou não
   showAll = false;
-
-  // Getter que retorna os projetos a serem exibidos
-  get displayedProjects() {
-    return this.showAll ? this.allProjects : this.allProjects.slice(0, 3);
-  }
-
-  // Método para alternar entre ver mais/ver menos
-  toggleShowAll() {
-    this.showAll = !this.showAll;
-  }
-
-  ngOnInit(): void {
-    this.setupSmoothScroll();
-    this.setupFadeInAnimations();
-    this.setupTouchGestures();
-
-
-
-
-  }
-
-
-
-
-
-
-
-
-
-  slideIndex = 1; // Índice do slide central (destaque)
+  slideIndex = 1;
+  isMenuActive = false;
 
   slides = [
     {
@@ -161,8 +124,66 @@ export class HomeComponent implements OnInit {
     }
   ];
 
+  get displayedProjects() {
+    return this.showAll ? this.allProjects : this.allProjects.slice(0, 3);
+  }
 
+  ngOnInit(): void {
+    this.setupSmoothScroll();
+    this.setupFadeInAnimations();
+    this.setupTouchGestures();
+  }
 
+  toggleShowAll() {
+    this.showAll = !this.showAll;
+  }
+
+  toggleMenu() {
+    this.isMenuActive = !this.isMenuActive;
+  }
+
+  moveSlide(n: number): void {
+    this.slideIndex = (this.slideIndex + n + this.slides.length) % this.slides.length;
+  }
+
+  getSlideStyle(index: number): any {
+    const totalSlides = this.slides.length;
+    const previousIndex = (this.slideIndex - 1 + totalSlides) % totalSlides;
+    const nextIndex = (this.slideIndex + 1) % totalSlides;
+
+    if (index === this.slideIndex) {
+      return {
+        transform: 'translateX(0%) scale(1)',
+        zIndex: 2,
+        opacity: 1
+      };
+    } else if (index === previousIndex) {
+      return {
+        transform: 'translateX(-100%) scale(0.8)',
+        zIndex: 1,
+        opacity: 0.7
+      };
+    } else if (index === nextIndex) {
+      return {
+        transform: 'translateX(100%) scale(0.8)',
+        zIndex: 1,
+        opacity: 0.7
+      };
+    } else {
+      return {
+        transform: 'translateX(0%) scale(0)',
+        zIndex: 0,
+        opacity: 0
+      };
+    }
+  }
+
+  resetSlider() {
+    const slider = document.querySelector('.slider') as HTMLElement;
+    if (slider) {
+      slider.style.transform = 'translateX(0)';
+    }
+  }
 
   private setupSmoothScroll(): void {
     document.querySelectorAll('.nav-link').forEach(anchor => {
@@ -233,56 +254,6 @@ export class HomeComponent implements OnInit {
         (slider as HTMLElement).style.transform = 'translateX(0%)';
         isDragging = false;
       });
-    }
-  }
-
-
-  moveSlide(n: number): void {
-    this.slideIndex = (this.slideIndex + n + this.slides.length) % this.slides.length;
-  }
-
-  getSlideStyle(index: number): any {
-    const totalSlides = this.slides.length;
-    const previousIndex = (this.slideIndex - 1 + totalSlides) % totalSlides;
-    const nextIndex = (this.slideIndex + 1) % totalSlides;
-
-    if (index === this.slideIndex) {
-      return {
-        transform: 'translateX(0%) scale(1)',
-        zIndex: 2,
-        opacity: 1
-      };
-    } else if (index === previousIndex) {
-      return {
-        transform: 'translateX(-100%) scale(0.8)',
-        zIndex: 1,
-        opacity: 0.7
-      };
-    } else if (index === nextIndex) {
-      return {
-        transform: 'translateX(100%) scale(0.8)',
-        zIndex: 1,
-        opacity: 0.7
-      };
-    } else {
-      return {
-        transform: 'translateX(0%) scale(0)',
-        zIndex: 0,
-        opacity: 0
-      };
-    }
-  }
-
-  isMenuActive: boolean = false;
-
-  toggleMenu() {
-    this.isMenuActive = !this.isMenuActive;
-  }
-
-  resetSlider() {
-    const slider = document.querySelector('.slider') as HTMLElement;
-    if (slider) {
-      slider.style.transform = 'translateX(0)';
     }
   }
 }
