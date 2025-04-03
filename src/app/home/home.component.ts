@@ -64,6 +64,54 @@ export class HomeComponent implements OnInit {
       githubUrl: 'https://github.com/seu-usuario/projeto5',
       demoUrl: 'https://demo-projeto5.com',
       image: 'assets/images/projeto5.jpg'
+    },
+    {
+      title: 'Projeto Angular 3',
+      description: 'E-commerce com carrinho de compras',
+      technologies: ['Angular', 'NgRx', 'SCSS'],
+      githubUrl: 'https://github.com/seu-usuario/projeto3',
+      demoUrl: 'https://demo-projeto3.com',
+      image: 'assets/images/projeto3.jpg'
+    },
+    {
+      title: 'Projeto Angular 4',
+      description: 'Aplicativo de gerenciamento de tarefas',
+      technologies: ['Angular', 'Firebase', 'PWA'],
+      githubUrl: 'https://github.com/seu-usuario/projeto4',
+      demoUrl: 'https://demo-projeto4.com',
+      image: 'assets/images/projeto4.jpg'
+    },
+    {
+      title: 'Projeto Angular 5',
+      description: 'Plataforma de aprendizado online',
+      technologies: ['Angular', 'Node.js', 'MongoDB'],
+      githubUrl: 'https://github.com/seu-usuario/projeto5',
+      demoUrl: 'https://demo-projeto5.com',
+      image: 'assets/images/projeto5.jpg'
+    },
+    {
+      title: 'Projeto Angular 3',
+      description: 'E-commerce com carrinho de compras',
+      technologies: ['Angular', 'NgRx', 'SCSS'],
+      githubUrl: 'https://github.com/seu-usuario/projeto3',
+      demoUrl: 'https://demo-projeto3.com',
+      image: 'assets/images/projeto3.jpg'
+    },
+    {
+      title: 'Projeto Angular 4',
+      description: 'Aplicativo de gerenciamento de tarefas',
+      technologies: ['Angular', 'Firebase', 'PWA'],
+      githubUrl: 'https://github.com/seu-usuario/projeto4',
+      demoUrl: 'https://demo-projeto4.com',
+      image: 'assets/images/projeto4.jpg'
+    },
+    {
+      title: 'Projeto Angular 5',
+      description: 'Plataforma de aprendizado online',
+      technologies: ['Angular', 'Node.js', 'MongoDB'],
+      githubUrl: 'https://github.com/seu-usuario/projeto5',
+      demoUrl: 'https://demo-projeto5.com',
+      image: 'assets/images/projeto5.jpg'
     }
   ];
 
