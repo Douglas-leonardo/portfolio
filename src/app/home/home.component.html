@@ -12,7 +12,7 @@
     <div class="container">
       <nav>
         <h1 class="logo-complete">
-          <a href="#sobre">
+          <a href="#home">
             Douglas Leonardo
             <span class="logo-tagline">Front End & QA</span>
           </a>
@@ -46,23 +46,114 @@
     </div>
   </header>
 
-  <section class="hero" id="home">
+
+
+
+
+
+
+
+
+  <section class="portfolio-hero" id="home">
+    <div class="hero-background"></div>
     <div class="container">
-      <h2>Transformando Ideias em Realidade</h2>
-      <p>Desenvolvedor Front End e QA, criando soluções que unem código de qualidade e experiência do usuário.</p>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="name">Douglas Leonardo</span>
+          <span class="title">Desenvolvedor Front End & QA</span>
+        </h1>
+
+        <div class="tech-stack">
+          <span class="tech-pill">Angular</span>
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">JavaScript</span>
+          <span class="tech-pill">HTML/CSS</span>
+          <span class="tech-pill">Cypress</span>
+          <span class="tech-pill">Jest</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#projetos" class="cta-primary">
+            <i class="fas fa-code"></i>
+            Ver Projetos
+          </a>
+          <a href="#contato" class="cta-secondary">
+            <i class="fas fa-paper-plane"></i>
+            Contato
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="about" id="sobre">
-    <div class="container">
-      <h2>Sobre Mim</h2>
-      <p>Oi, eu sou o Douglas Leonardo! Sou Desenvolvedor Front End e Analista de Qualidade (QA).
-        Comecei minha carreira como Desenvolvedor, criando soluções do zero, e hoje,
-        além de continuar desenvolvendo, atuo como QA, garantindo que cada projeto funcione perfeitamente. Essa dupla
-        experiência me permite entender profundamente o ciclo de desenvolvimento, desde a criação até a entrega final.
-      </p>
+  <section class="profile-section" id="sobre">
+    <div class="profile-bg-effect"></div>
+
+    <div class="profile-container">
+      <div class="profile-header">
+        <h2 class="profile-title">// Quem sou</h2>
+        <p class="profile-tagline">Desenvolvedor Front-end & QA com visão holística</p>
+      </div>
+
+      <div class="profile-content">
+        <div class="profile-intro">
+          <div class="profile-avatar">
+            <!-- Adicione sua foto aqui -->
+            <div class="avatar-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+          <div class="profile-bio">
+            <p>Combinando habilidades técnicas e pensamento crítico, atuo na interseção entre desenvolvimento e qualidade para criar produtos digitais excepcionais.</p>
+            <div class="profile-highlight">
+              <i class="fas fa-quote-left"></i>
+              <p>Acredito que código bem escrito e bem testado é a base para experiências digitais memoráveis.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2022-Presente</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Desenvolvedor Front-end & QA</h3>
+              <p>Desenvolvimento de interfaces com foco em performance e experiência do usuário</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2020-2022</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Desenvolvedor Júnior</h3>
+              <p>Primeiras experiências profissionais em desenvolvimento web</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   <section class="certifications" id="habilidades">
@@ -73,9 +164,6 @@
         <div class="slides">
           <div class="slide" *ngFor="let slide of slides; let i = index" [ngStyle]="getSlideStyle(i)">
             <div class="slide-content">
-              <div class="certification-icon">
-                <i class="fas fa-certificate"></i>
-              </div>
               <h3>{{ slide.title }}</h3>
               <div class="certification-details">
                 <p><i class="fas fa-university"></i> {{ slide.institution }}</p>
@@ -83,7 +171,8 @@
                 <p><i class="fas fa-chalkboard-teacher"></i> {{ slide.instructor }}</p>
                 <p><i class="fas fa-calendar-alt"></i> {{ slide.year }}</p>
               </div>
-              <a [href]="slide.certificateLink" target="_blank" class="certificate-link" data-tilt data-tilt-scale="1.05">
+              <a [href]="slide.certificateLink" target="_blank" class="certificate-link" data-tilt
+                data-tilt-scale="1.05">
                 Ver Certificado <i class="fas fa-external-link-alt"></i>
               </a>
             </div>
@@ -98,9 +187,6 @@
       </div>
     </div>
   </section>
-
-
-
 
   <section class="projects-section" id="projetos">
     <h2>Meus Projetos em Angular</h2>
