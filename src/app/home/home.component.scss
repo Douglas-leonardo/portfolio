@@ -10,6 +10,24 @@ a {
   font-family: 'Inter', sans-serif;
 }
 
+
+.position-relative {
+  position: relative;
+}
+
+/* home.component.css */
+:host {
+  position: relative;
+  display: block;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  /* Garante que o conteúdo fique acima das partículas */
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -31,6 +49,8 @@ a {
   display: none;
 }
 
+
+
 body {
   overflow-y: auto;
   background-color: #f8f9fa;
@@ -40,12 +60,25 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, #161e31 0%, #32384b 100%);
-  padding: 15px 0;
-  box-shadow: 0 2px 4px #f8f9fa3d;
-  position: sticky;
+  backdrop-filter: blur(5px);
+
+
+  background-color: rgba(18, 18, 18, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.2);
+
+
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1000;
+  padding: 12px 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo-complete {
@@ -148,7 +181,9 @@ nav ul li a:hover {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
+  background: transparent;
+
+  //background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
   color: white;
   overflow: hidden;
   padding: 40px 0;
@@ -160,9 +195,11 @@ nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    radial-gradient(circle at 70% 30%, rgba(40, 167, 69, 0.08) 0%, transparent 40%),
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,50 Q50,10 100,50" fill="none" stroke="rgba(40,167,69,0.05)" stroke-width="0.5"/></svg>');
+  background: transparent;
+
+  //background:
+  // radial-gradient(circle at 70% 30%, rgba(40, 167, 69, 0.08) 0%, transparent 40%),
+  //url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,50 Q50,10 100,50" fill="none" stroke="rgba(40,167,69,0.05)" stroke-width="0.5"/></svg>');
   background-size: cover;
   z-index: 0;
 }
@@ -290,7 +327,9 @@ nav ul li a:hover {
 .profile-section {
   position: relative;
   padding: 100px 0;
-  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
+  background: transparent;
+
+  //background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
   color: #fff;
   overflow: hidden;
 }
@@ -301,9 +340,10 @@ nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    radial-gradient(circle at 80% 20%, rgba(40, 167, 69, 0.08) 0%, transparent 50%),
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="none"><path d="M0,100 Q100,20 200,100" fill="none" stroke="rgba(40,167,69,0.03)" stroke-width="1"/></svg>');
+  background: transparent;
+  // background:
+  //   radial-gradient(circle at 80% 20%, rgba(40, 167, 69, 0.08) 0%, transparent 50%),
+  //   url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="none"><path d="M0,100 Q100,20 200,100" fill="none" stroke="rgba(40,167,69,0.03)" stroke-width="1"/></svg>');
   z-index: 0;
 }
 
@@ -514,12 +554,9 @@ nav ul li a:hover {
 /* Section de certificados */
 .certifications {
   padding: 100px 0;
-  background: rgba(10, 14, 23, 0.85);
-  backdrop-filter: blur(10px);
+  background: transparent;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(40, 167, 69, 0.1);
-  border-bottom: 1px solid rgba(40, 167, 69, 0.1);
 }
 
 .certifications h2 {
@@ -856,7 +893,9 @@ nav ul li a:hover {
 .contact-particles {
   position: relative;
   padding: 120px 0;
-  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
+  background: transparent;
+
+  //background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
   color: white;
   overflow: hidden;
 }
@@ -868,7 +907,9 @@ nav ul li a:hover {
   width: 100%;
   height: 100%;
   z-index: 0;
-  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
+  background: transparent;
+
+  // background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
 }
 
 .contact-content {
@@ -1040,7 +1081,9 @@ nav ul li a:hover {
 .projects-section {
   position: relative;
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
+  background: transparent;
+
+  //background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
   color: white;
   text-align: center;
   overflow: hidden;
@@ -1288,19 +1331,6 @@ nav ul li a:hover {
 }
 
 
-footer {
-  background: linear-gradient(135deg, #161e31 0%, #32384b 100%);
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
-
-footer p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-
 
 
 
@@ -1341,8 +1371,15 @@ footer p {
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 .space-content {
@@ -1431,4 +1468,107 @@ footer p {
   .space-card {
     padding: 30px 20px;
   }
+}
+
+
+.glass-footer {
+  background-color: rgba(18, 18, 18, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  position: relative;
+  padding: 2rem 0;
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #28a745;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.footer-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin: 0;
+}
+
+
+/* Efeito de partículas visíveis através do footer */
+.glass-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-nav {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 0.3rem;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+  }
+
+
 }
