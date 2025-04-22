@@ -1,0 +1,33 @@
+<section class="projects-section" id="projetos">
+  <h2>Meus Projetos em Angular</h2>
+  <p class="subtitle">Confira meus trabalhos mais recentes</p>
+
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let p of displayedProjects">
+      <img [src]="p.image" [alt]="p.title" class="project-image">
+
+      <div class="project-content">
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.description }}</p>
+
+        <div class="project-techs">
+          <span *ngFor="let t of p.technologies">{{ t }}</span>
+        </div>
+
+        <div class="project-actions">
+          <a [href]="p.githubUrl" target="_blank" class="btn github-btn">
+            <i class="fab fa-github"></i> Código
+          </a>
+          <a [href]="p.demoUrl" target="_blank" class="btn demo-btn">
+            <i class="fas fa-external-link-alt"></i> Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="toggle-projects-btn" (click)="toggleShowAll()" *ngIf="allProjects.length > 3">
+    {{ showAll ? 'Ver menos' : 'Ver mais' }}
+    <i class="fas" [class.fa-chevron-up]="showAll" [class.fa-chevron-down]="!showAll"></i>
+  </button>
+</section>

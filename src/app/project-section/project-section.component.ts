@@ -1,11 +1,5 @@
-import { Component, Injectable } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ParticulasComponent } from '../particulas/particulas.component';
-import { AboutSectionComponent } from '../about-section/about-section.component';
-import { CertificatesSectionComponent } from '../certificates-section/certificates-section.component';
-import { ContactSectionComponent } from '../contact-section/contact-section.component';
-import { HomeSectionComponent } from '../home-section/home-section.component';
-import { ProjectSectionComponent } from "../project-section/project-section.component";
+import { Component, Injectable } from '@angular/core';
 
 export interface Project {
   id: number;
@@ -20,16 +14,15 @@ export interface Project {
   featured?: boolean;
 }
 
-@Injectable({ providedIn: 'root' })
-
 @Component({
-  selector: 'app-home',
+  selector: 'app-project-section',
+  imports: [CommonModule],
   standalone: true,
-  imports: [CommonModule, ParticulasComponent, AboutSectionComponent, CertificatesSectionComponent, ContactSectionComponent, HomeSectionComponent, ProjectSectionComponent],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  templateUrl: './project-section.component.html',
+  styleUrl: './project-section.component.scss'
 })
-export class HomeComponent {
+export class ProjectSectionComponent {
+
   allProjects = [
     {
       title: 'Projeto Angular 1',
@@ -124,8 +117,6 @@ export class HomeComponent {
   showAll = false;
   isMenuActive = false;
 
-
-
   get displayedProjects() {
     return this.showAll ? this.allProjects : this.allProjects.slice(0, 3);
   }
@@ -138,5 +129,4 @@ export class HomeComponent {
   toggleMenu() {
     this.isMenuActive = !this.isMenuActive;
   }
-
 }
