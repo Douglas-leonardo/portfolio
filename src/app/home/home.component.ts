@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ParticulasComponent } from '../particulas/particulas.component';
 import { AboutSectionComponent } from '../about-section/about-section.component';
 import { CertificatesSectionComponent } from '../certificates-section/certificates-section.component';
+import { ContactSectionComponent } from '../contact-section/contact-section.component';
 
 
 
@@ -24,7 +25,7 @@ export interface Project {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ParticulasComponent, AboutSectionComponent, CertificatesSectionComponent],
+  imports: [CommonModule, ParticulasComponent, AboutSectionComponent, CertificatesSectionComponent, ContactSectionComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
