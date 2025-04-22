@@ -4,6 +4,7 @@ import { ParticulasComponent } from '../particulas/particulas.component';
 import { AboutSectionComponent } from '../about-section/about-section.component';
 import { CertificatesSectionComponent } from '../certificates-section/certificates-section.component';
 import { ContactSectionComponent } from '../contact-section/contact-section.component';
+import { HomeSectionComponent } from '../home-section/home-section.component';
 
 
 
@@ -25,7 +26,7 @@ export interface Project {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ParticulasComponent, AboutSectionComponent, CertificatesSectionComponent, ContactSectionComponent],
+  imports: [CommonModule, ParticulasComponent, AboutSectionComponent, CertificatesSectionComponent, ContactSectionComponent, HomeSectionComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
