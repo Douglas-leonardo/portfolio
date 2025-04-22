@@ -1,6 +1,8 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ParticulasComponent } from '../particulas/particulas.component';
+import { AboutSectionComponent } from '../about-section/about-section.component';
+
 
 export interface Project {
   id: number;
@@ -20,7 +22,7 @@ export interface Project {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ParticulasComponent],
+  imports: [CommonModule, ParticulasComponent, AboutSectionComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
