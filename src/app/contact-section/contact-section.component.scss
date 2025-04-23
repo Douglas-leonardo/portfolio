@@ -10,25 +10,14 @@ a {
   font-family: 'Inter', sans-serif;
 }
 
-
 .position-relative {
   position: relative;
 }
-
-/* home.component.css */
-:host {
-  position: relative;
-  display: block;
-  min-height: 100vh;
-}
-
 
 .contact-particles {
   position: relative;
   padding: 120px 0;
   background: transparent;
-
-  //background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
   color: white;
   overflow: hidden;
 }
@@ -41,8 +30,6 @@ a {
   height: 100%;
   z-index: 0;
   background: transparent;
-
-  // background: linear-gradient(135deg, #0a0e17 0%, #1a1f2d 100%);
 }
 
 .contact-content {

@@ -1,56 +1,8 @@
-/* home.component.css */
-:host {
-  position: relative;
-  display: block;
-  min-height: 100vh;
-}
-
-.content-wrapper {
-  position: relative;
-  z-index: 1;
-  /* Garante que o conteúdo fique acima das partículas */
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #000;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-::-webkit-scrollbar-button {
-  display: none;
-}
-
-
-
-body {
-  overflow-y: auto;
-  background-color: #f8f9fa;
-  color: #333;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
-
 header {
   backdrop-filter: blur(5px);
-
-
   background-color: rgba(18, 18, 18, 0.7);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.2);
-
-
   position: fixed;
   top: 0;
   width: 100%;
@@ -119,12 +71,6 @@ h1[class^="logo-"]:hover {
   }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -156,9 +102,6 @@ nav ul li a {
 nav ul li a:hover {
   color: #28a745;
 }
-
-
-
 
 .nav-link {
   position: relative;
@@ -243,105 +186,3 @@ nav ul li a:hover {
 
 
 
-
-.glass-footer {
-  background-color: rgba(18, 18, 18, 0.7);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
-  position: relative;
-  padding: 2rem 0;
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 1000;
-
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.footer-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.nav-link {
-  color: #e0e0e0;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-  position: relative;
-}
-
-.nav-link:hover {
-  color: #28a745;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #28a745;
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.footer-info {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.copyright {
-  font-size: 0.9rem;
-  color: #b0b0b0;
-  margin: 0;
-}
-
-
-/* Efeito de partículas visíveis através do footer */
-.glass-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .footer-nav {
-    gap: 1rem;
-  }
-
-  .nav-link {
-    font-size: 0.85rem;
-    padding: 0.3rem;
-  }
-
-  .copyright {
-    font-size: 0.8rem;
-  }
-
-
-}
