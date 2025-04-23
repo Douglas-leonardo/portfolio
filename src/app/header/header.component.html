@@ -1,36 +1,48 @@
-<header class="glass-header">
-  <div class="header-container">
-    <nav>
-      <h1 class="logo-complete">
+<header class="header__container">
+  <div class="header__content">
+    <nav class="header__nav">
+      <h1 class="header__logo">
         <a href="#home">
           Douglas Leonardo
-          <span class="logo-tagline">Front End & QA</span>
+          <span class="header__logo-tagline">Front End & QA</span>
         </a>
       </h1>
-      <button class="menu-icon" (click)="toggleMenu()" aria-label="Abrir menu">
+
+      <button class="header__menu-icon" (click)="toggleMenu()" aria-label="Abrir menu">
         <i class="fas fa-bars"></i>
       </button>
-      <ul class="nav-links" [class.active]="isMenuActive">
-        <li><a href="#home" class="nav-link">
-            <span class="text-link">Home</span>
-            <i class="fas fa-house icon-link"></i>
-          </a></li>
-        <li><a href="#sobre" class="nav-link">
-            <span class="text-link">Sobre</span>
-            <i class="fas fa-address-card icon-link"></i>
-          </a></li>
-        <li><a href="#habilidades" class="nav-link">
-            <span class="text-link">Habilidades</span>
-            <i class="fas fa-pen-to-square icon-link"></i>
-          </a></li>
-        <li><a href="#projetos" class="nav-link">
-            <span class="text-link">Projetos</span>
-            <i class="fas fa-graduation-cap icon-link"></i>
-          </a></li>
-        <li><a href="#contato" class="nav-link">
-            <span class="text-link">Contato</span>
-            <i class="fas fa-phone icon-link"></i>
-          </a></li>
+
+      <ul class="header__links" [class.active]="isMenuActive">
+        <li>
+          <a href="#home" class="header__link">
+            <span class="header__text-link">Home</span>
+            <i class="fas fa-house header__icon-link"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#sobre" class="header__link">
+            <span class="header__text-link">Sobre</span>
+            <i class="fas fa-address-card header__icon-link"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#habilidades" class="header__link">
+            <span class="header__text-link">Habilidades</span>
+            <i class="fas fa-pen-to-square header__icon-link"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#projetos" class="header__link">
+            <span class="header__text-link">Projetos</span>
+            <i class="fas fa-graduation-cap header__icon-link"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#contato" class="header__link">
+            <span class="header__text-link">Contato</span>
+            <i class="fas fa-phone header__icon-link"></i>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>

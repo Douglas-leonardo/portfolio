@@ -1,102 +1,80 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { Injectable } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-certificates-section',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './certificates-section.component.html',
-  styleUrl: './certificates-section.component.scss'
+  styleUrls: ['./certificates-section.component.scss']
 })
-export class CertificatesSectionComponent {
+export class CertificatesSectionComponent implements OnInit {
+  indiceSlideAtual = 1;
+  arrastando = false;
+  posicaoInicialX = 0;
 
-  @Injectable({ providedIn: 'root' })
-
-  ngOnInit(): void {
-    this.setupSmoothScroll();
-    this.setupFadeInAnimations();
-    this.setupTouchGestures();
-  }
-
-  slideIndex = 1;
-
-
-  slides = [
+  certificados = [
     {
-      title: 'Docker para Desenvolvedores',
-      institution: 'Udemy',
-      duration: '12 horas',
-      instructor: 'Mathieu Battieit',
-      year: '2023',
-      certificateLink: '#'
+      titulo: 'Docker para Desenvolvedores',
+      instituicao: 'Udemy',
+      duracao: '12 horas',
+      instrutor: 'Mathieu Battieit',
+      ano: '2023',
+      linkCertificado: '#'
     },
     {
-      title: 'Node.js do Zero a Maestria',
-      institution: 'Udemy',
-      duration: '38 horas',
-      instructor: 'Mathieu Battieit',
-      year: '2023',
-      certificateLink: '#'
+      titulo: 'Node.js do Zero a Maestria',
+      instituicao: 'Udemy',
+      duracao: '38 horas',
+      instrutor: 'Mathieu Battieit',
+      ano: '2023',
+      linkCertificado: '#'
     },
     {
-      title: 'JavaScript Completo ES6',
-      institution: 'Origamid',
-      duration: '74 horas',
-      instructor: 'André Rafael',
-      year: '2022',
-      certificateLink: '#'
+      titulo: 'JavaScript Completo ES6',
+      instituicao: 'Origamid',
+      duracao: '74 horas',
+      instrutor: 'André Rafael',
+      ano: '2022',
+      linkCertificado: '#'
     },
     {
-      title: 'React Avançado',
-      institution: 'Origamid',
-      duration: '50 horas',
-      instructor: 'André Rafael',
-      year: '2022',
-      certificateLink: '#'
-    },
-    {
-      title: 'Banco de Dados SQL',
-      institution: 'Udemy',
-      duration: '20 horas',
-      instructor: 'João Silva',
-      year: '2021',
-      certificateLink: '#'
-    },
-    {
-      title: 'Python para Data Science',
-      institution: 'Coursera',
-      duration: '30 horas',
-      instructor: 'Maria Souza',
-      year: '2021',
-      certificateLink: '#'
+      titulo: 'React Avançado',
+      instituicao: 'Origamid',
+      duracao: '50 horas',
+      instrutor: 'André Rafael',
+      ano: '2022',
+      linkCertificado: '#'
     }
   ];
 
-
-  moveSlide(n: number): void {
-    this.slideIndex = (this.slideIndex + n + this.slides.length) % this.slides.length;
+  ngOnInit(): void {
+    this.configurarRolagemSuave();
+    this.configurarAnimacoes();
   }
 
-  getSlideStyle(index: number): any {
-    const totalSlides = this.slides.length;
-    const previousIndex = (this.slideIndex - 1 + totalSlides) % totalSlides;
-    const nextIndex = (this.slideIndex + 1) % totalSlides;
+  moverSlide(direcao: number): void {
+    this.indiceSlideAtual = (this.indiceSlideAtual + direcao + this.certificados.length) % this.certificados.length;
+  }
 
-    if (index === this.slideIndex) {
+  obterEstiloSlide(indice: number): any {
+    const totalSlides = this.certificados.length;
+    const indiceAnterior = (this.indiceSlideAtual - 1 + totalSlides) % totalSlides;
+    const indiceProximo = (this.indiceSlideAtual + 1) % totalSlides;
+
+    if (indice === this.indiceSlideAtual) {
       return {
         transform: 'translateX(0%) scale(1)',
         zIndex: 2,
         opacity: 1
       };
-    } else if (index === previousIndex) {
+    } else if (indice === indiceAnterior) {
       return {
         transform: 'translateX(-100%) scale(0.8)',
         zIndex: 1,
         opacity: 0.7
       };
-    } else if (index === nextIndex) {
+    } else if (indice === indiceProximo) {
       return {
         transform: 'translateX(100%) scale(0.8)',
         zIndex: 1,
@@ -111,85 +89,37 @@ export class CertificatesSectionComponent {
     }
   }
 
-  resetSlider() {
-    const slider = document.querySelector('.slider') as HTMLElement;
-    if (slider) {
-      slider.style.transform = 'translateX(0)';
+  private configurarRolagemSuave(): void {
+    // Implementação para rolagem suave
+  }
+
+  private configurarAnimacoes(): void {
+    // Implementação para animações de fade-in
+  }
+
+  // Manipuladores de eventos de toque
+  aoIniciarToque(evento: TouchEvent): void {
+    this.posicaoInicialX = evento.touches[0].clientX;
+    this.arrastando = true;
+  }
+
+  aoMoverToque(evento: TouchEvent): void {
+    if (!this.arrastando) return;
+    // Opcional: Adicionar feedback visual durante o arrasto
+  }
+
+  aoTerminarToque(evento: TouchEvent): void {
+    if (!this.arrastando) return;
+
+    const posicaoX = evento.changedTouches[0].clientX;
+    const deslocamento = this.posicaoInicialX - posicaoX;
+
+    if (deslocamento > 50) {
+      this.moverSlide(1);
+    } else if (deslocamento < -50) {
+      this.moverSlide(-1);
     }
+
+    this.arrastando = false;
   }
-
-  private setupSmoothScroll(): void {
-    document.querySelectorAll('.nav-link').forEach(anchor => {
-      anchor.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = anchor.getAttribute('href');
-        if (targetId) {
-          const targetSection = document.querySelector(targetId);
-          if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      });
-    });
-  }
-
-  private setupFadeInAnimations(): void {
-    const fadeInElements = document.querySelectorAll('.fade-in');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    fadeInElements.forEach(element => {
-      observer.observe(element);
-    });
-  }
-
-  private setupTouchGestures(): void {
-    const slider = document.querySelector('.slider');
-    let startX = 0;
-    let isDragging = false;
-
-    if (slider) {
-      slider.addEventListener('touchstart', (e: Event) => {
-        const touchEvent = e as TouchEvent;
-        startX = touchEvent.touches[0].clientX;
-        isDragging = true;
-      });
-
-      slider.addEventListener('touchmove', (e: Event) => {
-        if (!isDragging) return;
-
-        const touchEvent = e as TouchEvent;
-        const moveX = touchEvent.touches[0].clientX;
-        const offset = startX - moveX;
-
-        (slider as HTMLElement).style.transform = `translateX(${-offset}px)`;
-      });
-
-      slider.addEventListener('touchend', (e: Event) => {
-        if (!isDragging) return;
-
-        const touchEvent = e as TouchEvent;
-        const moveX = touchEvent.changedTouches[0].clientX;
-        const offset = startX - moveX;
-
-        if (offset > 50) {
-          this.moveSlide(1);
-        } else if (offset < -50) {
-          this.moveSlide(-1);
-        }
-
-        (slider as HTMLElement).style.transform = 'translateX(0%)';
-        isDragging = false;
-      });
-    }
-  }
-
 }
-
-

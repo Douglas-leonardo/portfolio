@@ -1,30 +1,29 @@
-<section class="certifications" id="habilidades">
-  <div class="particles-background" id="certifications-particles"></div>
+<section class="certificados" id="certificados">
+  <div class="fundo-particulas" id="particulas-certificados"></div>
   <div class="container">
     <h2>Certificações</h2>
-    <div class="slider">
-      <div class="slides">
-        <div class="slide" *ngFor="let slide of slides; let i = index" [ngStyle]="getSlideStyle(i)">
-          <div class="slide-content">
-            <h3>{{ slide.title }}</h3>
-            <div class="certification-details">
-              <p><i class="fas fa-university"></i> {{ slide.institution }}</p>
-              <p><i class="fas fa-clock"></i> {{ slide.duration }}</p>
-              <p><i class="fas fa-chalkboard-teacher"></i> {{ slide.instructor }}</p>
-              <p><i class="fas fa-calendar-alt"></i> {{ slide.year }}</p>
+    <div class="carrossel">
+      <div class="slides"
+           (touchstart)="aoIniciarToque($event)"
+           (touchmove)="aoMoverToque($event)"
+           (touchend)="aoTerminarToque($event)">
+        <div class="slide" *ngFor="let certificado of certificados; let i = index" [ngStyle]="obterEstiloSlide(i)">
+          <div class="conteudo-slide">
+            <h3>{{ certificado.titulo }}</h3>
+            <div class="detalhes-certificado">
+              <p><i class="fas fa-university"></i> {{ certificado.instituicao }}</p>
+              <p><i class="fas fa-clock"></i> {{ certificado.duracao }}</p>
+              <p><i class="fas fa-chalkboard-teacher"></i> {{ certificado.instrutor }}</p>
+              <p><i class="fas fa-calendar-alt"></i> {{ certificado.ano }}</p>
             </div>
-            <a [href]="slide.certificateLink" target="_blank" class="certificate-link" data-tilt data-tilt-scale="1.05">
+            <a [href]="certificado.linkCertificado" target="_blank" class="link-certificado" rel="noopener noreferrer">
               Ver Certificado <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
         </div>
       </div>
-      <button class="slider-nav prev" (click)="moveSlide(-1)">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="slider-nav next" (click)="moveSlide(1)">
-        <i class="fas fa-chevron-right"></i>
-      </button>
+      <button class="navegacao-carrossel anterior" (click)="moverSlide(-1)" aria-label="Certificado anterior"></button>
+      <button class="navegacao-carrossel proximo" (click)="moverSlide(1)" aria-label="Próximo certificado"></button>
     </div>
   </div>
 </section>
