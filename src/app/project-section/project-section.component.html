@@ -1,33 +1,41 @@
-<section class="projects-section" id="projetos">
-  <h2>Meus Projetos em Angular</h2>
-  <p class="subtitle">Confira meus trabalhos mais recentes</p>
+<section class="projects" id="projects">
+  <div class="projects__header">
+    <h2 class="projects__title">Meus Projetos em Angular</h2>
+    <p class="projects__subtitle">Confira meus trabalhos mais recentes</p>
+  </div>
 
-  <div class="projects-grid">
-    <div class="project-card" *ngFor="let p of displayedProjects">
-      <img [src]="p.image" [alt]="p.title" class="project-image">
+  <div class="projects__grid">
+    <article class="project-card" *ngFor="let project of visibleProjects; trackBy: trackByProjectId">
+      <img [src]="project.imageUrl" [alt]="project.title" class="project-card__image">
 
-      <div class="project-content">
-        <h3>{{ p.title }}</h3>
-        <p>{{ p.description }}</p>
+      <div class="project-card__content">
+        <h3 class="project-card__title">{{ project.title }}</h3>
+        <p class="project-card__description">{{ project.description }}</p>
 
-        <div class="project-techs">
-          <span *ngFor="let t of p.technologies">{{ t }}</span>
+        <div class="project-card__technologies">
+          <span class="technology-tag" *ngFor="let tech of project.technologies">
+            {{ tech }}
+          </span>
         </div>
 
-        <div class="project-actions">
-          <a [href]="p.githubUrl" target="_blank" class="btn github-btn">
-            <i class="fab fa-github"></i> Código
+        <div class="project-card__actions">
+          <a [href]="project.codeUrl" target="_blank" rel="noopener" class="btn btn--github">
+            <i class="fab fa-github"></i>
+            <span>Código</span>
           </a>
-          <a [href]="p.demoUrl" target="_blank" class="btn demo-btn">
-            <i class="fas fa-external-link-alt"></i> Demo
+          <a [href]="project.projectUrl" target="_blank" rel="noopener" class="btn btn--demo">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Demo</span>
           </a>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 
-  <button class="toggle-projects-btn" (click)="toggleShowAll()" *ngIf="allProjects.length > 3">
-    {{ showAll ? 'Ver menos' : 'Ver mais' }}
-    <i class="fas" [class.fa-chevron-up]="showAll" [class.fa-chevron-down]="!showAll"></i>
-  </button>
+  <div class="projects__footer" *ngIf="projects.length > 3">
+    <button class="btn btn--toggle" (click)="toggleProjectsView()">
+      {{ showAllProjects ? 'Mostrar menos' : 'Ver todos os projetos' }}
+      <i class="fas" [class.fa-chevron-up]="showAllProjects" [class.fa-chevron-down]="!showAllProjects"></i>
+    </button>
+  </div>
 </section>

@@ -1,132 +1,110 @@
 import { CommonModule } from '@angular/common';
-import { Component, Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 
-export interface Project {
+interface Project {
   id: number;
   title: string;
   description: string;
   imageUrl: string;
   projectUrl: string;
   codeUrl: string;
-  category: string;
-  year: number;
   technologies: string[];
   featured?: boolean;
 }
 
 @Component({
   selector: 'app-project-section',
-  imports: [CommonModule],
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './project-section.component.html',
-  styleUrl: './project-section.component.scss'
+  styleUrls: ['./project-section.component.scss']
 })
 export class ProjectSectionComponent {
+  showAllProjects = false;
 
-  allProjects = [
+  projects: Project[] = [
     {
+      id: 1,
       title: 'Projeto Angular 1',
       description: 'Aplicação web desenvolvida com Angular e Firebase',
       technologies: ['Angular', 'TypeScript', 'Firebase'],
-      githubUrl: 'https://github.com/seu-usuario/projeto1',
-      demoUrl: 'https://demo-projeto1.com',
-      image: 'assets/images/projeto1.jpg'
+      codeUrl: 'https://github.com/seu-usuario/projeto1',
+      projectUrl: 'https://demo-projeto1.com',
+      imageUrl: 'assets/images/projeto1.jpg',
+      featured: true
     },
     {
-      title: 'Projeto Angular 2',
-      description: 'Dashboard administrativo com Angular Material',
-      technologies: ['Angular', 'Material', 'RxJS'],
-      githubUrl: 'https://github.com/seu-usuario/projeto2',
-      demoUrl: 'https://demo-projeto2.com',
-      image: 'assets/images/projeto2.jpg'
+      id: 1,
+      title: 'Projeto Angular 1',
+      description: 'Aplicação web desenvolvida com Angular e Firebase',
+      technologies: ['Angular', 'TypeScript', 'Firebase'],
+      codeUrl: 'https://github.com/seu-usuario/projeto1',
+      projectUrl: 'https://demo-projeto1.com',
+      imageUrl: 'assets/images/projeto1.jpg',
+      featured: true
     },
     {
-      title: 'Projeto Angular 3',
-      description: 'E-commerce com carrinho de compras',
-      technologies: ['Angular', 'NgRx', 'SCSS'],
-      githubUrl: 'https://github.com/seu-usuario/projeto3',
-      demoUrl: 'https://demo-projeto3.com',
-      image: 'assets/images/projeto3.jpg'
+      id: 1,
+      title: 'Projeto Angular 1',
+      description: 'Aplicação web desenvolvida com Angular e Firebase',
+      technologies: ['Angular', 'TypeScript', 'Firebase'],
+      codeUrl: 'https://github.com/seu-usuario/projeto1',
+      projectUrl: 'https://demo-projeto1.com',
+      imageUrl: 'assets/images/projeto1.jpg',
+      featured: true
     },
     {
-      title: 'Projeto Angular 4',
-      description: 'Aplicativo de gerenciamento de tarefas',
-      technologies: ['Angular', 'Firebase', 'PWA'],
-      githubUrl: 'https://github.com/seu-usuario/projeto4',
-      demoUrl: 'https://demo-projeto4.com',
-      image: 'assets/images/projeto4.jpg'
+      id: 1,
+      title: 'Projeto Angular 1',
+      description: 'Aplicação web desenvolvida com Angular e Firebase',
+      technologies: ['Angular', 'TypeScript', 'Firebase'],
+      codeUrl: 'https://github.com/seu-usuario/projeto1',
+      projectUrl: 'https://demo-projeto1.com',
+      imageUrl: 'assets/images/projeto1.jpg',
+      featured: true
     },
     {
-      title: 'Projeto Angular 5',
-      description: 'Plataforma de aprendizado online',
-      technologies: ['Angular', 'Node.js', 'MongoDB'],
-      githubUrl: 'https://github.com/seu-usuario/projeto5',
-      demoUrl: 'https://demo-projeto5.com',
-      image: 'assets/images/projeto5.jpg'
+      id: 1,
+      title: 'Projeto Angular 1',
+      description: 'Aplicação web desenvolvida com Angular e Firebase',
+      technologies: ['Angular', 'TypeScript', 'Firebase'],
+      codeUrl: 'https://github.com/seu-usuario/projeto1',
+      projectUrl: 'https://demo-projeto1.com',
+      imageUrl: 'assets/images/projeto1.jpg',
+      featured: true
     },
     {
-      title: 'Projeto Angular 3',
-      description: 'E-commerce com carrinho de compras',
-      technologies: ['Angular', 'NgRx', 'SCSS'],
-      githubUrl: 'https://github.com/seu-usuario/projeto3',
-      demoUrl: 'https://demo-projeto3.com',
-      image: 'assets/images/projeto3.jpg'
+      id: 1,
+      title: 'Projeto Angular 1',
+      description: 'Aplicação web desenvolvida com Angular e Firebase',
+      technologies: ['Angular', 'TypeScript', 'Firebase'],
+      codeUrl: 'https://github.com/seu-usuario/projeto1',
+      projectUrl: 'https://demo-projeto1.com',
+      imageUrl: 'assets/images/projeto1.jpg',
+      featured: true
     },
     {
-      title: 'Projeto Angular 4',
-      description: 'Aplicativo de gerenciamento de tarefas',
-      technologies: ['Angular', 'Firebase', 'PWA'],
-      githubUrl: 'https://github.com/seu-usuario/projeto4',
-      demoUrl: 'https://demo-projeto4.com',
-      image: 'assets/images/projeto4.jpg'
+      id: 1,
+      title: 'Projeto Angular 1',
+      description: 'Aplicação web desenvolvida com Angular e Firebase',
+      technologies: ['Angular', 'TypeScript', 'Firebase'],
+      codeUrl: 'https://github.com/seu-usuario/projeto1',
+      projectUrl: 'https://demo-projeto1.com',
+      imageUrl: 'assets/images/projeto1.jpg',
+      featured: true
     },
-    {
-      title: 'Projeto Angular 5',
-      description: 'Plataforma de aprendizado online',
-      technologies: ['Angular', 'Node.js', 'MongoDB'],
-      githubUrl: 'https://github.com/seu-usuario/projeto5',
-      demoUrl: 'https://demo-projeto5.com',
-      image: 'assets/images/projeto5.jpg'
-    },
-    {
-      title: 'Projeto Angular 3',
-      description: 'E-commerce com carrinho de compras',
-      technologies: ['Angular', 'NgRx', 'SCSS'],
-      githubUrl: 'https://github.com/seu-usuario/projeto3',
-      demoUrl: 'https://demo-projeto3.com',
-      image: 'assets/images/projeto3.jpg'
-    },
-    {
-      title: 'Projeto Angular 4',
-      description: 'Aplicativo de gerenciamento de tarefas',
-      technologies: ['Angular', 'Firebase', 'PWA'],
-      githubUrl: 'https://github.com/seu-usuario/projeto4',
-      demoUrl: 'https://demo-projeto4.com',
-      image: 'assets/images/projeto4.jpg'
-    },
-    {
-      title: 'Projeto Angular 5',
-      description: 'Plataforma de aprendizado online',
-      technologies: ['Angular', 'Node.js', 'MongoDB'],
-      githubUrl: 'https://github.com/seu-usuario/projeto5',
-      demoUrl: 'https://demo-projeto5.com',
-      image: 'assets/images/projeto5.jpg'
-    }
+    // ... outros projetos (mantenha apenas 5 únicos e remova as duplicatas)
   ];
 
-  showAll = false;
-  isMenuActive = false;
-
-  get displayedProjects() {
-    return this.showAll ? this.allProjects : this.allProjects.slice(0, 3);
+  get visibleProjects() {
+    return this.showAllProjects ? this.projects : this.projects.filter(project => project.featured).slice(0, 3);
   }
 
-
-  toggleShowAll() {
-    this.showAll = !this.showAll;
+  toggleProjectsView() {
+    this.showAllProjects = !this.showAllProjects;
   }
 
-  toggleMenu() {
-    this.isMenuActive = !this.isMenuActive;
+  trackByProjectId(index: number, project: Project) {
+    return project.id;
   }
 }
