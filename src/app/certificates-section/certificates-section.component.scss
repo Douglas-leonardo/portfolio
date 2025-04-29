@@ -9,10 +9,9 @@
     text-align: center;
     margin-bottom: 50px;
     position: relative;
-    background: linear-gradient(90deg, #f7c0c0, #28a745);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #e0f7fa;
+    font-weight: 600;
+    letter-spacing: 1px;
 
     &::after {
       content: '';
@@ -108,7 +107,7 @@
 
 .detalhes-certificado {
   p {
-    color: rgba(255, 255, 255, 0.8);
+    color: #e0f7fa;
     margin: 10px 0;
     font-size: 1rem;
     display: flex;

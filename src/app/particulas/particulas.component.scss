@@ -6,9 +6,16 @@ body {
 
 canvas {
   display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.7; /* Reduz a opacidade para menos impacto visual */
 }
 
-
-app-particulas canvas {
-  display: block;
+/* Reduz ainda mais as partículas em telas muito pequenas */
+@media (max-width: 600px) {
+  canvas {
+    opacity: 0.5;
+  }
 }

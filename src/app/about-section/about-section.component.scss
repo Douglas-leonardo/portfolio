@@ -34,17 +34,18 @@ $text-muted: rgba(255, 255, 255, 0.7);
 
   &__title {
     font-size: 2.5rem;
-    background: linear-gradient(90deg, #f7c0c0, $primary-color);
+    color: #e0f7fa;
+    font-weight: 600;
+    letter-spacing: 1px;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
     display: inline-block;
     margin-bottom: 15px;
   }
 
   &__tagline {
     font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: #e0f7fa;
     max-width: 700px;
     margin: 0 auto;
   }

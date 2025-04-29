@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-particulas',
@@ -7,116 +7,140 @@ import { Component, AfterViewInit } from '@angular/core';
   styleUrls: ['./particulas.component.css']
 })
 export class ParticulasComponent implements AfterViewInit {
+  private canvas!: HTMLCanvasElement;
+  private ctx!: CanvasRenderingContext2D;
+  private particles: any[] = [];
+  private mouse = { x: null as number | null, y: null as number | null, radius: 100 };
+  private animationId!: number;
 
   ngAfterViewInit(): void {
-    const canvas = document.getElementById('canvas') as HTMLCanvasElement;
-    const ctx = canvas.getContext('2d')!;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    this.canvas = document.getElementById('canvas') as HTMLCanvasElement;
+    this.ctx = this.canvas.getContext('2d')!;
+    this.initCanvas();
+    this.createParticles();
+    this.animate();
+  }
 
-    // Adiciona fundo escuro
-    ctx.fillStyle = '#121212'; // Cor escura de fundo
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  @HostListener('window:resize')
+  onResize() {
+    this.resetCanvas();
+  }
 
-    const particles: any[] = [];
-    const mouse = { x: null as number | null, y: null as number | null, radius: 100 };
-    const particleCount = 203;
+  @HostListener('window:mousemove', ['$event'])
+  onMouseMove(e: MouseEvent) {
+    this.mouse.x = e.x;
+    this.mouse.y = e.y;
+  }
+
+  private initCanvas() {
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+    this.ctx.fillStyle = '#121212';
+    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+  }
+
+  private resetCanvas() {
+    cancelAnimationFrame(this.animationId);
+    this.initCanvas();
+    this.createParticles();
+    this.animate();
+  }
+
+  private createParticles() {
+    this.particles = [];
+    const isMobile = window.innerWidth <= 768;
+    const particleCount = isMobile ? 80 : 200; // Reduz drasticamente para mobile
 
     for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 1,
-        baseX: Math.random() * canvas.width,
-        baseY: Math.random() * canvas.height,
+      this.particles.push({
+        x: Math.random() * this.canvas.width,
+        y: Math.random() * this.canvas.height,
+        size: isMobile ? Math.random() * 1 + 0.5 : Math.random() * 2 + 1, // Partículas menores
+        baseX: Math.random() * this.canvas.width,
+        baseY: Math.random() * this.canvas.height,
         density: Math.random() * 10 + 5,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3
+        vx: (Math.random() - 0.5) * (isMobile ? 0.1 : 0.3), // Movimento mais lento
+        vy: (Math.random() - 0.5) * (isMobile ? 0.1 : 0.3)
       });
     }
+  }
 
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.x;
-      mouse.y = e.y;
-    });
+  private connectParticles() {
+    const isMobile = window.innerWidth <= 768;
+    const maxDistance = isMobile ? 60 : 100; // Conexões mais curtas
 
-    const connect = () => {
-      for (let a = 0; a < particles.length; a++) {
-        for (let b = a; b < particles.length; b++) {
-          const dx = particles[a].x - particles[b].x;
-          const dy = particles[a].y - particles[b].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+    for (let a = 0; a < this.particles.length; a++) {
+      for (let b = a; b < this.particles.length; b++) {
+        const dx = this.particles[a].x - this.particles[b].x;
+        const dy = this.particles[a].y - this.particles[b].y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 100) {
-            ctx.strokeStyle = `rgba(40, 167, 69, ${1 - distance / 100})`;
-            ctx.lineWidth = 0.5;
-            ctx.beginPath();
-            ctx.moveTo(particles[a].x, particles[a].y);
-            ctx.lineTo(particles[b].x, particles[b].y);
-            ctx.stroke();
-          }
+        if (distance < maxDistance) {
+          this.ctx.strokeStyle = `rgba(40, 167, 69, ${1 - distance / maxDistance})`;
+          this.ctx.lineWidth = isMobile ? 0.3 : 0.5; // Linhas mais finas
+          this.ctx.beginPath();
+          this.ctx.moveTo(this.particles[a].x, this.particles[a].y);
+          this.ctx.lineTo(this.particles[b].x, this.particles[b].y);
+          this.ctx.stroke();
         }
       }
-    };
+    }
+  }
 
-    const animate = () => {
-      // Em vez de clearRect, preenchemos com a cor escura
-      ctx.fillStyle = '#121212'; // Mesma cor do fundo
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+  private animate() {
+    this.ctx.fillStyle = '#121212';
+    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
-      ctx.fillStyle = "rgba(40, 167, 69, 0.8)";
+    this.ctx.fillStyle = "rgba(40, 167, 69, 0.8)";
 
-      particles.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
+    const isMobile = window.innerWidth <= 768;
+    const maxSpeed = isMobile ? 0.2 : 0.4; // Velocidade máxima reduzida
 
-        if (Math.random() < 0.01) {
-          p.vx += (Math.random() - 0.5) * 0.1;
-          p.vy += (Math.random() - 0.5) * 0.1;
+    this.particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (Math.random() < 0.01) {
+        p.vx += (Math.random() - 0.5) * 0.1;
+        p.vy += (Math.random() - 0.5) * 0.1;
+      }
+
+      const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+      if (speed > maxSpeed) {
+        p.vx = (p.vx / speed) * maxSpeed;
+        p.vy = (p.vy / speed) * maxSpeed;
+      }
+
+      if (this.mouse.x && this.mouse.y) {
+        const dx = this.mouse.x - p.x;
+        const dy = this.mouse.y - p.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const forceDirectionX = dx / distance;
+        const forceDirectionY = dy / distance;
+        const maxDistance = this.mouse.radius;
+        let force = (maxDistance - distance) / maxDistance;
+
+        if (distance < maxDistance) {
+          p.x -= forceDirectionX * force * p.density * (isMobile ? 0.4 : 0.7);
+          p.y -= forceDirectionY * force * p.density * (isMobile ? 0.4 : 0.7);
         }
+      }
 
-        const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
-        if (speed > 0.4) {
-          p.vx = (p.vx / speed) * 0.4;
-          p.vy = (p.vy / speed) * 0.4;
-        }
+      if (p.x < 0 || p.x > this.canvas.width || p.y < 0 || p.y > this.canvas.height) {
+        if (p.x < 0 || p.x > this.canvas.width) p.vx *= -0.8;
+        if (p.y < 0 || p.y > this.canvas.height) p.vy *= -0.8;
+      }
 
-        if (mouse.x && mouse.y) {
-          const dx = mouse.x - p.x;
-          const dy = mouse.y - p.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          const forceDirectionX = dx / distance;
-          const forceDirectionY = dy / distance;
-          const maxDistance = mouse.radius;
-          let force = (maxDistance - distance) / maxDistance;
-
-          if (distance < maxDistance) {
-            p.x -= forceDirectionX * force * p.density * 0.7;
-            p.y -= forceDirectionY * force * p.density * 0.7;
-          }
-        }
-
-        if (p.x < 0 || p.x > canvas.width || p.y < 0 || p.y > canvas.height) {
-          if (p.x < 0 || p.x > canvas.width) p.vx *= -0.8;
-          if (p.y < 0 || p.y > canvas.height) p.vy *= -0.8;
-        }
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      connect();
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      ctx.fillStyle = '#121212';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      this.ctx.beginPath();
+      this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      this.ctx.fill();
     });
+
+    this.connectParticles();
+    this.animationId = requestAnimationFrame(() => this.animate());
+  }
+
+  ngOnDestroy() {
+    cancelAnimationFrame(this.animationId);
   }
 }

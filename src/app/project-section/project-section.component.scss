@@ -1,7 +1,7 @@
 .projects {
   padding: 5rem 2rem;
   background: transparent;
-  color: white;
+  color: #e0f7fa;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -15,16 +15,17 @@
   &__title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(90deg, #f7c0c0, #28a745);
+    color: #e0f7fa;
+    font-weight: 600;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
     display: inline-block;
+    letter-spacing: 1px;
   }
 
   &__subtitle {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: #e0f7fa;
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.5;
