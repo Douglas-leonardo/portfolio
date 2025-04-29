@@ -8,13 +8,14 @@ import { HomeSectionComponent } from '../home-section/home-section.component';
 import { ProjectSectionComponent } from "../project-section/project-section.component";
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from "../footer/footer.component";
+import { SkillsComponent } from '../skills/skills.component';
 
 @Injectable({ providedIn: 'root' })
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, ParticulasComponent, AboutSectionComponent, CertificatesSectionComponent, ContactSectionComponent, HomeSectionComponent, ProjectSectionComponent, HeaderComponent, FooterComponent],
+  imports: [CommonModule, ParticulasComponent, AboutSectionComponent, CertificatesSectionComponent, ContactSectionComponent, HomeSectionComponent, ProjectSectionComponent, HeaderComponent, FooterComponent, SkillsComponent],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
 })
