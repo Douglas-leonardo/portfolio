@@ -3,10 +3,8 @@
   <div class="container">
     <h2>Certificações</h2>
     <div class="carrossel">
-      <div class="slides"
-           (touchstart)="aoIniciarToque($event)"
-           (touchmove)="aoMoverToque($event)"
-           (touchend)="aoTerminarToque($event)">
+      <div class="slides" (touchstart)="aoIniciarToque($event)" (touchmove)="aoMoverToque($event)"
+        (touchend)="aoTerminarToque($event)">
         <div class="slide" *ngFor="let certificado of certificados; let i = index" [ngStyle]="obterEstiloSlide(i)">
           <div class="conteudo-slide">
             <h3>{{ certificado.titulo }}</h3>

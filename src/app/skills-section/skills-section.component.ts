@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-skills-section',
   standalone: true,
   imports: [CommonModule],
