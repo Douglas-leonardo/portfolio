@@ -1,0 +1,122 @@
+<section class="skills-section" id="habilidades">
+  <div class="skills-container">
+    <div class="skills-header">
+      <h2 class="skills-title">Minhas Habilidades</h2>
+      <p class="skills-subtitle">Conhecimento técnico abrangente em todas as camadas de desenvolvimento</p>
+    </div>
+
+    <div class="skills-tabs">
+      <button class="tab-button"
+              [class.active]="activeTab === 'frontend'"
+              (click)="changeTab('frontend')"
+              data-tab="frontend">
+        <i class="fas fa-code"></i> Frontend
+      </button>
+      <button class="tab-button"
+              [class.active]="activeTab === 'backend'"
+              (click)="changeTab('backend')"
+              data-tab="backend">
+        <i class="fas fa-server"></i> Backend
+      </button>
+      <button class="tab-button"
+              [class.active]="activeTab === 'tools'"
+              (click)="changeTab('tools')"
+              data-tab="tools">
+        <i class="fas fa-tools"></i> Ferramentas
+      </button>
+    </div>
+
+    <!-- Conteúdo Frontend -->
+    <div id="frontend" class="tab-content" [class.active]="activeTab === 'frontend'">
+      <div class="skills-grid">
+        <div class="skill-card" *ngFor="let skill of frontendSkills">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i [class]="skill.icon"></i>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">{{skill.name}}</h3>
+              <span class="skill-level" [class]="getLevelClass(skill.level)">
+                {{skill.level}}
+              </span>
+            </div>
+          </div>
+          <div class="skill-description">
+            {{skill.description}}
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" [style.width]="skill.progress"></div>
+          </div>
+          <div class="skill-features">
+            <div class="feature-item" *ngFor="let feature of skill.features">
+              <i class="fas fa-check-circle"></i>
+              <span>{{feature}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo Backend -->
+    <div id="backend" class="tab-content" [class.active]="activeTab === 'backend'">
+      <div class="skills-grid">
+        <div class="skill-card" *ngFor="let skill of backendSkills">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i [class]="skill.icon"></i>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">{{skill.name}}</h3>
+              <span class="skill-level" [class]="getLevelClass(skill.level)">
+                {{skill.level}}
+              </span>
+            </div>
+          </div>
+          <div class="skill-description">
+            {{skill.description}}
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" [style.width]="skill.progress"></div>
+          </div>
+          <div class="skill-features">
+            <div class="feature-item" *ngFor="let feature of skill.features">
+              <i class="fas fa-check-circle"></i>
+              <span>{{feature}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo Ferramentas -->
+    <div id="tools" class="tab-content" [class.active]="activeTab === 'tools'">
+      <div class="skills-grid">
+        <div class="skill-card" *ngFor="let skill of toolsSkills">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i [class]="skill.icon"></i>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">{{skill.name}}</h3>
+              <span class="skill-level" [class]="getLevelClass(skill.level)">
+                {{skill.level}}
+              </span>
+            </div>
+          </div>
+          <div class="skill-description">
+            {{skill.description}}
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" [style.width]="skill.progress"></div>
+          </div>
+          <div class="skill-features">
+            <div class="feature-item" *ngFor="let feature of skill.features">
+              <i class="fas fa-check-circle"></i>
+              <span>{{feature}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
