@@ -25,75 +25,24 @@ export class ProjectSectionComponent {
   projects: Project[] = [
     {
       id: 1,
-      title: 'Projeto Angular 1',
-      description: 'Aplicação web desenvolvida com Angular e Firebase',
+      title: 'Doceria',
+      description: 'Uma loja de docer online',
       technologies: ['Angular', 'TypeScript', 'Firebase'],
       codeUrl: 'https://github.com/seu-usuario/projeto1',
-      projectUrl: 'https://demo-projeto1.com',
-      imageUrl: 'assets/images/projeto1.jpg',
+      projectUrl: 'https://doceria-eta.vercel.app/',
+      imageUrl: "assets/images/doceria.png",
       featured: true
     },
     {
-      id: 1,
-      title: 'Projeto Angular 1',
+      id: 2,
+      title: 'Venda de imoveis',
       description: 'Aplicação web desenvolvida com Angular e Firebase',
       technologies: ['Angular', 'TypeScript', 'Firebase'],
       codeUrl: 'https://github.com/seu-usuario/projeto1',
-      projectUrl: 'https://demo-projeto1.com',
-      imageUrl: 'assets/images/projeto1.jpg',
+      projectUrl: 'https://condomio-vendas.vercel.app/',
+      imageUrl: "assets/images/condominio.png",
       featured: true
-    },
-    {
-      id: 1,
-      title: 'Projeto Angular 1',
-      description: 'Aplicação web desenvolvida com Angular e Firebase',
-      technologies: ['Angular', 'TypeScript', 'Firebase'],
-      codeUrl: 'https://github.com/seu-usuario/projeto1',
-      projectUrl: 'https://demo-projeto1.com',
-      imageUrl: 'assets/images/projeto1.jpg',
-      featured: true
-    },
-    {
-      id: 1,
-      title: 'Projeto Angular 1',
-      description: 'Aplicação web desenvolvida com Angular e Firebase',
-      technologies: ['Angular', 'TypeScript', 'Firebase'],
-      codeUrl: 'https://github.com/seu-usuario/projeto1',
-      projectUrl: 'https://demo-projeto1.com',
-      imageUrl: 'assets/images/projeto1.jpg',
-      featured: true
-    },
-    {
-      id: 1,
-      title: 'Projeto Angular 1',
-      description: 'Aplicação web desenvolvida com Angular e Firebase',
-      technologies: ['Angular', 'TypeScript', 'Firebase'],
-      codeUrl: 'https://github.com/seu-usuario/projeto1',
-      projectUrl: 'https://demo-projeto1.com',
-      imageUrl: 'assets/images/projeto1.jpg',
-      featured: true
-    },
-    {
-      id: 1,
-      title: 'Projeto Angular 1',
-      description: 'Aplicação web desenvolvida com Angular e Firebase',
-      technologies: ['Angular', 'TypeScript', 'Firebase'],
-      codeUrl: 'https://github.com/seu-usuario/projeto1',
-      projectUrl: 'https://demo-projeto1.com',
-      imageUrl: 'assets/images/projeto1.jpg',
-      featured: true
-    },
-    {
-      id: 1,
-      title: 'Projeto Angular 1',
-      description: 'Aplicação web desenvolvida com Angular e Firebase',
-      technologies: ['Angular', 'TypeScript', 'Firebase'],
-      codeUrl: 'https://github.com/seu-usuario/projeto1',
-      projectUrl: 'https://demo-projeto1.com',
-      imageUrl: 'assets/images/projeto1.jpg',
-      featured: true
-    },
-    // ... outros projetos (mantenha apenas 5 únicos e remova as duplicatas)
+    }
   ];
 
   get visibleProjects() {
