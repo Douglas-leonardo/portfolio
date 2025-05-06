@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  email = 'dougbriet@gmail.com';
   currentYear: number;
 
   constructor() {
