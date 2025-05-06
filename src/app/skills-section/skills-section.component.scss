@@ -118,6 +118,16 @@
     i {
       color: var(--primary);
     }
+
+    &[data-tab="qa"] {
+      background: rgba(40, 167, 69, 0.2);
+      border-color: var(--primary);
+      box-shadow: 0 0 15px rgba(156, 39, 176, 0.2);
+
+      i {
+        color: var(--primary);
+      }
+    }
   }
 
   i {
@@ -190,6 +200,11 @@
   font-size: 1.6rem;
   color: white;
   box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+
+  [data-tab="qa"] & {
+    background: linear-gradient(135deg, var(--primary), #7b1fa2);
+    box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+  }
 }
 
 .skill-info {
@@ -248,6 +263,10 @@
   border-radius: 4px;
   position: relative;
 
+  [data-tab="qa"] & {
+    background: linear-gradient(90deg, var(--primary), #ba68c8);
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -279,6 +298,10 @@
   i {
     color: var(--primary);
     font-size: 0.9rem;
+
+    [data-tab="qa"] & {
+      color: var(--primary);
+    }
   }
 }
 

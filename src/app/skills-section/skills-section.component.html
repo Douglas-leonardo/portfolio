@@ -24,6 +24,12 @@
               data-tab="tools">
         <i class="fas fa-tools"></i> Ferramentas
       </button>
+      <button class="tab-button"
+              [class.active]="activeTab === 'qa'"
+              (click)="changeTab('qa')"
+              data-tab="qa">
+        <i class="fas fa-bug"></i> QA & Automação
+      </button>
     </div>
 
     <!-- Conteúdo Frontend -->
@@ -92,6 +98,37 @@
     <div id="tools" class="tab-content" [class.active]="activeTab === 'tools'">
       <div class="skills-grid">
         <div class="skill-card" *ngFor="let skill of toolsSkills">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i [class]="skill.icon"></i>
+            </div>
+            <div class="skill-info">
+              <h3 class="skill-name">{{skill.name}}</h3>
+              <span class="skill-level" [class]="getLevelClass(skill.level)">
+                {{skill.level}}
+              </span>
+            </div>
+          </div>
+          <div class="skill-description">
+            {{skill.description}}
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" [style.width]="skill.progress"></div>
+          </div>
+          <div class="skill-features">
+            <div class="feature-item" *ngFor="let feature of skill.features">
+              <i class="fas fa-check-circle"></i>
+              <span>{{feature}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo QA & Automação -->
+    <div id="qa" class="tab-content" [class.active]="activeTab === 'qa'">
+      <div class="skills-grid">
+        <div class="skill-card" *ngFor="let skill of qaSkills">
           <div class="skill-header">
             <div class="skill-icon">
               <i [class]="skill.icon"></i>

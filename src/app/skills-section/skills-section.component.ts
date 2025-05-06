@@ -57,9 +57,9 @@ export class SkillsSectionComponent {
   backendSkills = [
     {
       name: 'Node.js',
-      level: 'Avançado',
+      level: 'Intermediário',
       description: 'Construção de APIs RESTful e aplicações server-side eficientes.',
-      progress: '85%',
+      progress: '60%',
       icon: 'fab fa-node-js',
       features: [
         'Express.js',
@@ -93,6 +93,20 @@ export class SkillsSectionComponent {
         'Web Scraping',
         'Scripting'
       ]
+    },
+    {
+      name: 'Java',
+      level: 'Intermediário',
+      description: 'Desenvolvimento de aplicações empresariais com Maven e integração com Firebase.',
+      progress: '75%',
+      icon: 'fab fa-java',
+      features: [
+        'Projetos Maven',
+        'Integração com Firebase',
+        'POO Avançada',
+        'Tratamento de Exceções',
+        'Collections Framework'
+      ]
     }
   ];
 
@@ -111,10 +125,24 @@ export class SkillsSectionComponent {
       ]
     },
     {
+      name: 'SourceTree',
+      level: 'Avançado',
+      description: 'Gerenciamento visual de repositórios Git com fluxos de trabalho avançados.',
+      progress: '90%',
+      icon: 'fas fa-code-branch',
+      features: [
+        'Interface gráfica para Git',
+        'Gestão visual de branches',
+        'Resolução de conflitos',
+        'Integração com GitHub/Bitbucket',
+        'Stashing e cherry-picking'
+      ]
+    },
+    {
       name: 'Docker',
-      level: 'Intermediário',
+      level: 'Básico',
       description: 'Containerização de aplicações e ambientes de desenvolvimento.',
-      progress: '75%',
+      progress: '50%',
       icon: 'fab fa-docker',
       features: [
         'Docker Compose',
@@ -134,6 +162,51 @@ export class SkillsSectionComponent {
         'AWS Básico',
         'Deploy Automatizado',
         'Monitoramento'
+      ]
+    }
+  ];
+
+  qaSkills = [
+    {
+      name: 'Testes Automatizados',
+      level: 'Avançado',
+      description: 'Desenvolvimento e execução de testes automatizados para aplicações web e desktop.',
+      progress: '85%',
+      icon: 'fas fa-robot',
+      features: [
+        'Cypress',
+        'Selenium',
+        'Testes E2E',
+        'Integração Contínua',
+        'TestComplete',
+        'Protractor',
+        'Robot Framework'
+      ]
+    },
+    {
+      name: 'Testes Manuais',
+      level: 'Avançado',
+      description: 'Planejamento e execução de testes manuais com relatórios detalhados.',
+      progress: '90%',
+      icon: 'fas fa-clipboard-check',
+      features: [
+        'Casos de Teste',
+        'Relatórios de Bugs',
+        'Testes de Usabilidade',
+        'Testes de Regressão'
+      ]
+    },
+    {
+      name: 'QA Processes',
+      level: 'Intermediário',
+      description: 'Implementação de processos de garantia de qualidade em projetos ágeis.',
+      progress: '80%',
+      icon: 'fas fa-tasks',
+      features: [
+        'Metodologias Ágeis',
+        'Bugs Tracking',
+        'Padrões de Qualidade',
+        'Documentação Técnica'
       ]
     }
   ];
