@@ -25,20 +25,20 @@ export class ProjectSectionComponent {
   projects: Project[] = [
     {
       id: 1,
-      title: 'Doceria',
-      description: 'Uma loja de docer online',
-      technologies: ['Angular', 'TypeScript', 'Firebase'],
-      codeUrl: 'https://github.com/seu-usuario/projeto1',
+      title: 'Doceria Delícia',
+      description: "Site estático de doceria com design responsivo",
+      technologies: ["HTML5", "CSS3", "JavaScript", "Font Awesome", "Google Fonts"],
+      codeUrl: 'https://github.com/Douglas-leonardo/doceria/tree/main/doceria',
       projectUrl: 'https://doceria-eta.vercel.app/',
       imageUrl: "assets/images/doceria.png",
       featured: true
     },
     {
       id: 2,
-      title: 'Venda de imoveis',
-      description: 'Aplicação web desenvolvida com Angular e Firebase',
-      technologies: ['Angular', 'TypeScript', 'Firebase'],
-      codeUrl: 'https://github.com/seu-usuario/projeto1',
+      title: 'InDecor',
+      description: "Landing page para evento de design de interiores com múltiplas seções interativas",
+      technologies: ["HTML5", "CSS3", "JavaScript", "Google Fonts", "Bootstrap Icons"],
+      codeUrl: 'https://github.com/Douglas-leonardo/Condomio-vendas',
       projectUrl: 'https://condomio-vendas.vercel.app/',
       imageUrl: "assets/images/condominio.png",
       featured: true
