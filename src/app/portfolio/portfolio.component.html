@@ -22,6 +22,10 @@
 
   <app-project-section></app-project-section>
 
+  <button [class.scroll-to-top--visible]="showScrollButton" (click)="scrollToTop()" class="scroll-to-top"
+    aria-label="Voltar ao topo">
+  </button>
+
   <app-footer></app-footer>
 </body>
 

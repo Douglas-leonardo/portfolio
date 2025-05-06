@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, HostListener, Injectable } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ParticulasComponent } from '../particulas/particulas.component';
 import { AboutSectionComponent } from '../about-section/about-section.component';
@@ -31,4 +31,20 @@ export class PortfolioComponent {
     this.isMenuActive = !this.isMenuActive;
   }
 
+  showScrollButton = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const shouldShow = window.scrollY > 300;
+    if (shouldShow !== this.showScrollButton) {
+      this.showScrollButton = shouldShow;
+    }
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }
