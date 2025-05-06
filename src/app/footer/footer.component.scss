@@ -1,6 +1,6 @@
 /* Estilos Gerais do Footer */
 .footer {
-  background: rgba(18, 18, 18, 0.7);
+  background: rgba(18, 18, 18, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #ffffff;
@@ -8,24 +8,6 @@
   padding-top: 80px;
   margin-top: 80px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-wave {
-  position: absolute;
-  top: -80px;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  overflow: hidden;
-  line-height: 0;
-  color: rgba(18, 18, 18, 0.7);
-}
-
-.footer-wave svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 80px;
 }
 
 .footer-container {
