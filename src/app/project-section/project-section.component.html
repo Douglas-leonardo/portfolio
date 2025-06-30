@@ -1,16 +1,16 @@
 <section class="projects" id="projects">
   <div class="projects__header">
-    <h2 class="projects__title">Meus Projetos em Angular</h2>
-    <p class="projects__subtitle">Confira meus trabalhos mais recentes</p>
+    <h2 class="projects__title">{{ translations?.projects?.title }}</h2>
+    <p class="projects__subtitle">{{ translations?.projects?.subtitle }}</p>
   </div>
 
   <div class="projects__grid">
     <article class="project-card" *ngFor="let project of visibleProjects; trackBy: trackByProjectId">
-      <img [src]="project.imageUrl" [alt]="project.title" class="project-card__image">
+      <img [src]="project.imageUrl" [alt]="project.title[currentLanguage]" class="project-card__image">
 
       <div class="project-card__content">
-        <h3 class="project-card__title">{{ project.title }}</h3>
-        <p class="project-card__description">{{ project.description }}</p>
+        <h3 class="project-card__title">{{ project.title[currentLanguage] }}</h3>
+        <p class="project-card__description">{{ project.description[currentLanguage] }}</p>
 
         <div class="project-card__technologies">
           <span class="technology-tag" *ngFor="let tech of project.technologies">
@@ -21,11 +21,11 @@
         <div class="project-card__actions">
           <a [href]="project.codeUrl" target="_blank" rel="noopener" class="btn btn--github">
             <i class="fab fa-github"></i>
-            <span>Código</span>
+            <span>{{ translations?.projects?.viewCode }}</span>
           </a>
           <a [href]="project.projectUrl" target="_blank" rel="noopener" class="btn btn--demo">
             <i class="fas fa-external-link-alt"></i>
-            <span>Demo</span>
+            <span>{{ translations?.projects?.viewProject }}</span>
           </a>
         </div>
       </div>
@@ -34,7 +34,7 @@
 
   <div class="projects__footer" *ngIf="projects.length > 3">
     <button class="btn btn--toggle" (click)="toggleProjectsView()">
-      {{ showAllProjects ? 'Mostrar menos' : 'Ver todos os projetos' }}
+      {{ showAllProjects ? (currentLanguage === 'pt' ? 'Mostrar menos' : 'Show less') : (currentLanguage === 'pt' ? 'Ver todos os projetos' : 'View all projects') }}
       <i class="fas" [class.fa-chevron-up]="showAllProjects" [class.fa-chevron-down]="!showAllProjects"></i>
     </button>
   </div>

@@ -1,3 +1,6 @@
+// about-section.component.scss
+
+// Variáveis definidas localmente (opção 2)
 $primary-color: #28a745;
 $dark-bg: #0a0e17;
 $text-light: rgba(255, 255, 255, 0.9);
@@ -17,6 +20,34 @@ $text-muted: rgba(255, 255, 255, 0.7);
     height: 100%;
     background: transparent;
     z-index: 0;
+  }
+
+  .language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    gap: 5px;
+
+    .language-btn {
+      padding: 5px 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+
+      &.active {
+        background: rgba(255, 255, 255, 0.3);
+        font-weight: bold;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
   }
 
   &__container {
@@ -242,29 +273,6 @@ $text-muted: rgba(255, 255, 255, 0.7);
     &__avatar {
       width: 150px;
       height: 150px;
-    }
-  }
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-
-  &__item {
-    background: rgba($primary-color, 0.1);
-    color: $primary-color;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    border: 1px solid rgba($primary-color, 0.3);
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: rgba($primary-color, 0.2);
-      transform: translateY(-2px);
     }
   }
 }

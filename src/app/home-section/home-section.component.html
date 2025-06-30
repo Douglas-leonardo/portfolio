@@ -3,8 +3,8 @@
   <div class="container">
     <div class="home-hero__content">
       <h1 class="home-hero__title">
-        <span class="home-hero__name">Douglas Leonardo</span>
-        <span class="home-hero__profession">Desenvolvedor Front End & QA</span>
+        <span class="home-hero__name">{{ translations?.home?.name }}</span>
+        <span class="home-hero__profession">{{ translations?.home?.profession }}</span>
       </h1>
 
       <div class="home-hero__tech-stack">
@@ -19,11 +19,11 @@
       <div class="home-hero__cta">
         <a href="#projects" class="home-hero__cta-primary">
           <i class="fas fa-code"></i>
-          Ver Projetos
+          {{ translations?.home?.viewProjects }}
         </a>
         <a href="#contato" class="home-hero__cta-secondary">
           <i class="fas fa-paper-plane"></i>
-          Contato
+          {{ translations?.home?.contact }}
         </a>
       </div>
     </div>

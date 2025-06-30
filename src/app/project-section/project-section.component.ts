@@ -1,10 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { TranslationService, Language } from '../services/translation.service';
 
 interface Project {
   id: number;
-  title: string;
-  description: string;
+  title: {
+    pt: string;
+    en: string;
+  };
+  description: {
+    pt: string;
+    en: string;
+  };
   imageUrl: string;
   projectUrl: string;
   codeUrl: string;
@@ -19,14 +27,23 @@ interface Project {
   templateUrl: './project-section.component.html',
   styleUrls: ['./project-section.component.scss']
 })
-export class ProjectSectionComponent {
+export class ProjectSectionComponent implements OnInit, OnDestroy {
   showAllProjects = false;
+  currentLanguage: Language = 'pt';
+  translations: any;
+  private subscription: Subscription = new Subscription();
 
   projects: Project[] = [
     {
       id: 1,
-      title: 'Doceria Delícia',
-      description: "Site estático de doceria com design responsivo",
+      title: {
+        pt: 'Doceria Delícia',
+        en: 'Doceria Delícia'
+      },
+      description: {
+        pt: "Site estático de doceria com design responsivo",
+        en: "Static bakery website with responsive design"
+      },
       technologies: ["HTML5", "CSS3", "JavaScript", "Font Awesome", "Google Fonts"],
       codeUrl: 'https://github.com/Douglas-leonardo/doceria/tree/main/doceria',
       projectUrl: 'https://doceria-eta.vercel.app/',
@@ -35,8 +52,14 @@ export class ProjectSectionComponent {
     },
     {
       id: 2,
-      title: 'InDecor',
-      description: "Landing page para evento de design de interiores com múltiplas seções interativas",
+      title: {
+        pt: 'InDecor',
+        en: 'InDecor'
+      },
+      description: {
+        pt: "Landing page para evento de design de interiores com múltiplas seções interativas",
+        en: "Landing page for interior design event with multiple interactive sections"
+      },
       technologies: ["HTML5", "CSS3", "JavaScript", "Google Fonts", "Bootstrap Icons"],
       codeUrl: 'https://github.com/Douglas-leonardo/Condomio-vendas',
       projectUrl: 'https://condomio-vendas.vercel.app/',
@@ -44,6 +67,21 @@ export class ProjectSectionComponent {
       featured: true
     }
   ];
+
+  constructor(private translationService: TranslationService) {}
+
+  ngOnInit(): void {
+    this.subscription.add(
+      this.translationService.currentLanguage$.subscribe(lang => {
+        this.currentLanguage = lang;
+        this.translations = this.translationService.getTranslations();
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   get visibleProjects() {
     return this.showAllProjects ? this.projects : this.projects.filter(project => project.featured).slice(0, 3);

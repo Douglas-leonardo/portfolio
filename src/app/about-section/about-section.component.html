@@ -3,8 +3,8 @@
 
   <div class="about-section__container">
     <div class="about-section__header">
-      <h2 class="about-section__title">// Sobre mim</h2>
-      <p class="about-section__tagline">Desenvolvedor Front-end & QA com visão holística</p>
+      <h2 class="about-section__title">{{ translations?.about?.title }}</h2>
+      <p class="about-section__tagline">{{ translations?.about?.tagline }}</p>
     </div>
 
     <div class="about-section__content">
@@ -16,30 +16,21 @@
           </div>
         </div>
         <div class="about-section__bio">
-          <p>Combinando habilidades técnicas e pensamento crítico, atuo na interseção entre desenvolvimento e
-            qualidade para criar produtos digitais excepcionais.</p>
+          <p>{{ translations?.about?.bio1 }}</p>
           <div class="about-section__highlight">
             <i class="fas fa-quote-left"></i>
-            <p>Acredito que código bem escrito e bem testado é a base para experiências digitais memoráveis.</p>
+            <p>{{ translations?.about?.quote }}</p>
           </div>
         </div>
       </div>
 
       <div class="about-section__timeline">
-        <div class="about-section__timeline-item">
-          <div class="about-section__timeline-year">2022-Presente</div>
+        <div class="about-section__timeline-item" *ngFor="let item of timelineItems">
+          <div class="about-section__timeline-year">{{ item.year[currentLanguage] }}</div>
           <div class="about-section__timeline-dot"></div>
           <div class="about-section__timeline-content">
-            <h3>Desenvolvedor Front-end & QA</h3>
-            <p>Desenvolvimento de interfaces com foco em performance e experiência do usuário</p>
-          </div>
-        </div>
-        <div class="about-section__timeline-item">
-          <div class="about-section__timeline-year">2020-2022</div>
-          <div class="about-section__timeline-dot"></div>
-          <div class="about-section__timeline-content">
-            <h3>Desenvolvedor Júnior</h3>
-            <p>Primeiras experiências profissionais em desenvolvimento web</p>
+            <h3>{{ item.title[currentLanguage] }}</h3>
+            <p>{{ item.description[currentLanguage] }}</p>
           </div>
         </div>
       </div>

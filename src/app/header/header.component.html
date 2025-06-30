@@ -4,48 +4,48 @@
       <h1 class="header__logo">
         <a href="#home">
           Douglas Leonardo
-          <span class="header__logo-tagline">Front End & QA</span>
+          <span class="header__logo-tagline">{{ translations?.home?.profession }}</span>
         </a>
       </h1>
 
-      <button class="header__menu-icon" (click)="toggleMenu()" aria-label="Abrir menu">
+      <button class="header__menu-icon" (click)="toggleMenu()" [attr.aria-label]="currentLanguage === 'pt' ? 'Abrir menu' : 'Open menu'">
         <i class="fas fa-bars"></i>
       </button>
 
       <ul class="header__links" [class.active]="isMenuActive">
         <li>
           <a href="#home" class="header__link">
-            <span class="header__text-link">Home</span>
+            <span class="header__text-link">{{ translations?.nav?.home }}</span>
             <i class="fas fa-house header__icon-link"></i>
           </a>
         </li>
         <li>
           <a href="#sobre" class="header__link">
-            <span class="header__text-link">Sobre</span>
+            <span class="header__text-link">{{ translations?.nav?.about }}</span>
             <i class="fas fa-address-card header__icon-link"></i>
           </a>
         </li>
         <li>
           <a href="#habilidades" class="header__link">
-            <span class="header__text-link">Habilidades</span>
+            <span class="header__text-link">{{ translations?.nav?.skills }}</span>
             <i class="fas fa-code header__icon-link"></i>
           </a>
         </li>
         <li>
           <a href="#certificados" class="header__link">
-            <span class="header__text-link">Certificados</span>
+            <span class="header__text-link">{{ translations?.nav?.certificates }}</span>
             <i class="fas fa-pen-to-square header__icon-link"></i>
           </a>
         </li>
         <li>
           <a href="#projects" class="header__link">
-            <span class="header__text-link">Projetos</span>
+            <span class="header__text-link">{{ translations?.nav?.projects }}</span>
             <i class="fas fa-graduation-cap header__icon-link"></i>
           </a>
         </li>
         <li>
           <a href="#contato" class="header__link">
-            <span class="header__text-link">Contato</span>
+            <span class="header__text-link">{{ translations?.nav?.contact }}</span>
             <i class="fas fa-phone header__icon-link"></i>
           </a>
         </li>

@@ -2,8 +2,7 @@
   <div class="footer-container">
     <div class="footer-brand">
       <h3 class="footer-title">Douglas Leonardo</h3>
-      <p class="footer-about">Desenvolvedor especializado em criar soluções web com design moderno, alta performance e
-        segurança robusta.</p>
+      <p class="footer-about">{{ currentLanguage === 'pt' ? 'Desenvolvedor especializado em criar soluções web com design moderno, alta performance e segurança robusta.' : 'Developer specialized in creating web solutions with modern design, high performance and robust security.' }}</p>
       <div class="footer-social">
         <a href="https://github.com/Douglas-leonardo" class="social-link"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/douglas-leonardo-8152a219a/" class="social-link"><i
@@ -14,9 +13,9 @@
     </div>
 
     <div class="footer-contact">
-      <h3 class="footer-title">Contato</h3>
+      <h3 class="footer-title">{{ translations?.nav?.contact }}</h3>
       <ul class="contact-list">
-        <li><i class="fas fa-map-marker-alt"></i> São Paulo, Brasil</li>
+        <li><i class="fas fa-map-marker-alt"></i> {{ currentLanguage === 'pt' ? 'São Paulo, Brasil' : 'São Paulo, Brazil' }}</li>
         <li><i class="fas fa-phone"></i> <a href="tel:+5511992626582">+55 (11) 99262-6582</a></li>
         <li><i class="fas fa-envelope"></i> <a [href]="'mailto:' + email" class="email-link">{{email}}</a></li>
       </ul>
@@ -24,6 +23,6 @@
   </div>
 
   <div class="footer-bottom">
-    <p class="footer-copyright">&copy; {{currentYear}} Douglas Leonardo. Todos os direitos reservados.</p>
+    <p class="footer-copyright">{{ translations?.footer?.rights }}</p>
   </div>
 </footer>

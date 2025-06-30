@@ -1,8 +1,8 @@
 <section class="skills-section" id="habilidades">
   <div class="skills-container">
     <div class="skills-header">
-      <h2 class="skills-title">Minhas Habilidades</h2>
-      <p class="skills-subtitle">Conhecimento técnico abrangente em todas as camadas de desenvolvimento</p>
+      <h2 class="skills-title">{{ translations?.skills?.title }}</h2>
+      <p class="skills-subtitle">{{ translations?.skills?.subtitle }}</p>
     </div>
 
     <div class="skills-tabs">
@@ -10,7 +10,7 @@
               [class.active]="activeTab === 'frontend'"
               (click)="changeTab('frontend')"
               data-tab="frontend">
-        <i class="fas fa-code"></i> Frontend
+        <i class="fas fa-code"></i> {{ translations?.skills?.frontend }}
       </button>
       <button class="tab-button"
               [class.active]="activeTab === 'backend'"
@@ -22,13 +22,13 @@
               [class.active]="activeTab === 'tools'"
               (click)="changeTab('tools')"
               data-tab="tools">
-        <i class="fas fa-tools"></i> Ferramentas
+        <i class="fas fa-tools"></i> {{ translations?.skills?.tools }}
       </button>
       <button class="tab-button"
               [class.active]="activeTab === 'qa'"
               (click)="changeTab('qa')"
               data-tab="qa">
-        <i class="fas fa-bug"></i> QA & Automação
+        <i class="fas fa-bug"></i> {{ translations?.skills?.testing }}
       </button>
     </div>
 
@@ -41,20 +41,20 @@
               <i [class]="skill.icon"></i>
             </div>
             <div class="skill-info">
-              <h3 class="skill-name">{{skill.name}}</h3>
-              <span class="skill-level" [class]="getLevelClass(skill.level)">
-                {{skill.level}}
+              <h3 class="skill-name">{{skill.name[currentLanguage]}}</h3>
+              <span class="skill-level" [class]="getLevelClass(skill.level[currentLanguage])">
+                {{skill.level[currentLanguage]}}
               </span>
             </div>
           </div>
           <div class="skill-description">
-            {{skill.description}}
+            {{skill.description[currentLanguage]}}
           </div>
           <div class="progress-container">
             <div class="progress-bar" [style.width]="skill.progress"></div>
           </div>
           <div class="skill-features">
-            <div class="feature-item" *ngFor="let feature of skill.features">
+            <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">
               <i class="fas fa-check-circle"></i>
               <span>{{feature}}</span>
             </div>
@@ -72,20 +72,20 @@
               <i [class]="skill.icon"></i>
             </div>
             <div class="skill-info">
-              <h3 class="skill-name">{{skill.name}}</h3>
-              <span class="skill-level" [class]="getLevelClass(skill.level)">
-                {{skill.level}}
+              <h3 class="skill-name">{{skill.name[currentLanguage]}}</h3>
+              <span class="skill-level" [class]="getLevelClass(skill.level[currentLanguage])">
+                {{skill.level[currentLanguage]}}
               </span>
             </div>
           </div>
           <div class="skill-description">
-            {{skill.description}}
+            {{skill.description[currentLanguage]}}
           </div>
           <div class="progress-container">
             <div class="progress-bar" [style.width]="skill.progress"></div>
           </div>
           <div class="skill-features">
-            <div class="feature-item" *ngFor="let feature of skill.features">
+            <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">
               <i class="fas fa-check-circle"></i>
               <span>{{feature}}</span>
             </div>
@@ -103,20 +103,20 @@
               <i [class]="skill.icon"></i>
             </div>
             <div class="skill-info">
-              <h3 class="skill-name">{{skill.name}}</h3>
-              <span class="skill-level" [class]="getLevelClass(skill.level)">
-                {{skill.level}}
+              <h3 class="skill-name">{{skill.name[currentLanguage]}}</h3>
+              <span class="skill-level" [class]="getLevelClass(skill.level[currentLanguage])">
+                {{skill.level[currentLanguage]}}
               </span>
             </div>
           </div>
           <div class="skill-description">
-            {{skill.description}}
+            {{skill.description[currentLanguage]}}
           </div>
           <div class="progress-container">
             <div class="progress-bar" [style.width]="skill.progress"></div>
           </div>
           <div class="skill-features">
-            <div class="feature-item" *ngFor="let feature of skill.features">
+            <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">
               <i class="fas fa-check-circle"></i>
               <span>{{feature}}</span>
             </div>
@@ -134,20 +134,20 @@
               <i [class]="skill.icon"></i>
             </div>
             <div class="skill-info">
-              <h3 class="skill-name">{{skill.name}}</h3>
-              <span class="skill-level" [class]="getLevelClass(skill.level)">
-                {{skill.level}}
+              <h3 class="skill-name">{{skill.name[currentLanguage]}}</h3>
+              <span class="skill-level" [class]="getLevelClass(skill.level[currentLanguage])">
+                {{skill.level[currentLanguage]}}
               </span>
             </div>
           </div>
           <div class="skill-description">
-            {{skill.description}}
+            {{skill.description[currentLanguage]}}
           </div>
           <div class="progress-container">
             <div class="progress-bar" [style.width]="skill.progress"></div>
           </div>
           <div class="skill-features">
-            <div class="feature-item" *ngFor="let feature of skill.features">
+            <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">
               <i class="fas fa-check-circle"></i>
               <span>{{feature}}</span>
             </div>
