@@ -30,4 +30,27 @@ export class FooterComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
+  downloadCV(): void {
+    const cvFileName = this.currentLanguage === 'pt' ? 'Douglas_Leonardo_CV_PT.pdf' : 'Douglas_Leonardo_CV_EN.pdf';
+    const cvPath = `assets/documents/${cvFileName}`;
+    
+    // Criar um link temporário para download
+    const link = document.createElement('a');
+    link.href = cvPath;
+    link.download = cvFileName;
+    link.target = '_blank';
+    
+    // Adicionar ao DOM, clicar e remover
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  openCVInNewTab(): void {
+    const cvFileName = this.currentLanguage === 'pt' ? 'Douglas_Leonardo_CV_PT.pdf' : 'Douglas_Leonardo_CV_EN.pdf';
+    const cvPath = `assets/documents/${cvFileName}`;
+    
+    window.open(cvPath, '_blank');
+  }
 }
