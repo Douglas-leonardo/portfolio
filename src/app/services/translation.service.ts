@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, map, distinctUntilChanged } from 'rxjs';
 
 export type Language = 'pt' | 'en';
 
@@ -65,6 +65,9 @@ export interface Translations {
 export class TranslationService {
   private currentLanguageSubject = new BehaviorSubject<Language>('pt');
   public currentLanguage$ = this.currentLanguageSubject.asObservable();
+  
+  // Cache para traduções
+  private translationCache = new Map<string, string>();
 
   private translations: Record<Language, Translations> = {
     pt: {
@@ -154,6 +157,10 @@ export class TranslationService {
   };
 
   constructor() {
+    this.initializeLanguage();
+  }
+
+  private initializeLanguage(): void {
     const savedLanguage = localStorage.getItem('preferredLanguage') as Language;
     if (savedLanguage === 'pt' || savedLanguage === 'en') {
       this.currentLanguageSubject.next(savedLanguage);
@@ -165,8 +172,11 @@ export class TranslationService {
   }
 
   setLanguage(language: Language): void {
-    this.currentLanguageSubject.next(language);
-    localStorage.setItem('preferredLanguage', language);
+    if (language !== this.currentLanguageSubject.value) {
+      this.currentLanguageSubject.next(language);
+      localStorage.setItem('preferredLanguage', language);
+      this.clearCache(); // Limpa cache ao trocar idioma
+    }
   }
 
   getTranslations(): Translations {
@@ -174,6 +184,12 @@ export class TranslationService {
   }
 
   getTranslation(key: string): string {
+    const cacheKey = `${this.getCurrentLanguage()}:${key}`;
+    
+    if (this.translationCache.has(cacheKey)) {
+      return this.translationCache.get(cacheKey)!;
+    }
+
     const keys = key.split('.');
     let value: any = this.translations[this.getCurrentLanguage()];
     
@@ -181,6 +197,21 @@ export class TranslationService {
       value = value?.[k];
     }
     
-    return value || key;
+    const result = value || key;
+    this.translationCache.set(cacheKey, result);
+    
+    return result;
+  }
+
+  // Observable para traduções específicas
+  getTranslation$(key: string): Observable<string> {
+    return this.currentLanguage$.pipe(
+      map(() => this.getTranslation(key)),
+      distinctUntilChanged()
+    );
+  }
+
+  private clearCache(): void {
+    this.translationCache.clear();
   }
 } 

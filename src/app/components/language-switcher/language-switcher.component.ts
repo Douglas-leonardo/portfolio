@@ -6,6 +6,7 @@ interface LanguageOption {
   code: Language;
   name: string;
   flag: string;
+  ariaLabel: string;
 }
 
 @Component({
@@ -13,23 +14,28 @@ interface LanguageOption {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="language-switcher">
+    <div class="language-switcher" role="region" aria-label="Language selector">
       <div class="language-select-container">
+        <label for="language-select" class="sr-only">Select language</label>
         <select 
+          id="language-select"
           class="language-select" 
           [value]="currentLanguage"
           (change)="changeLanguage($any($event.target).value)"
           [attr.aria-label]="'Selecionar idioma'"
+          role="combobox"
+          aria-haspopup="listbox"
         >
           <option 
             *ngFor="let lang of languages" 
             [value]="lang.code"
             class="language-option"
+            [attr.aria-label]="lang.ariaLabel"
           >
             {{ lang.flag }} {{ lang.name }}
           </option>
         </select>
-        <div class="select-arrow">
+        <div class="select-arrow" aria-hidden="true">
           <i class="fas fa-chevron-down"></i>
         </div>
       </div>
@@ -98,6 +104,19 @@ interface LanguageOption {
       transform: translateY(-50%) rotate(180deg);
     }
 
+    /* Screen reader only class */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     @media (max-width: 768px) {
       .language-switcher {
         bottom: 15px;
@@ -123,6 +142,22 @@ interface LanguageOption {
         min-width: 90px;
       }
     }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      .language-select {
+        border: 2px solid #fff;
+        background: #000;
+      }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      .language-select,
+      .select-arrow {
+        transition: none;
+      }
+    }
   `]
 })
 export class LanguageSwitcherComponent {
@@ -132,12 +167,14 @@ export class LanguageSwitcherComponent {
     {
       code: 'pt',
       name: 'Português',
-      flag: '🇧🇷'
+      flag: '🇧🇷',
+      ariaLabel: 'Mudar para português'
     },
     {
       code: 'en',
       name: 'English',
-      flag: '🇺🇸'
+      flag: '🇺🇸',
+      ariaLabel: 'Change to English'
     }
   ];
 
