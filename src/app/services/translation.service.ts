@@ -161,10 +161,8 @@ export class TranslationService {
   }
 
   private initializeLanguage(): void {
-    const savedLanguage = localStorage.getItem('preferredLanguage') as Language;
-    if (savedLanguage === 'pt' || savedLanguage === 'en') {
-      this.currentLanguageSubject.next(savedLanguage);
-    }
+    // Sempre inicia em português
+    this.currentLanguageSubject.next('pt');
   }
 
   getCurrentLanguage(): Language {
