@@ -226,30 +226,30 @@ $text-muted: rgba(255, 255, 255, 0.7);
     }
   }
 
-  &__timeline-year {
+  &__timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 10px;
-    letter-spacing: 1px;
-    margin-left: 8px;
-    font-weight: bold;
-    color: $primary-color;
-    font-size: 1.1rem;
+    position: relative;
   }
 
   &__timeline-dot {
-    left: -20px;
-    top: 2px;
-    z-index: 1;
-    position: absolute;
+    position: static;
     width: 16px;
     height: 16px;
     border-radius: 50%;
     background: $primary-color;
     border: 3px solid $dark-bg;
     box-shadow: 0 0 0 2px rgba($primary-color, 0.5);
+  }
 
-    @media (max-width: 992px) {
-      left: 0;
-    }
+  &__timeline-year {
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: $primary-color;
+    font-size: 1.1rem;
   }
 
   &__timeline-content {
@@ -263,6 +263,16 @@ $text-muted: rgba(255, 255, 255, 0.7);
       color: $text-muted;
       font-size: 0.95rem;
       line-height: 1.6;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .about-section__timeline-dot {
+      left: unset;
+      top: unset;
+    }
+    .about-section__timeline-year {
+      margin-left: 0;
     }
   }
 

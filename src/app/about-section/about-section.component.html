@@ -26,8 +26,10 @@
 
       <div class="about-section__timeline">
         <div class="about-section__timeline-item" *ngFor="let item of timelineItems">
-          <div class="about-section__timeline-year">{{ item.year[currentLanguage] }}</div>
-          <div class="about-section__timeline-dot"></div>
+          <div class="about-section__timeline-header">
+            <div class="about-section__timeline-dot"></div>
+            <div class="about-section__timeline-year">{{ item.year[currentLanguage] }}</div>
+          </div>
           <div class="about-section__timeline-content">
             <h3>{{ item.title[currentLanguage] }}</h3>
             <p>{{ item.description[currentLanguage] }}</p>
