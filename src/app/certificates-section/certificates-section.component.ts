@@ -23,12 +23,10 @@ interface Certificate {
   styleUrls: ['./certificates-section.component.scss']
 })
 export class CertificatesSectionComponent implements OnInit, OnDestroy {
-  indiceSlideAtual = 1;
-  arrastando = false;
-  posicaoInicialX = 0;
   currentLanguage: Language = 'pt';
   translations: any;
   private subscription: Subscription = new Subscription();
+  showAllCertificates = false;
 
   certificados: Certificate[] = [
     {
@@ -185,81 +183,21 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
         this.translations = this.translationService.getTranslations();
       })
     );
-    this.configurarRolagemSuave();
-    this.configurarAnimacoes();
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  moverSlide(direcao: number): void {
-    this.indiceSlideAtual = (this.indiceSlideAtual + direcao + this.certificados.length) % this.certificados.length;
-  }
-
-  obterEstiloSlide(indice: number): any {
-    const totalSlides = this.certificados.length;
-    const indiceAnterior = (this.indiceSlideAtual - 1 + totalSlides) % totalSlides;
-    const indiceProximo = (this.indiceSlideAtual + 1) % totalSlides;
-
-    if (indice === this.indiceSlideAtual) {
-      return {
-        transform: 'translateX(0%) scale(1)',
-        zIndex: 2,
-        opacity: 1
-      };
-    } else if (indice === indiceAnterior) {
-      return {
-        transform: 'translateX(-100%) scale(0.8)',
-        zIndex: 1,
-        opacity: 0.7
-      };
-    } else if (indice === indiceProximo) {
-      return {
-        transform: 'translateX(100%) scale(0.8)',
-        zIndex: 1,
-        opacity: 0.7
-      };
-    } else {
-      return {
-        transform: 'translateX(0%) scale(0)',
-        zIndex: 0,
-        opacity: 0
-      };
+  get certificadosFiltradosLimitados() {
+    const lista = this.certificados;
+    if (this.showAllCertificates || lista.length <= 3) {
+      return lista;
     }
+    return lista.slice(0, 3);
   }
 
-  private configurarRolagemSuave(): void {
-    // Implementação para rolagem suave
-  }
-
-  private configurarAnimacoes(): void {
-    // Implementação para animações de fade-in
-  }
-
-  // Manipuladores de eventos de toque
-  aoIniciarToque(evento: TouchEvent): void {
-    this.posicaoInicialX = evento.touches[0].clientX;
-    this.arrastando = true;
-  }
-
-  aoMoverToque(evento: TouchEvent): void {
-    if (!this.arrastando) return;
-    // Opcional: Adicionar feedback visual durante o arrasto
-  }
-
-  aoTerminarToque(evento: TouchEvent): void {
-    if (!this.arrastando) return;
-
-    const posicaoX = evento.changedTouches[0].clientX;
-    const deslocamento = this.posicaoInicialX - posicaoX;
-
-    if (deslocamento > 50) {
-      this.moverSlide(1);
-    } else if (deslocamento < -50) {
-      this.moverSlide(-1);
-    }
-
-    this.arrastando = false;
+  toggleShowAllCertificates() {
+    this.showAllCertificates = !this.showAllCertificates;
   }
 }

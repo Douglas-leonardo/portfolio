@@ -1,34 +1,242 @@
-.certificados {
-  padding: 100px 0;
-  background: transparent;
+@import '../project-section/project-section.component.scss';
+
+$primary-color: #28a745;
+$dark-bg: #0a0e17;
+$text-light: rgba(255, 255, 255, 0.9);
+$text-muted: rgba(255, 255, 255, 0.7);
+
+.certificates-section {
   position: relative;
+  padding: 100px 0;
+  color: $text-light;
   overflow: hidden;
 
-  h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 50px;
+  &__bg-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 0;
+  }
+
+  &__container {
     position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 2.5rem;
     color: #e0f7fa;
     font-weight: 600;
     letter-spacing: 1px;
+    margin-bottom: 15px;
+    position: relative;
+  }
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, #28a745, transparent);
+  &__counter {
+    background: $primary-color;
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.3em 1em;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__filters {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 24px;
+    button {
+      background: #181d29;
+      color: #fff;
+      border: 1px solid $primary-color;
+      border-radius: 4px;
+      padding: 6px 18px;
+      cursor: pointer;
+      transition: background 0.2s;
+      &.ativo, &:hover {
+        background: $primary-color;
+        color: #fff;
+      }
     }
   }
 
-  h3 {
-    font-size: 1.8rem;
-    color: #fff;
-    margin-bottom: 25px;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+  }
+
+  &__card {
+    background: rgba(31, 31, 31, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(40, 167, 69, 0.08);
+    padding: 24px 18px 18px 18px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: 1px solid rgba(40, 167, 69, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 420px;
+    min-width: 320px;
+    margin: 0 auto;
+    &:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(40, 167, 69, 0.15);
+    }
+    .certificates-section__badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: $primary-color;
+      color: #fff;
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(40, 167, 69, 0.12);
+    }
+    .certificates-section__card-title {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: #e0f7fa;
+    }
+    .certificates-section__card-details {
+      margin-bottom: 16px;
+      p {
+        color: $text-light;
+        font-size: 0.98rem;
+        margin: 6px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        i {
+          color: $primary-color;
+        }
+      }
+    }
+    .certificates-section__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+      img {
+        display: block;
+        width: 54px;
+        height: 54px;
+        object-fit: contain;
+        filter: drop-shadow(0 2px 8px rgba(40, 167, 69, 0.10));
+      }
+    }
+    .certificates-section__see-certificate {
+      background: $primary-color;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 18px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+      justify-content: center;
+      text-align: center;
+      &:hover {
+        background: adjust-color($primary-color, $lightness: -10%);
+        color: #fff;
+      }
+    }
+  }
+
+  &__see-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    .btn.btn--toggle {
+      border-radius: 50px;
+      font-size: 1.1rem;
+      padding: 0.7rem 2.2rem;
+      font-weight: 500;
+      background: rgba(40, 167, 69, 0.1);
+      color: #28a745;
+      border: 1px solid rgba(40, 167, 69, 0.3);
+      box-shadow: 0 2px 8px rgba(40, 167, 69, 0.12);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      &:hover {
+        background: #28a745;
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(40, 167, 69, 0.2);
+      }
+      i {
+        margin-left: 8px;
+        font-size: 1rem;
+        position: relative;
+        left: 0;
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .certificates-section__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .certificates-section__card {
+      max-width: 100%;
+      min-width: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .certificates-section__grid {
+      grid-template-columns: 1fr;
+    }
+    .certificates-section__card {
+      max-width: 100%;
+      min-width: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 70px 0;
+    &__title { font-size: 2rem; }
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    &__card {
+      max-width: 100%;
+      padding: 16px 8px 12px 8px;
+    }
   }
 }
 
@@ -326,6 +534,35 @@
 
     &.proximo {
       right: 10px;
+    }
+  }
+}
+
+.certificates-section__card-title {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #e0f7fa;
+  font-weight: 600;
+  text-align: center;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificates-section__card-details {
+  margin-bottom: 16px;
+  p {
+    color: $text-light;
+    font-size: 0.98rem;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 400;
+    i {
+      color: $primary-color;
     }
   }
 }

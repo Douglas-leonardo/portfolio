@@ -1,27 +1,36 @@
-<section class="certificados" id="certificados">
-  <div class="fundo-particulas" id="particulas-certificados"></div>
-  <div class="container">
-    <h2>{{ translations?.certificates?.title }}</h2>
-    <div class="carrossel">
-      <div class="slides" (touchstart)="aoIniciarToque($event)" (touchmove)="aoMoverToque($event)"
-        (touchend)="aoTerminarToque($event)">
-        <div class="slide" *ngFor="let certificado of certificados; let i = index" [ngStyle]="obterEstiloSlide(i)">
-          <div class="conteudo-slide">
-            <h3>{{ certificado.titulo[currentLanguage] }}</h3>
-            <div class="detalhes-certificado">
-              <p><i class="fas fa-university"></i> {{ certificado.instituicao }}</p>
-              <p><i class="fas fa-clock"></i> {{ certificado.duracao }}</p>
-              <p><i class="fas fa-chalkboard-teacher"></i> {{ certificado.instrutor }}</p>
-              <p><i class="fas fa-calendar-alt"></i> {{ certificado.ano }}</p>
-            </div>
-            <a [href]="certificado.linkCertificado" target="_blank" class="link-certificado" rel="noopener noreferrer">
-              {{ currentLanguage === 'pt' ? 'Ver Certificado' : 'View Certificate' }} <i class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
+<section class="certificates-section" id="certificados">
+  <div class="certificates-section__bg-effect"></div>
+  <div class="certificates-section__container">
+    <div class="certificates-section__header">
+      <h2 class="certificates-section__title">
+        {{ translations?.certificates?.title }}
+        <span class="certificates-section__counter">{{ certificados.length }}</span>
+      </h2>
+    </div>
+    <div class="certificates-section__grid">
+      <div class="certificates-section__card" *ngFor="let certificado of certificadosFiltradosLimitados">
+        <div class="certificates-section__icon">
+          <svg width="54" height="54" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M256 32C132.288 32 32 132.288 32 256c0 123.712 100.288 224 224 224s224-100.288 224-224C480 132.288 379.712 32 256 32zm0 416c-105.872 0-192-86.128-192-192S150.128 64 256 64s192 86.128 192 192-86.128 192-192 192zm-32-96l-64-64 22.624-22.624L224 297.376l97.376-97.376L344 222.624 224 352z" fill="#28a745"/>
+          </svg>
         </div>
+        <div class="certificates-section__badge">{{ certificado.instituicao }}</div>
+        <h3 class="certificates-section__card-title">{{ certificado.titulo[currentLanguage] }}</h3>
+        <div class="certificates-section__card-details">
+          <p><i class="fas fa-clock"></i> {{ certificado.duracao }}</p>
+          <p><i class="fas fa-chalkboard-teacher"></i> {{ certificado.instrutor }}</p>
+          <p><i class="fas fa-calendar-alt"></i> {{ certificado.ano }}</p>
+        </div>
+        <a [href]="certificado.linkCertificado" target="_blank" class="certificates-section__see-certificate" rel="noopener noreferrer">
+          {{ currentLanguage === 'pt' ? 'Ver Certificado' : 'View Certificate' }} <i class="fas fa-external-link-alt"></i>
+        </a>
       </div>
-      <button class="navegacao-carrossel anterior" (click)="moverSlide(-1)" [attr.aria-label]="currentLanguage === 'pt' ? 'Certificado anterior' : 'Previous certificate'"></button>
-      <button class="navegacao-carrossel proximo" (click)="moverSlide(1)" [attr.aria-label]="currentLanguage === 'pt' ? 'Próximo certificado' : 'Next certificate'"></button>
+    </div>
+    <div class="certificates-section__see-more" *ngIf="certificados.length > 3">
+      <button class="btn btn--toggle" (click)="toggleShowAllCertificates()">
+        {{ showAllCertificates ? (currentLanguage === 'pt' ? 'Ver menos' : 'Show less') : (currentLanguage === 'pt' ? 'Ver mais' : 'Show more') }}
+        <i class="fas" [class.fa-chevron-up]="showAllCertificates" [class.fa-chevron-down]="!showAllCertificates"></i>
+      </button>
     </div>
   </div>
 </section>
