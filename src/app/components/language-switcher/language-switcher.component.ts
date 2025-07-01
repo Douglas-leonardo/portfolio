@@ -175,6 +175,12 @@ export class LanguageSwitcherComponent {
       name: 'English',
       flag: '🇺🇸',
       ariaLabel: 'Change to English'
+    },
+    {
+      code: 'es',
+      name: 'Español',
+      flag: '🇪🇸',
+      ariaLabel: 'Cambiar a español'
     }
   ];
 

@@ -34,7 +34,7 @@
 
   <div class="projects__footer" *ngIf="projects.length > 3">
     <button class="btn btn--toggle" (click)="toggleProjectsView()">
-      {{ showAllProjects ? (currentLanguage === 'pt' ? 'Mostrar menos' : 'Show less') : (currentLanguage === 'pt' ? 'Ver todos os projetos' : 'View all projects') }}
+      {{ showAllProjects ? (currentLanguage === 'pt' ? 'Mostrar menos' : currentLanguage === 'en' ? 'Show less' : 'Mostrar menos') : (currentLanguage === 'pt' ? 'Ver todos os projetos' : currentLanguage === 'en' ? 'View all projects' : 'Ver todos los proyectos') }}
       <i class="fas" [class.fa-chevron-up]="showAllProjects" [class.fa-chevron-down]="!showAllProjects"></i>
     </button>
   </div>

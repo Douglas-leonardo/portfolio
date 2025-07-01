@@ -28,7 +28,7 @@
     </div>
     <div class="certificates-section__see-more" *ngIf="certificados.length > 3">
       <button class="btn btn--toggle" (click)="toggleShowAllCertificates()">
-        {{ showAllCertificates ? (currentLanguage === 'pt' ? 'Ver menos' : 'Show less') : (currentLanguage === 'pt' ? 'Ver mais' : 'Show more') }}
+        {{ showAllCertificates ? (currentLanguage === 'pt' ? 'Ver menos' : currentLanguage === 'en' ? 'Show less' : 'Ver menos') : (currentLanguage === 'pt' ? 'Ver mais' : currentLanguage === 'en' ? 'Show more' : 'Ver más') }}
         <i class="fas" [class.fa-chevron-up]="showAllCertificates" [class.fa-chevron-down]="!showAllCertificates"></i>
       </button>
     </div>

@@ -2,7 +2,11 @@
   <div class="footer-container">
     <div class="footer-brand">
       <h3 class="footer-title">Douglas Leonardo</h3>
-      <p class="footer-about">{{ currentLanguage === 'pt' ? 'Desenvolvedor especializado em criar soluções web com design moderno, alta performance e segurança robusta.' : 'Developer specialized in creating web solutions with modern design, high performance and robust security.' }}</p>
+      <p class="footer-about">
+        {{ currentLanguage === 'pt' ? 'Desenvolvedor especializado em criar soluções web com design moderno, alta performance e segurança robusta.' :
+           currentLanguage === 'en' ? 'Developer specialized in creating web solutions with modern design, high performance and robust security.' :
+           'Desarrollador especializado en crear soluciones web con diseño moderno, alto rendimiento y seguridad robusta.' }}
+      </p>
       <div class="footer-social">
         <a href="https://github.com/Douglas-leonardo" class="social-link"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/douglas-leonardo-8152a219a/" class="social-link"><i
@@ -15,32 +19,36 @@
     <div class="footer-contact">
       <h3 class="footer-title">{{ translations?.nav?.contact }}</h3>
       <ul class="contact-list">
-        <li><i class="fas fa-map-marker-alt"></i> {{ currentLanguage === 'pt' ? 'São Paulo, Brasil' : 'São Paulo, Brazil' }}</li>
+        <li><i class="fas fa-map-marker-alt"></i> {{ currentLanguage === 'pt' ? 'São Paulo, Brasil' : currentLanguage === 'en' ? 'São Paulo, Brazil' : 'São Paulo, Brasil' }}</li>
         <li><i class="fas fa-phone"></i> <a href="tel:+5511992626582">+55 (11) 99262-6582</a></li>
         <li><i class="fas fa-envelope"></i> <a [href]="'mailto:' + email" class="email-link">{{email}}</a></li>
       </ul>
     </div>
 
     <div class="footer-cv">
-      <h3 class="footer-title">{{ currentLanguage === 'pt' ? 'Currículo' : 'Resume' }}</h3>
-      <p class="footer-cv-description">{{ currentLanguage === 'pt' ? 'Baixe meu currículo em PDF' : 'Download my resume in PDF' }}</p>
+      <h3 class="footer-title">
+        {{ currentLanguage === 'pt' ? 'Currículo' : currentLanguage === 'en' ? 'Resume' : 'Currículum' }}
+      </h3>
+      <p class="footer-cv-description">
+        {{ currentLanguage === 'pt' ? 'Baixe meu currículo em PDF' : currentLanguage === 'en' ? 'Download my resume in PDF' : 'Descarga mi currículum en PDF' }}
+      </p>
       <div class="footer-cv-actions">
         <button 
           class="footer-cv-btn footer-cv-btn--primary" 
           (click)="downloadCV()"
-          [attr.aria-label]="currentLanguage === 'pt' ? 'Baixar currículo' : 'Download resume'"
+          [attr.aria-label]="currentLanguage === 'pt' ? 'Baixar currículo' : currentLanguage === 'en' ? 'Download resume' : 'Descargar currículum'"
         >
           <i class="fas fa-download"></i>
-          <span>{{ currentLanguage === 'pt' ? 'Baixar CV' : 'Download CV' }}</span>
+          <span>{{ currentLanguage === 'pt' ? 'Baixar CV' : currentLanguage === 'en' ? 'Download CV' : 'Descargar CV' }}</span>
         </button>
         
         <button 
           class="footer-cv-btn footer-cv-btn--secondary" 
           (click)="openCVInNewTab()"
-          [attr.aria-label]="currentLanguage === 'pt' ? 'Visualizar currículo' : 'View resume'"
+          [attr.aria-label]="currentLanguage === 'pt' ? 'Visualizar currículo' : currentLanguage === 'en' ? 'View resume' : 'Ver currículum'"
         >
           <i class="fas fa-eye"></i>
-          <span>{{ currentLanguage === 'pt' ? 'Visualizar' : 'View' }}</span>
+          <span>{{ currentLanguage === 'pt' ? 'Visualizar' : currentLanguage === 'en' ? 'View' : 'Ver' }}</span>
         </button>
       </div>
     </div>

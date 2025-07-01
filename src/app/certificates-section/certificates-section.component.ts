@@ -7,6 +7,7 @@ interface Certificate {
   titulo: {
     pt: string;
     en: string;
+    es: string;
   };
   instituicao: string;
   duracao: string;
@@ -32,7 +33,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Integração continua com testes Jenkins',
-        en: 'Continuous Integration with Jenkins Testing'
+        en: 'Continuous Integration with Jenkins Testing',
+        es: 'Integración continua con pruebas Jenkins'
       },
       instituicao: 'Udemy',
       duracao: '10 horas',
@@ -43,7 +45,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Investimentos: Aprenda a Investir seu Dinheiro',
-        en: 'Investments: Learn to Invest Your Money'
+        en: 'Investments: Learn to Invest Your Money',
+        es: 'Inversiones: Aprenda a Invertir Su Dinero'
       },
       instituicao: 'Udemy',
       duracao: '7,5 horas',
@@ -54,7 +57,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Projeto Completo NodeJS, React, React Native, TypeScript',
-        en: 'Complete Project NodeJS, React, React Native, TypeScript'
+        en: 'Complete Project NodeJS, React, React Native, TypeScript',
+        es: 'Proyecto Completo NodeJS, React, React Native, TypeScript'
       },
       instituicao: 'Udemy',
       duracao: '20,5 horas',
@@ -65,7 +69,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Dominando o TestComplete',
-        en: 'Mastering TestComplete'
+        en: 'Mastering TestComplete',
+        es: 'Dominando TestComplete'
       },
       instituicao: 'Udemy',
       duracao: '2,5 horas',
@@ -76,7 +81,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Automação de testes de API com Postman',
-        en: 'API Testing Automation with Postman'
+        en: 'API Testing Automation with Postman',
+        es: 'Automatización de pruebas de API con Postman'
       },
       instituicao: 'Udemy',
       duracao: '9 horas',
@@ -87,7 +93,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Curso completo de PostgreSQL! Do Básico ao Avançado v2025!',
-        en: 'Complete PostgreSQL Course! From Basic to Advanced v2025!'
+        en: 'Complete PostgreSQL Course! From Basic to Advanced v2025!',
+        es: 'Curso completo de PostgreSQL! De Básico a Avanzado v2025!'
       },
       instituicao: 'Udemy',
       duracao: '38 horas',
@@ -98,7 +105,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Testes automatizados com Cypress - Avançado',
-        en: 'Automated Testing with Cypress - Advanced'
+        en: 'Automated Testing with Cypress - Advanced',
+        es: 'Pruebas automatizadas con Cypress - Avanzado'
       },
       instituicao: 'Udemy',
       duracao: '3 horas',
@@ -109,7 +117,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Testes automatizados com Cypress intermediário',
-        en: 'Automated Testing with Cypress Intermediate'
+        en: 'Automated Testing with Cypress Intermediate',
+        es: 'Pruebas automatizadas con Cypress Intermedio'
       },
       instituicao: 'Udemy',
       duracao: '3,5 horas',
@@ -120,7 +129,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Testes end-to-end com Cypress Basico',
-        en: 'End-to-end Testing with Cypress Basic'
+        en: 'End-to-end Testing with Cypress Basic',
+        es: 'Pruebas end-to-end con Cypress Básico'
       },
       instituicao: 'Udemy',
       duracao: '4 horas',
@@ -131,7 +141,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Cybersecurity Essentials',
-        en: 'Cybersecurity Essentials'
+        en: 'Cybersecurity Essentials',
+        es: 'Fundamentos de Ciberseguridad'
       },
       instituicao: 'Uninove',
       duracao: '40 horas',
@@ -142,7 +153,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Formação Angular 13',
-        en: 'Angular 13 Training'
+        en: 'Angular 13 Training',
+        es: 'Formación Angular 13'
       },
       instituicao: 'Udemy',
       duracao: '11 horas',
@@ -153,7 +165,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Testes unitários em JAVA: Domine JUnit 4, Mockito e TDD',
-        en: 'Unit Testing in JAVA: Master JUnit 4, Mockito and TDD'
+        en: 'Unit Testing in JAVA: Master JUnit 4, Mockito and TDD',
+        es: 'Pruebas unitarias en JAVA: Domine JUnit 4, Mockito y TDD'
       },
       instituicao: 'Udemy',
       duracao: '8 horas',
@@ -164,7 +177,8 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
     {
       titulo: {
         pt: 'Lógica de Programação',
-        en: 'Programming Logic'
+        en: 'Programming Logic',
+        es: 'Lógica de Programación'
       },
       instituicao: 'Senai',
       duracao: '14 horas',

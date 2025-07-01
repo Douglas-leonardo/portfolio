@@ -8,10 +8,12 @@ interface Project {
   title: {
     pt: string;
     en: string;
+    es: string;
   };
   description: {
     pt: string;
     en: string;
+    es: string;
   };
   imageUrl: string;
   projectUrl: string;
@@ -38,11 +40,13 @@ export class ProjectSectionComponent implements OnInit, OnDestroy {
       id: 1,
       title: {
         pt: 'Doceria Delícia',
-        en: 'Doceria Delícia'
+        en: 'Doceria Delícia',
+        es: 'Doceria Delícia'
       },
       description: {
         pt: "Site estático de doceria com design responsivo",
-        en: "Static bakery website with responsive design"
+        en: "Static bakery website with responsive design",
+        es: "Site estático de doceria com design responsivo"
       },
       technologies: ["HTML5", "CSS3", "JavaScript", "Font Awesome", "Google Fonts"],
       codeUrl: 'https://github.com/Douglas-leonardo/doceria/tree/main/doceria',
@@ -54,11 +58,13 @@ export class ProjectSectionComponent implements OnInit, OnDestroy {
       id: 2,
       title: {
         pt: 'InDecor',
-        en: 'InDecor'
+        en: 'InDecor',
+        es: 'InDecor'
       },
       description: {
         pt: "Landing page para evento de design de interiores com múltiplas seções interativas",
-        en: "Landing page for interior design event with multiple interactive sections"
+        en: "Landing page for interior design event with multiple interactive sections",
+        es: "Landing page para evento de design de interiores com múltiplas seções interativas"
       },
       technologies: ["HTML5", "CSS3", "JavaScript", "Google Fonts", "Bootstrap Icons"],
       codeUrl: 'https://github.com/Douglas-leonardo/Condomio-vendas',

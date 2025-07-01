@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map, distinctUntilChanged } from 'rxjs';
 
-export type Language = 'pt' | 'en';
+export type Language = 'pt' | 'en' | 'es';
 
 export interface Translations {
   // Home Section
@@ -152,6 +152,48 @@ export class TranslationService {
         projects: 'Projects',
         certificates: 'Certificates',
         contact: 'Contact'
+      }
+    },
+    es: {
+      home: {
+        name: 'Douglas Leonardo',
+        profession: 'Desarrollador Front End & QA',
+        viewProjects: 'Ver Proyectos',
+        contact: 'Contacto'
+      },
+      about: {
+        title: '// Sobre mí',
+        tagline: 'Desarrollador Front-end & QA con visión holística',
+        bio1: 'Combinando habilidades técnicas y pensamiento crítico, actúo en la intersección entre desarrollo y calidad para crear productos digitales excepcionales.',
+        quote: 'Creo que un código bien escrito y bien probado es la base para experiencias digitales memorables.'
+      },
+      skills: {
+        title: '// Habilidades',
+        subtitle: 'Tecnologías y herramientas que utilizo',
+        frontend: 'Front-end',
+        testing: 'QA & Automatización',
+        tools: 'Herramientas'
+      },
+      projects: {
+        title: '// Proyectos',
+        subtitle: 'Algunos de mis trabajos recientes',
+        viewProject: 'Ver Proyecto',
+        viewCode: 'Ver Código'
+      },
+      certificates: {
+        title: '// Certificados',
+        subtitle: 'Certificaciones y cursos'
+      },
+      footer: {
+        rights: '© 2024 Douglas Leonardo. Todos los derechos reservados.'
+      },
+      nav: {
+        home: 'Inicio',
+        about: 'Sobre',
+        skills: 'Habilidades',
+        projects: 'Proyectos',
+        certificates: 'Certificados',
+        contact: 'Contacto'
       }
     }
   };

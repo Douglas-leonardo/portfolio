@@ -76,6 +76,11 @@ export class AppComponent implements OnInit, OnDestroy {
         title: 'Douglas Leonardo - Front End Developer & QA',
         description: 'Professional portfolio with Angular, TypeScript and test automation projects. Developer specialized in creating web solutions with modern design.',
         keywords: 'developer, front-end, QA, Angular, TypeScript, JavaScript, Cypress, Jest, São Paulo'
+      },
+      es: {
+        title: 'Douglas Leonardo - Desarrollador Front End & QA',
+        description: 'Portafolio profesional con proyectos en Angular, TypeScript y automatización de pruebas. Desarrollador especializado en crear soluciones web con diseño moderno.',
+        keywords: 'desarrollador, front-end, QA, Angular, TypeScript, JavaScript, Cypress, Jest, São Paulo'
       }
     };
 

@@ -14,14 +14,17 @@ interface TimelineItem {
   year: {
     pt: string;
     en: string;
+    es: string;
   };
   title: {
     pt: string;
     en: string;
+    es: string;
   };
   description: {
     pt: string;
     en: string;
+    es: string;
   };
 }
 
@@ -41,29 +44,35 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
     {
       year: {
         pt: '2022-Presente',
-        en: '2022-Present'
+        en: '2022-Present',
+        es: '2022-Presente'
       },
       title: {
         pt: 'Desenvolvedor Front-end & QA',
-        en: 'Front-end Developer & QA'
+        en: 'Front-end Developer & QA',
+        es: 'Desarrollador Front-end & QA'
       },
       description: {
         pt: 'Desenvolvimento de interfaces com foco em performance e experiência do usuário',
-        en: 'Interface development with focus on performance and user experience'
+        en: 'Interface development with focus on performance and user experience',
+        es: 'Desarrollo de interfaces con enfoque en rendimiento y experiencia del usuario'
       }
     },
     {
       year: {
         pt: '2020-2022',
-        en: '2020-2022'
+        en: '2020-2022',
+        es: '2020-2022'
       },
       title: {
         pt: 'Desenvolvedor Júnior',
-        en: 'Junior Developer'
+        en: 'Junior Developer',
+        es: 'Desarrollador Junior'
       },
       description: {
         pt: 'Primeiras experiências profissionais em desenvolvimento web',
-        en: 'First professional experiences in web development'
+        en: 'First professional experiences in web development',
+        es: 'Primeras experiencias profesionales en desarrollo web'
       }
     }
   ];
