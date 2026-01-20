@@ -1,41 +1,57 @@
-<section class="skills-section" id="habilidades">
+<section class="skills-section" id="habilidades" aria-labelledby="skills-title">
   <div class="skills-container">
     <div class="skills-header">
-      <h2 class="skills-title">{{ translations?.skills?.title }}</h2>
+      <h2 class="skills-title" id="skills-title">{{ translations?.skills?.title }}</h2>
       <p class="skills-subtitle">{{ translations?.skills?.subtitle }}</p>
     </div>
 
-    <div class="skills-tabs">
+    <div class="skills-tabs" role="tablist" aria-label="Categorias de habilidades">
       <button class="tab-button"
               [class.active]="activeTab === 'frontend'"
               (click)="changeTab('frontend')"
-              data-tab="frontend">
-        <i class="fas fa-code"></i> {{ translations?.skills?.frontend }}
+              data-tab="frontend"
+              role="tab"
+              [attr.aria-selected]="activeTab === 'frontend'"
+              [attr.aria-controls]="'frontend'"
+              id="tab-frontend">
+        <i class="fas fa-code" aria-hidden="true"></i> {{ translations?.skills?.frontend }}
       </button>
       <button class="tab-button"
               [class.active]="activeTab === 'backend'"
               (click)="changeTab('backend')"
-              data-tab="backend">
-        <i class="fas fa-server"></i> Backend
+              data-tab="backend"
+              role="tab"
+              [attr.aria-selected]="activeTab === 'backend'"
+              [attr.aria-controls]="'backend'"
+              id="tab-backend">
+        <i class="fas fa-server" aria-hidden="true"></i> Backend
       </button>
       <button class="tab-button"
               [class.active]="activeTab === 'tools'"
               (click)="changeTab('tools')"
-              data-tab="tools">
-        <i class="fas fa-tools"></i> {{ translations?.skills?.tools }}
+              data-tab="tools"
+              role="tab"
+              [attr.aria-selected]="activeTab === 'tools'"
+              [attr.aria-controls]="'tools'"
+              id="tab-tools">
+        <i class="fas fa-tools" aria-hidden="true"></i> {{ translations?.skills?.tools }}
       </button>
       <button class="tab-button"
               [class.active]="activeTab === 'qa'"
               (click)="changeTab('qa')"
-              data-tab="qa">
-        <i class="fas fa-bug"></i> {{ translations?.skills?.testing }}
+              data-tab="qa"
+              role="tab"
+              [attr.aria-selected]="activeTab === 'qa'"
+              [attr.aria-controls]="'qa'"
+              id="tab-qa">
+        <i class="fas fa-bug" aria-hidden="true"></i> {{ translations?.skills?.testing }}
       </button>
     </div>
 
     <!-- Conteúdo Frontend -->
-    <div id="frontend" class="tab-content" [class.active]="activeTab === 'frontend'">
-      <div class="skills-grid">
-        <div class="skill-card" *ngFor="let skill of frontendSkills">
+    <div id="frontend" class="tab-content" [class.active]="activeTab === 'frontend'" role="tabpanel" aria-labelledby="tab-frontend" [attr.hidden]="activeTab !== 'frontend' ? true : null">
+      <div class="skills-grid" role="list">
+        <div class="skill-card" *ngFor="let skill of frontendSkills" role="listitem">
           <div class="skill-header">
             <div class="skill-icon">
               <i [class]="skill.icon"></i>
@@ -55,7 +71,7 @@
           </div>
           <div class="skill-features">
             <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">
-              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
               <span>{{ feature }}</span>
             </div>
           </div>
@@ -64,9 +80,9 @@
     </div>
 
     <!-- Conteúdo Backend -->
-    <div id="backend" class="tab-content" [class.active]="activeTab === 'backend'">
-      <div class="skills-grid">
-        <div class="skill-card" *ngFor="let skill of backendSkills">
+    <div id="backend" class="tab-content" [class.active]="activeTab === 'backend'" role="tabpanel" aria-labelledby="tab-backend" [attr.hidden]="activeTab !== 'backend' ? true : null">
+      <div class="skills-grid" role="list">
+        <div class="skill-card" *ngFor="let skill of backendSkills" role="listitem">
           <div class="skill-header">
             <div class="skill-icon">
               <i [class]="skill.icon"></i>
@@ -86,7 +102,7 @@
           </div>
           <div class="skill-features">
             <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">
-              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
               <span>{{ feature }}</span>
             </div>
           </div>
@@ -95,9 +111,9 @@
     </div>
 
     <!-- Conteúdo Ferramentas -->
-    <div id="tools" class="tab-content" [class.active]="activeTab === 'tools'">
-      <div class="skills-grid">
-        <div class="skill-card" *ngFor="let skill of toolsSkills">
+    <div id="tools" class="tab-content" [class.active]="activeTab === 'tools'" role="tabpanel" aria-labelledby="tab-tools" [attr.hidden]="activeTab !== 'tools' ? true : null">
+      <div class="skills-grid" role="list">
+        <div class="skill-card" *ngFor="let skill of toolsSkills" role="listitem">
           <div class="skill-header">
             <div class="skill-icon">
               <i [class]="skill.icon"></i>
@@ -117,7 +133,7 @@
           </div>
           <div class="skill-features">
             <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">
-              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
               <span>{{ feature }}</span>
             </div>
           </div>
@@ -126,9 +142,9 @@
     </div>
 
     <!-- Conteúdo QA & Automação -->
-    <div id="qa" class="tab-content" [class.active]="activeTab === 'qa'">
-      <div class="skills-grid">
-        <div class="skill-card" *ngFor="let skill of qaSkills">
+    <div id="qa" class="tab-content" [class.active]="activeTab === 'qa'" role="tabpanel" aria-labelledby="tab-qa" [attr.hidden]="activeTab !== 'qa' ? true : null">
+      <div class="skills-grid" role="list">
+        <div class="skill-card" *ngFor="let skill of qaSkills" role="listitem">
           <div class="skill-header">
             <div class="skill-icon">
               <i [class]="skill.icon"></i>
@@ -148,7 +164,7 @@
           </div>
           <div class="skill-features">
             <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">
-              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
               <span>{{ feature }}</span>
             </div>
           </div>

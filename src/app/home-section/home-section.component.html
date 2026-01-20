@@ -1,28 +1,28 @@
-<section class="home-hero" id="home">
-  <div class="home-hero__background"></div>
+<section class="home-hero" id="home" aria-labelledby="home-title">
+  <div class="home-hero__background" aria-hidden="true"></div>
   <div class="container">
     <div class="home-hero__content">
-      <h1 class="home-hero__title">
+      <h1 class="home-hero__title" id="home-title">
         <span class="home-hero__name">{{ translations?.home?.name }}</span>
         <span class="home-hero__profession">{{ translations?.home?.profession }}</span>
       </h1>
 
-      <div class="home-hero__tech-stack">
-        <span class="home-hero__tech-pill">Angular</span>
-        <span class="home-hero__tech-pill">TypeScript</span>
-        <span class="home-hero__tech-pill">JavaScript</span>
-        <span class="home-hero__tech-pill">HTML/CSS</span>
-        <span class="home-hero__tech-pill">Cypress</span>
-        <span class="home-hero__tech-pill">Jest</span>
+      <div class="home-hero__tech-stack" aria-label="Tecnologias principais">
+        <span class="home-hero__tech-pill" aria-label="Angular">Angular</span>
+        <span class="home-hero__tech-pill" aria-label="TypeScript">TypeScript</span>
+        <span class="home-hero__tech-pill" aria-label="JavaScript">JavaScript</span>
+        <span class="home-hero__tech-pill" aria-label="HTML/CSS">HTML/CSS</span>
+        <span class="home-hero__tech-pill" aria-label="Cypress">Cypress</span>
+        <span class="home-hero__tech-pill" aria-label="Jest">Jest</span>
       </div>
 
       <div class="home-hero__cta">
-        <a href="#projects" class="home-hero__cta-primary">
-          <i class="fas fa-code"></i>
+        <a href="#projects" class="home-hero__cta-primary" [attr.aria-label]="translations?.home?.viewProjects">
+          <i class="fas fa-code" aria-hidden="true"></i>
           {{ translations?.home?.viewProjects }}
         </a>
-        <a href="#contato" class="home-hero__cta-secondary">
-          <i class="fas fa-paper-plane"></i>
+        <a href="#contato" class="home-hero__cta-secondary" [attr.aria-label]="translations?.home?.contact">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i>
           {{ translations?.home?.contact }}
         </a>
       </div>

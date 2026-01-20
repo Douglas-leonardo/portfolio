@@ -1,16 +1,16 @@
-<section class="about-section" id="sobre">
-  <div class="about-section__bg-effect"></div>
+<section class="about-section" id="sobre" aria-labelledby="about-title">
+  <div class="about-section__bg-effect" aria-hidden="true"></div>
 
   <div class="about-section__container">
     <div class="about-section__header">
-      <h2 class="about-section__title">{{ translations?.about?.title }}</h2>
+      <h2 class="about-section__title" id="about-title">{{ translations?.about?.title }}</h2>
       <p class="about-section__tagline">{{ translations?.about?.tagline }}</p>
     </div>
 
     <div class="about-section__content">
       <div class="about-section__intro">
         <div class="about-section__avatar">
-          <img src="assets/images/icons/douglasFoto.jpg" alt="Douglas Leonardo" class="about-section__avatar-img">
+          <img src="assets/images/icons/douglasFoto.jpg" alt="Douglas Leonardo" class="about-section__avatar-img" loading="eager" decoding="async">
           <div class="about-section__avatar-placeholder">
             <i class="fas fa-user"></i>
           </div>

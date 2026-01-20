@@ -1,35 +1,38 @@
-<section class="certificates-section" id="certificados">
-  <div class="certificates-section__bg-effect"></div>
+<section class="certificates-section" id="certificados" aria-labelledby="certificates-title">
+  <div class="certificates-section__bg-effect" aria-hidden="true"></div>
   <div class="certificates-section__container">
     <div class="certificates-section__header">
-      <h2 class="certificates-section__title">
+      <h2 class="certificates-section__title" id="certificates-title">
         {{ translations?.certificates?.title }}
-        <span class="certificates-section__counter">{{ certificados.length }}</span>
+        <span class="certificates-section__counter" [attr.aria-label]="certificados.length + ' certificados'">{{ certificados.length }}</span>
       </h2>
     </div>
-    <div class="certificates-section__grid">
-      <div class="certificates-section__card" *ngFor="let certificado of certificadosFiltradosLimitados">
-        <div class="certificates-section__icon">
-          <svg width="54" height="54" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="certificates-section__grid" role="list">
+      <article class="certificates-section__card" *ngFor="let certificado of certificadosFiltradosLimitados" role="listitem">
+        <div class="certificates-section__icon" aria-hidden="true">
+          <svg width="54" height="54" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M256 32C132.288 32 32 132.288 32 256c0 123.712 100.288 224 224 224s224-100.288 224-224C480 132.288 379.712 32 256 32zm0 416c-105.872 0-192-86.128-192-192S150.128 64 256 64s192 86.128 192 192-86.128 192-192 192zm-32-96l-64-64 22.624-22.624L224 297.376l97.376-97.376L344 222.624 224 352z" fill="#28a745"/>
           </svg>
         </div>
-        <div class="certificates-section__badge">{{ certificado.instituicao }}</div>
+        <div class="certificates-section__badge" [attr.aria-label]="'Instituição: ' + certificado.instituicao">{{ certificado.instituicao }}</div>
         <h3 class="certificates-section__card-title">{{ certificado.titulo[currentLanguage] }}</h3>
         <div class="certificates-section__card-details">
-          <p><i class="fas fa-clock"></i> {{ certificado.duracao }}</p>
-          <p><i class="fas fa-chalkboard-teacher"></i> {{ certificado.instrutor }}</p>
-          <p><i class="fas fa-calendar-alt"></i> {{ certificado.ano }}</p>
+          <p><i class="fas fa-clock" aria-hidden="true"></i> <span>{{ certificado.duracao }}</span></p>
+          <p><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> <span>{{ certificado.instrutor }}</span></p>
+          <p><i class="fas fa-calendar-alt" aria-hidden="true"></i> <span>{{ certificado.ano }}</span></p>
         </div>
-        <a [href]="certificado.linkCertificado" target="_blank" class="certificates-section__see-certificate" rel="noopener noreferrer">
-          {{ currentLanguage === 'pt' ? 'Ver Certificado' : 'View Certificate' }} <i class="fas fa-external-link-alt"></i>
+        <a [href]="certificado.linkCertificado" target="_blank" class="certificates-section__see-certificate" rel="noopener noreferrer" [attr.aria-label]="(currentLanguage === 'pt' ? 'Ver Certificado: ' : 'View Certificate: ') + certificado.titulo[currentLanguage]">
+          {{ currentLanguage === 'pt' ? 'Ver Certificado' : 'View Certificate' }} <i class="fas fa-external-link-alt" aria-hidden="true"></i>
         </a>
-      </div>
+      </article>
     </div>
     <div class="certificates-section__see-more" *ngIf="certificados.length > 3">
-      <button class="btn btn--toggle" (click)="toggleShowAllCertificates()">
+      <button class="btn btn--toggle" 
+              (click)="toggleShowAllCertificates()"
+              [attr.aria-expanded]="showAllCertificates"
+              [attr.aria-label]="showAllCertificates ? (currentLanguage === 'pt' ? 'Mostrar menos certificados' : 'Show fewer certificates') : (currentLanguage === 'pt' ? 'Mostrar mais certificados' : 'Show more certificates')">
         {{ showAllCertificates ? (currentLanguage === 'pt' ? 'Ver menos' : currentLanguage === 'en' ? 'Show less' : 'Ver menos') : (currentLanguage === 'pt' ? 'Ver mais' : currentLanguage === 'en' ? 'Show more' : 'Ver más') }}
-        <i class="fas" [class.fa-chevron-up]="showAllCertificates" [class.fa-chevron-down]="!showAllCertificates"></i>
+        <i class="fas" [class.fa-chevron-up]="showAllCertificates" [class.fa-chevron-down]="!showAllCertificates" aria-hidden="true"></i>
       </button>
     </div>
   </div>

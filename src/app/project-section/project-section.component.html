@@ -1,12 +1,12 @@
-<section class="projects" id="projects">
+<section class="projects" id="projects" aria-labelledby="projects-title">
   <div class="projects__header">
-    <h2 class="projects__title">{{ translations?.projects?.title }}</h2>
+    <h2 class="projects__title" id="projects-title">{{ translations?.projects?.title }}</h2>
     <p class="projects__subtitle">{{ translations?.projects?.subtitle }}</p>
   </div>
 
-  <div class="projects__grid">
-    <article class="project-card" *ngFor="let project of visibleProjects; trackBy: trackByProjectId">
-      <img [src]="project.imageUrl" [alt]="project.title[currentLanguage]" class="project-card__image">
+  <div class="projects__grid" role="list">
+    <article class="project-card" *ngFor="let project of visibleProjects; trackBy: trackByProjectId" role="listitem">
+      <img [src]="project.imageUrl" [alt]="project.title[currentLanguage]" class="project-card__image" loading="lazy" decoding="async">
 
       <div class="project-card__content">
         <h3 class="project-card__title">{{ project.title[currentLanguage] }}</h3>

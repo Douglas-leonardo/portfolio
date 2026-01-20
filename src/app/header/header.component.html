@@ -1,52 +1,60 @@
-<header class="header__container">
+<header class="header__container" role="banner">
+  <a href="#main-content" class="skip-link" aria-label="Pular para o conteúdo principal">Pular para o conteúdo principal</a>
   <div class="header__content">
-    <nav class="header__nav">
+    <nav class="header__nav" role="navigation" aria-label="Navegação principal">
       <h1 class="header__logo">
-        <a href="#home">
+        <a href="#home" aria-label="Início - Douglas Leonardo">
           Douglas Leonardo
           <span class="header__logo-tagline">{{ translations?.home?.profession }}</span>
         </a>
       </h1>
 
-      <button class="header__menu-icon" (click)="toggleMenu()" [attr.aria-label]="currentLanguage === 'pt' ? 'Abrir menu' : 'Open menu'">
-        <i class="fas fa-bars"></i>
+      <button class="header__menu-icon" 
+              (click)="toggleMenu()" 
+              [attr.aria-label]="currentLanguage === 'pt' ? (isMenuActive ? 'Fechar menu' : 'Abrir menu') : (isMenuActive ? 'Close menu' : 'Open menu')"
+              [attr.aria-expanded]="isMenuActive"
+              aria-controls="main-navigation">
+        <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
 
-      <ul class="header__links" [class.active]="isMenuActive">
-        <li>
-          <a href="#home" class="header__link">
+      <ul class="header__links" 
+          [class.active]="isMenuActive"
+          id="main-navigation"
+          role="menubar">
+        <li role="none">
+          <a href="#home" class="header__link" role="menuitem" [attr.aria-label]="translations?.nav?.home">
             <span class="header__text-link">{{ translations?.nav?.home }}</span>
-            <i class="fas fa-house header__icon-link"></i>
+            <i class="fas fa-house header__icon-link" aria-hidden="true"></i>
           </a>
         </li>
-        <li>
-          <a href="#sobre" class="header__link">
+        <li role="none">
+          <a href="#sobre" class="header__link" role="menuitem" [attr.aria-label]="translations?.nav?.about">
             <span class="header__text-link">{{ translations?.nav?.about }}</span>
-            <i class="fas fa-address-card header__icon-link"></i>
+            <i class="fas fa-address-card header__icon-link" aria-hidden="true"></i>
           </a>
         </li>
-        <li>
-          <a href="#habilidades" class="header__link">
+        <li role="none">
+          <a href="#habilidades" class="header__link" role="menuitem" [attr.aria-label]="translations?.nav?.skills">
             <span class="header__text-link">{{ translations?.nav?.skills }}</span>
-            <i class="fas fa-code header__icon-link"></i>
+            <i class="fas fa-code header__icon-link" aria-hidden="true"></i>
           </a>
         </li>
-        <li>
-          <a href="#certificados" class="header__link">
+        <li role="none">
+          <a href="#certificados" class="header__link" role="menuitem" [attr.aria-label]="translations?.nav?.certificates">
             <span class="header__text-link">{{ translations?.nav?.certificates }}</span>
-            <i class="fas fa-pen-to-square header__icon-link"></i>
+            <i class="fas fa-pen-to-square header__icon-link" aria-hidden="true"></i>
           </a>
         </li>
-        <li>
-          <a href="#projects" class="header__link">
+        <li role="none">
+          <a href="#projects" class="header__link" role="menuitem" [attr.aria-label]="translations?.nav?.projects">
             <span class="header__text-link">{{ translations?.nav?.projects }}</span>
-            <i class="fas fa-graduation-cap header__icon-link"></i>
+            <i class="fas fa-graduation-cap header__icon-link" aria-hidden="true"></i>
           </a>
         </li>
-        <li>
-          <a href="#contato" class="header__link">
+        <li role="none">
+          <a href="#contato" class="header__link" role="menuitem" [attr.aria-label]="translations?.nav?.contact">
             <span class="header__text-link">{{ translations?.nav?.contact }}</span>
-            <i class="fas fa-phone header__icon-link"></i>
+            <i class="fas fa-phone header__icon-link" aria-hidden="true"></i>
           </a>
         </li>
       </ul>

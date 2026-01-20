@@ -15,7 +15,8 @@
 
   <app-header></app-header>
 
-  <app-home-section></app-home-section>
+  <main id="main-content">
+    <app-home-section></app-home-section>
 
   <app-about-section></app-about-section>
 
@@ -23,7 +24,8 @@
 
   <app-certificates-section></app-certificates-section>
 
-  <app-project-section></app-project-section>
+    <app-project-section></app-project-section>
+  </main>
 
   <button [class.scroll-to-top--visible]="showScrollButton" (click)="scrollToTop()" class="scroll-to-top"
     aria-label="Voltar ao topo">
