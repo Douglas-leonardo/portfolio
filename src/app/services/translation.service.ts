@@ -11,7 +11,7 @@ export interface Translations {
     viewProjects: string;
     contact: string;
   };
-  
+
   // About Section
   about: {
     title: string;
@@ -19,7 +19,7 @@ export interface Translations {
     bio1: string;
     quote: string;
   };
-  
+
   // Skills Section
   skills: {
     title: string;
@@ -28,7 +28,7 @@ export interface Translations {
     testing: string;
     tools: string;
   };
-  
+
   // Projects Section
   projects: {
     title: string;
@@ -36,18 +36,18 @@ export interface Translations {
     viewProject: string;
     viewCode: string;
   };
-  
+
   // Certificates Section
   certificates: {
     title: string;
     subtitle: string;
   };
-  
+
   // Footer
   footer: {
     rights: string;
   };
-  
+
   // Navigation
   nav: {
     home: string;
@@ -65,7 +65,7 @@ export interface Translations {
 export class TranslationService {
   private currentLanguageSubject = new BehaviorSubject<Language>('pt');
   public currentLanguage$ = this.currentLanguageSubject.asObservable();
-  
+
   // Cache para traduções
   private translationCache = new Map<string, string>();
 
@@ -84,20 +84,20 @@ export class TranslationService {
         quote: 'Acredito que código bem escrito e bem testado é a base para experiências digitais memoráveis.'
       },
       skills: {
-        title: '// Habilidades',
+        title: 'Habilidades',
         subtitle: 'Tecnologias e ferramentas que utilizo',
         frontend: 'Front-end',
         testing: 'QA & Automação',
         tools: 'Ferramentas'
       },
       projects: {
-        title: '// Projetos',
+        title: 'Projetos',
         subtitle: 'Alguns dos meus trabalhos recentes',
         viewProject: 'Ver Projeto',
         viewCode: 'Ver Código'
       },
       certificates: {
-        title: '// Certificados',
+        title: 'Certificados',
         subtitle: 'Certificações e cursos'
       },
       footer: {
@@ -225,21 +225,21 @@ export class TranslationService {
 
   getTranslation(key: string): string {
     const cacheKey = `${this.getCurrentLanguage()}:${key}`;
-    
+
     if (this.translationCache.has(cacheKey)) {
       return this.translationCache.get(cacheKey)!;
     }
 
     const keys = key.split('.');
     let value: any = this.translations[this.getCurrentLanguage()];
-    
+
     for (const k of keys) {
       value = value?.[k];
     }
-    
+
     const result = value || key;
     this.translationCache.set(cacheKey, result);
-    
+
     return result;
   }
 
@@ -254,4 +254,4 @@ export class TranslationService {
   private clearCache(): void {
     this.translationCache.clear();
   }
-} 
+}
