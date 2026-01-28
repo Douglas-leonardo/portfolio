@@ -214,4 +214,16 @@ export class CertificatesSectionComponent implements OnInit, OnDestroy {
   toggleShowAllCertificates() {
     this.showAllCertificates = !this.showAllCertificates;
   }
+
+  scrollToCertificados() {
+  const element = document.getElementById('certificados');
+
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+
 }

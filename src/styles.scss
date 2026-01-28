@@ -21,28 +21,6 @@ body {
   height: 100%;
 }
 
-/* Skip Link para Acessibilidade */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #28a745;
-  color: #fff;
-  padding: 8px 16px;
-  text-decoration: none;
-  z-index: 10000;
-  border-radius: 0 0 4px 0;
-  font-weight: 600;
-  transition: top 0.3s;
-
-  &:focus {
-    top: 0;
-    color: #fff;
-    outline: 3px solid #fff;
-    outline-offset: 2px;
-  }
-}
-
 /* Skeleton Loaders */
 .skeleton {
   background: linear-gradient(90deg, rgba(31, 31, 31, 0.7) 25%, rgba(31, 31, 31, 0.9) 50%, rgba(31, 31, 31, 0.7) 75%);
