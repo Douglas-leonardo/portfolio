@@ -253,18 +253,34 @@ $text-muted: rgba(255, 255, 255, 0.7);
   }
 
   &__timeline-content {
-    h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: #e0f7fa;
-    }
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.8;
 
-    p {
-      color: $text-muted;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #e0f7fa;
   }
+
+  p,
+  div {
+    color: #fff;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  * {
+    color: #fff !important;
+  }
+
+  br {
+    display: block;
+    margin-bottom: 8px;
+    content: "";
+  }
+}
 
   @media (max-width: 992px) {
     .about-section__timeline-dot {

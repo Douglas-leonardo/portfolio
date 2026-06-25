@@ -79,9 +79,9 @@ export class TranslationService {
       },
       about: {
         title: '// Sobre mim',
-        tagline: 'Desenvolvedor Front-end & QA com visão holística',
-        bio1: 'Combinando habilidades técnicas e pensamento crítico, atuo na interseção entre desenvolvimento e qualidade para criar produtos digitais excepcionais.',
-        quote: 'Acredito que código bem escrito e bem testado é a base para experiências digitais memoráveis.'
+        tagline: 'QA Engineer & Desenvolvedor Front-end com visão de qualidade de ponta a ponta',
+        bio1: 'QA Engineer com experiência em testes manuais e automatizados, focado em garantir a qualidade de sistemas por meio da validação de regras de negócio, testes funcionais, regressão e API. Também possuo experiência com automação de testes e participação em processos ágeis, contribuindo para a entrega de produtos mais estáveis, escaláveis e com melhor experiência para o usuário.',
+        quote: 'Acredito que qualidade não é uma fase, mas sim um processo contínuo que conecta desenvolvimento, testes e experiência do usuário.'
       },
       skills: {
         title: 'Habilidades',
@@ -121,9 +121,9 @@ export class TranslationService {
       },
       about: {
         title: '// About me',
-        tagline: 'Front-end Developer & QA with holistic vision',
-        bio1: 'Combining technical skills and critical thinking, I work at the intersection of development and quality to create exceptional digital products.',
-        quote: 'I believe that well-written and well-tested code is the foundation for memorable digital experiences.'
+        tagline: 'QA Engineer & Front-end Developer with a holistic quality mindset',
+        bio1: 'QA Engineer with experience in manual and automated testing, focused on ensuring system quality through business rules validation, functional, regression, and API testing. I also have experience with test automation and participation in agile processes, contributing to the delivery of more stable, scalable products with a better user experience.',
+        quote: 'I believe that well-written and well-tested code is the foundation for exceptional digital experiences.'
       },
       skills: {
         title: '// Skills',
@@ -163,9 +163,9 @@ export class TranslationService {
       },
       about: {
         title: '// Sobre mí',
-        tagline: 'Desarrollador Front-end & QA con visión holística',
-        bio1: 'Combinando habilidades técnicas y pensamiento crítico, actúo en la intersección entre desarrollo y calidad para crear productos digitales excepcionales.',
-        quote: 'Creo que un código bien escrito y bien probado es la base para experiencias digitales memorables.'
+        tagline: 'QA Engineer y Desarrollador Front-end con visión holística de calidad',
+        bio1: 'QA Engineer con experiencia en pruebas manuales y automatizadas, enfocado en garantizar la calidad de sistemas mediante la validación de reglas de negocio, pruebas funcionales, regresión y API. También tengo experiencia en automatización de pruebas y participación en procesos ágiles, contribuyendo a la entrega de productos más estables, escalables y con mejor experiencia para el usuario.',
+        quote: 'Creo que un código bien escrito y bien probado es la base para experiencias digitales excepcionales.'
       },
       skills: {
         title: '// Habilidades',

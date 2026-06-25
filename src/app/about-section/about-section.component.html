@@ -32,7 +32,7 @@
           </div>
           <div class="about-section__timeline-content">
             <h3>{{ item.title[currentLanguage] }}</h3>
-            <p>{{ item.description[currentLanguage] }}</p>
+            <p [innerHTML]="item.description[currentLanguage]"></p>
           </div>
         </div>
       </div>
