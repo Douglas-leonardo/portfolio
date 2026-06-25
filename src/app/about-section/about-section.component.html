@@ -10,7 +10,8 @@
     <div class="about-section__content">
       <div class="about-section__intro">
         <div class="about-section__avatar">
-          <img src="assets/images/icons/douglasFoto.jpg" alt="Douglas Leonardo" class="about-section__avatar-img" loading="eager" decoding="async">
+          <img src="assets/images/icons/douglasFoto.jpg" alt="Douglas Leonardo" class="about-section__avatar-img"
+            loading="eager" decoding="async">
           <div class="about-section__avatar-placeholder">
             <i class="fas fa-user"></i>
           </div>
@@ -24,17 +25,38 @@
         </div>
       </div>
 
+
       <div class="about-section__timeline">
-        <div class="about-section__timeline-item" *ngFor="let item of timelineItems">
-          <div class="about-section__timeline-header">
+
+        <details class="about-section__timeline-item" *ngFor="let item of timelineItems">
+
+          <summary class="about-section__timeline-header">
             <div class="about-section__timeline-dot"></div>
-            <div class="about-section__timeline-year">{{ item.year[currentLanguage] }}</div>
-          </div>
+
+            <div class="about-section__timeline-summary">
+              <span class="about-section__timeline-company">{{ item.company }}</span>
+              <span class="about-section__timeline-period">{{ item.period[currentLanguage] }}</span>
+            </div>
+
+            <span class="about-section__timeline-toggle" aria-hidden="true">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </summary>
+
           <div class="about-section__timeline-content">
-            <h3>{{ item.title[currentLanguage] }}</h3>
-            <p [innerHTML]="item.description[currentLanguage]"></p>
+            <article class="about-section__timeline-role" *ngFor="let role of item.roles">
+              <div class="about-section__timeline-role-header">
+                <h3>{{ role.title[currentLanguage] }}</h3>
+                <span>{{ role.period[currentLanguage] }}</span>
+              </div>
+
+              <p [innerHTML]="role.description[currentLanguage]"></p>
+            </article>
           </div>
-        </div>
+
+        </details>
+
+
       </div>
     </div>
   </div>

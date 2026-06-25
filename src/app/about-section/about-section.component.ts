@@ -10,8 +10,8 @@ interface Translation {
   quote: string;
 }
 
-interface TimelineItem {
-  year: {
+interface TimelineRole {
+  period: {
     pt: string;
     en: string;
     es: string;
@@ -28,6 +28,16 @@ interface TimelineItem {
   };
 }
 
+interface TimelineCompany {
+  company: string;
+  period: {
+    pt: string;
+    en: string;
+    es: string;
+  };
+  roles: TimelineRole[];
+}
+
 @Component({
   selector: 'app-about-section',
   standalone: true,
@@ -40,20 +50,28 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
   currentLanguage: Language = 'pt';
   private subscription: Subscription = new Subscription();
 
-  timelineItems: TimelineItem[] = [
+  timelineItems: TimelineCompany[] = [
     {
-      year: {
-        pt: '2022 - 2023',
-        en: '2022 - 2023',
-        es: '2022 - 2023'
+      company: 'Contmatic Phoenix',
+      period: {
+        pt: '2021 - 2026',
+        en: '2021 - 2026',
+        es: '2021 - 2026'
       },
-      title: {
-        pt: 'QA Engineer Júnior',
-        en: 'Junior QA Engineer',
-        es: 'QA Engineer Junior'
-      },
-      description: {
-        pt: `
+      roles: [
+        {
+          period: {
+            pt: '2021 - 2023',
+            en: '2021 - 2023',
+            es: '2021 - 2023'
+          },
+          title: {
+            pt: 'QA Engineer Júnior',
+            en: 'Junior QA Engineer',
+            es: 'QA Engineer Junior'
+          },
+          description: {
+            pt: `
           • Atuei no processo de garantia de qualidade em aplicações web e desktop, executando testes para validação de novas funcionalidades antes dos releases, garantindo estabilidade e qualidade das entregas.<br><br>
 
           • Desenvolvi e mantive testes automatizados utilizando Cypress, Selenium e Playwright, cobrindo fluxos críticos de usuário, regressão e comportamento da aplicação.<br><br>
@@ -69,8 +87,7 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
           • Participei ativamente de rotinas ágeis (Scrum), apoiando planejamento de sprints, refinamento de histórias e validação contínua das entregas.<br><br>
 
           • Contribuí para a melhoria contínua da cultura de qualidade, incluindo práticas de CI/CD, automação de testes e suporte ao time de QA.`,
-
-        en: `
+            en: `
           • Worked in quality assurance for web and desktop applications, executing tests to validate new features before releases and ensuring stability and delivery quality.<br><br>
 
           • Developed and maintained automated tests using Cypress, Selenium, and Playwright, covering critical user flows, regression suites, and application behavior.<br><br>
@@ -86,8 +103,7 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
           • Participated in Agile (Scrum) ceremonies, supporting sprint planning, backlog refinement, and continuous validation of deliverables.<br><br>
 
           • Contributed to continuous improvement of QA practices, including CI/CD adoption, test automation, and team support initiatives.`,
-
-          es: `
+            es: `
           • Trabajé en el proceso de aseguramiento de calidad en aplicaciones web y de escritorio, ejecutando pruebas para validar nuevas funcionalidades antes de los releases, garantizando estabilidad y calidad en las entregas.<br><br>
 
           • Desarrollé y mantuve pruebas automatizadas utilizando Cypress, Selenium y Playwright, cubriendo flujos críticos de usuario, regresión y comportamiento de la aplicación.<br><br>
@@ -103,21 +119,21 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
           • Participé activamente en ceremonias ágiles (Scrum), apoyando la planificación de sprints, refinamiento del backlog y validación continua de entregas.<br><br>
 
           • Contribuí a la mejora continua de las prácticas de QA, incluyendo adopción de CI/CD, automatización de pruebas y soporte al equipo.`
-      }
-    },
-    {
-      year: {
-        pt: '2023 - 2026',
-        en: '2023 - 2026',
-        es: '2023 - 2026'
-      },
-      title: {
-        pt: 'QA Engineer Pleno',
-        en: 'Mid-Level QA Engineer',
-        es: 'QA Engineer Semi-Senior'
-      },
-      description: {
-        pt: `
+          }
+        },
+        {
+          period: {
+            pt: '2023 - 2026',
+            en: '2023 - 2026',
+            es: '2023 - 2026'
+          },
+          title: {
+            pt: 'QA Engineer Pleno',
+            en: 'Mid-Level QA Engineer',
+            es: 'QA Engineer Semi-Senior'
+          },
+          description: {
+            pt: `
       • Assumi responsabilidade pela automação de testes, desenvolvendo e evoluindo frameworks que tornaram o processo de QA mais rápido, confiável e escalável.<br><br>
 
       • Transformei o processo de regressão ao automatizar fluxos críticos, reduzindo o tempo de execução de horas para cerca de 1 hora, acelerando ciclos de release.<br><br>
@@ -137,8 +153,7 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
       • Atuei em ambiente ágil (Scrum), colaborando com desenvolvedores e produto para prevenir defeitos e melhorar a qualidade desde cedo.<br><br>
 
       • Contribuí ativamente para a cultura de automação no time, apoiando outros QA engineers e promovendo boas práticas de qualidade.`,
-
-        en: `
+            en: `
       • Took ownership of test automation by designing and evolving frameworks that improved speed, reliability, and scalability of QA processes.<br><br>
 
       • Transformed regression testing by automating critical flows, reducing execution time from hours to approximately 1 hour, enabling faster release cycles.<br><br>
@@ -158,8 +173,7 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
       • Actively contributed in Agile (Scrum) environments, collaborating closely with developers and product teams to prevent issues early in the lifecycle.<br><br>
 
       • Helped drive a strong automation culture within the team, supporting QA peers and promoting best practices.`,
-
-      es: `
+            es: `
       • Asumí la responsabilidad de la automatización de pruebas, diseñando y evolucionando frameworks que mejoraron la velocidad, confiabilidad y escalabilidad de los procesos de QA.<br><br>
 
       • Transformé el proceso de regresión al automatizar flujos críticos, reduciendo el tiempo de ejecución de horas a aproximadamente 1 hora, acelerando los ciclos de entrega.<br><br>
@@ -179,7 +193,9 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
       • Participé activamente en entornos ágiles (Scrum), colaborando estrechamente con desarrolladores y producto para prevenir defectos desde etapas tempranas.<br><br>
 
       • Contribuí al fortalecimiento de la cultura de automatización en el equipo, apoyando a otros QA y promoviendo buenas prácticas.`
-      }
+          }
+        }
+      ]
     }
   ];
 
