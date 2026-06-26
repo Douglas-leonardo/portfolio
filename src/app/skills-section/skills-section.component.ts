@@ -89,35 +89,74 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
         es: 'TypeScript'
       },
       level: {
+        pt: 'Intermediário/Avançado',
+        en: 'Intermediate/Advanced',
+        es: 'Intermedio/Avanzado'
+      },
+      description: {
+        pt: 'Tipagem estática aplicada em automação de testes, desenvolvimento de scripts e projetos escaláveis.',
+        en: 'Static typing applied to test automation, scripting, and scalable projects.',
+        es: 'Tipificación estática aplicada a automatización de pruebas, scripts y proyectos escalables.'
+      },
+      progress: '85%',
+      icon: 'fas fa-code',
+      features: {
+        pt: [
+          'Tipagem estática',
+          'Interfaces e Types',
+          'Automação com Cypress e Playwright',
+          'Organização de testes escaláveis'
+        ],
+        en: [
+          'Static typing',
+          'Interfaces and Types',
+          'Automation with Cypress and Playwright',
+          'Scalable test organization'
+        ],
+        es: [
+          'Tipificación estática',
+          'Interfaces y Types',
+          'Automatización con Cypress y Playwright',
+          'Organización de pruebas escalables'
+        ]
+      }
+    },
+    {
+      name: {
+        pt: 'JavaScript',
+        en: 'JavaScript',
+        es: 'JavaScript'
+      },
+      level: {
         pt: 'Avançado',
         en: 'Advanced',
         es: 'Avanzado'
       },
       description: {
-        pt: 'Tipagem estática e recursos avançados para JavaScript escalável.',
-        en: 'Static typing and advanced features for scalable JavaScript.',
-        es: 'Tipificación estática y recursos avanzados para JavaScript escalable.'
+        pt: 'Linguagem utilizada para automação de testes, criação de scripts e desenvolvimento de soluções para qualidade de software.',
+        en: 'Language used for test automation, scripting, and software quality solutions.',
+        es: 'Lenguaje utilizado para automatización de pruebas, creación de scripts y soluciones de calidad de software.'
       },
       progress: '90%',
-      icon: 'fas fa-code',
+      icon: 'fab fa-js',
       features: {
         pt: [
-          'Interfaces e Types',
-          'Generics',
-          'Decorators',
-          'Integração com Angular'
+          'ES6+ e recursos modernos',
+          'Automação com Cypress e Playwright',
+          'Manipulação de dados e APIs',
+          'Criação de scripts de testes'
         ],
         en: [
-          'Interfaces and Types',
-          'Generics',
-          'Decorators',
-          'Angular integration'
+          'ES6+ and modern features',
+          'Automation with Cypress and Playwright',
+          'Data and API handling',
+          'Test script creation'
         ],
         es: [
-          'Interfaces y Types',
-          'Generics',
-          'Decorators',
-          'Integración con Angular'
+          'ES6+ y características modernas',
+          'Automatización con Cypress y Playwright',
+          'Manejo de datos y APIs',
+          'Creación de scripts de pruebas'
         ]
       }
     },
@@ -243,40 +282,79 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
     },
     {
       name: {
+        pt: 'API Testing & Backend',
+        en: 'API Testing & Backend',
+        es: 'API Testing & Backend'
+      },
+      level: {
+        pt: 'Avançado',
+        en: 'Advanced',
+        es: 'Avanzado'
+      },
+      description: {
+        pt: 'Testes, validações e automações em serviços backend, garantindo qualidade e integração entre sistemas.',
+        en: 'Testing, validation, and automation of backend services, ensuring quality and system integration.',
+        es: 'Pruebas, validaciones y automatización de servicios backend, asegurando calidad e integración de sistemas.'
+      },
+      progress: '85%',
+      icon: 'fas fa-server',
+      features: {
+        pt: [
+          'Testes de API REST',
+          'Postman e Newman',
+          'Validação HTTP e JSON',
+          'Integração com CI/CD'
+        ],
+        en: [
+          'REST API testing',
+          'Postman and Newman',
+          'HTTP and JSON validation',
+          'CI/CD integration'
+        ],
+        es: [
+          'Pruebas de API REST',
+          'Postman y Newman',
+          'Validación HTTP y JSON',
+          'Integración CI/CD'
+        ]
+      }
+    },
+    {
+      name: {
         pt: 'Python',
         en: 'Python',
         es: 'Python'
       },
       level: {
-        pt: 'Básico',
-        en: 'Basic',
-        es: 'Básico'
+        pt: 'Intermediário',
+        en: 'Intermediate',
+        es: 'Intermedio'
       },
       description: {
-        pt: 'Scripts de automação e desenvolvimento web básico.',
-        en: 'Basic automation and web development scripts.',
-        es: 'Scripts básicos de automatización y desarrollo web.'
+        pt: 'Utilizado para automação de testes, criação de scripts e melhoria de processos em qualidade de software.',
+        en: 'Used for test automation, scripting, and process improvements in software quality.',
+        es: 'Utilizado para automatización de pruebas, creación de scripts y mejora de procesos de calidad de software.'
       },
-      progress: '60%',
+      progress: '75%',
       icon: 'fab fa-python',
       features: {
         pt: [
-          'Flask',
-          'Automações',
-          'Web Scraping',
-          'Scripting'
+          'Automação de testes',
+          'Criação de scripts',
+          'Manipulação de dados',
+          'Integração com ferramentas QA'
         ],
         en: [
-          'Flask',
-          'Automations',
-          'Web Scraping',
-          'Scripting'
+          'Test automation',
+          'Script creation',
+          'Data manipulation',
+          'Integration with QA tools'
         ],
         es: [
-          'Flask',
-          'Automatizaciones',
-          'Web Scraping',
-          'Scripting'
+          'Automatización de pruebas',
+          'Creación de scripts',
+          'Manipulación de datos',
+          'Integración con herramientas QA'
         ]
       }
     },
@@ -337,30 +415,30 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
         es: 'Avanzado'
       },
       description: {
-        pt: 'Controle de versão e trabalho colaborativo em equipe.',
-        en: 'Version control and collaborative team work.',
-        es: 'Control de versiones y trabajo colaborativo en equipo.'
+        pt: 'Controle de versão e colaboração em projetos de software.',
+        en: 'Version control and collaboration in software projects.',
+        es: 'Control de versiones y colaboración en proyectos de software.'
       },
       progress: '90%',
       icon: 'fab fa-git-alt',
       features: {
         pt: [
           'Git Flow',
-          'GitHub Actions',
+          'Branching strategy',
           'Code Review',
-          'Gestão de Branches'
+          'Pull Requests'
         ],
         en: [
           'Git Flow',
-          'GitHub Actions',
+          'Branching strategy',
           'Code Review',
-          'Branch Management'
+          'Pull Requests'
         ],
         es: [
           'Git Flow',
-          'GitHub Actions',
+          'Estrategia de ramas',
           'Code Review',
-          'Gestión de Ramas'
+          'Pull Requests'
         ]
       }
     },
@@ -413,38 +491,39 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
         es: 'Docker'
       },
       level: {
-        pt: 'Básico',
-        en: 'Basic',
-        es: 'Básico'
+        pt: 'Básico/Intermediário',
+        en: 'Basic/Intermediate',
+        es: 'Básico/Intermedio'
       },
       description: {
-        pt: 'Containerização de aplicações e ambientes de desenvolvimento.',
-        en: 'Containerization of applications and development environments.',
-        es: 'Contenedorización de aplicaciones y entornos de desarrollo.'
+        pt: 'Criação e gerenciamento de ambientes isolados para testes e aplicações.',
+        en: 'Creation and management of isolated environments for testing and applications.',
+        es: 'Creación y gestión de entornos aislados para pruebas y aplicaciones.'
       },
-      progress: '50%',
+      progress: '70%',
       icon: 'fab fa-docker',
       features: {
         pt: [
-          'Docker Compose',
           'Dockerfiles',
-          'Otimização de Imagens',
-          'Integração CI/CD'
+          'Docker Compose',
+          'Ambientes de teste',
+          'Containers para automação'
         ],
         en: [
-          'Docker Compose',
           'Dockerfiles',
-          'Image Optimization',
-          'CI/CD Integration'
+          'Docker Compose',
+          'Test environments',
+          'Containers for automation'
         ],
         es: [
-          'Docker Compose',
           'Dockerfiles',
-          'Optimización de Imágenes',
-          'Integración CI/CD'
+          'Docker Compose',
+          'Entornos de prueba',
+          'Contenedores para automatización'
         ]
       }
     },
+
     {
       name: {
         pt: 'DevOps',
@@ -457,30 +536,70 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
         es: 'Básico'
       },
       description: {
-        pt: 'Conhecimentos iniciais em infraestrutura como código e CI/CD.',
-        en: 'Basic knowledge of infrastructure as code and CI/CD.',
-        es: 'Conocimientos básicos de infraestructura como código y CI/CD.'
+        pt: 'Conhecimentos básicos em CI/CD e automação de processos de entrega.',
+        en: 'Basic knowledge of CI/CD and delivery process automation.',
+        es: 'Conocimientos básicos de CI/CD y automatización de procesos de entrega.'
       },
-      progress: '65%',
-      icon: 'fas fa-cloud',
+      progress: '60%',
+      icon: 'fas fa-cogs',
       features: {
         pt: [
+          'CI/CD básico',
           'GitHub Actions',
-          'AWS Básico',
-          'Deploy Automatizado',
-          'Monitoramento'
+          'Deploy automatizado',
+          'Noções de AWS'
         ],
         en: [
+          'Basic CI/CD',
           'GitHub Actions',
-          'Basic AWS',
-          'Automated Deployment',
-          'Monitoring'
+          'Automated deployment',
+          'Basic AWS knowledge'
         ],
         es: [
+          'CI/CD básico',
           'GitHub Actions',
-          'AWS Básico',
-          'Despliegue Automatizado',
-          'Monitoreo'
+          'Despliegue automatizado',
+          'Conocimientos básicos de AWS'
+        ]
+      }
+    },
+
+    {
+      name: {
+        pt: 'Jira & Xray',
+        en: 'Jira & Xray',
+        es: 'Jira & Xray'
+      },
+      level: {
+        pt: 'Avançado',
+        en: 'Advanced',
+        es: 'Avanzado'
+      },
+      description: {
+        pt: 'Gestão de tarefas, bugs e testes com foco em qualidade de software.',
+        en: 'Task, bug, and test management focused on software quality.',
+        es: 'Gestión de tareas, bugs y pruebas enfocada en calidad de software.'
+      },
+      progress: '90%',
+      icon: 'fab fa-jira',
+      features: {
+        pt: [
+          'Gestão de bugs',
+          'Planejamento de sprints',
+          'Xray (gestão de testes)',
+          'Rastreabilidade de testes'
+        ],
+        en: [
+          'Bug tracking',
+          'Sprint planning',
+          'Xray test management',
+          'Test traceability'
+        ],
+        es: [
+          'Gestión de bugs',
+          'Planificación de sprints',
+          'Xray (gestión de pruebas)',
+          'Trazabilidad de pruebas'
         ]
       }
     }
@@ -499,30 +618,33 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
         es: 'Avanzado'
       },
       description: {
-        pt: 'Desenvolvimento e execução de testes automatizados para aplicações web e desktop.',
-        en: 'Development and execution of automated tests for web and desktop applications.',
-        es: 'Desarrollo y ejecución de pruebas automatizadas para aplicaciones web y de escritorio.'
+        pt: 'Desenvolvimento e execução de testes automatizados para aplicações web e APIs.',
+        en: 'Development and execution of automated tests for web applications and APIs.',
+        es: 'Desarrollo y ejecución de pruebas automatizadas para aplicaciones web y APIs.'
       },
-      progress: '85%',
-      icon: 'fas fa-robot',
+      progress: '90%',
+      icon: 'fas fa-vial',
       features: {
         pt: [
-          'Cypress',
-          'Selenium',
+          'Cypress / Playwright',
+          'Selenium / Robot Framework',
+          'Postman (API Testing)',
           'Testes E2E',
-          'Integração Contínua'
+          'Integração com CI/CD'
         ],
         en: [
-          'Cypress',
-          'Selenium',
-          'E2E Testing',
-          'Continuous Integration'
+          'Cypress / Playwright',
+          'Selenium / Robot Framework',
+          'Postman (API Testing)',
+          'E2E testing',
+          'CI/CD integration'
         ],
         es: [
-          'Cypress',
-          'Selenium',
+          'Cypress / Playwright',
+          'Selenium / Robot Framework',
+          'Postman (API Testing)',
           'Pruebas E2E',
-          'Integración Continua'
+          'Integración CI/CD'
         ]
       }
     },
@@ -538,30 +660,33 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
         es: 'Avanzado'
       },
       description: {
-        pt: 'Planejamento e execução de testes manuais com relatórios detalhados.',
-        en: 'Planning and execution of manual tests with detailed reports.',
-        es: 'Planificación y ejecución de pruebas manuales con informes detallados.'
+        pt: 'Planejamento e execução de testes manuais com foco em qualidade e validação de sistemas.',
+        en: 'Planning and execution of manual tests focused on quality and system validation.',
+        es: 'Planificación y ejecución de pruebas manuales enfocadas en calidad y validación de sistemas.'
       },
       progress: '90%',
-      icon: 'fas fa-clipboard-check',
+      icon: 'fas fa-check-circle',
       features: {
         pt: [
           'Casos de Teste',
           'Relatórios de Bugs',
+          'Testes de Regressão',
           'Testes de Usabilidade',
-          'Testes de Regressão'
+          'Validação de dados com SQL'
         ],
         en: [
           'Test Cases',
           'Bug Reports',
+          'Regression Testing',
           'Usability Testing',
-          'Regression Testing'
+          'Data validation with SQL'
         ],
         es: [
           'Casos de Prueba',
-          'Informes de Errores',
+          'Reportes de Bugs',
+          'Pruebas de Regresión',
           'Pruebas de Usabilidad',
-          'Pruebas de Regresión'
+          'Validación de datos con SQL'
         ]
       }
     },
@@ -569,44 +694,83 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
       name: {
         pt: 'QA Processes',
         en: 'QA Processes',
-        es: 'Procesos QA'
+        es: 'Procesos de QA'
       },
       level: {
-        pt: 'Intermediário',
-        en: 'Intermediate',
-        es: 'Intermedio'
+        pt: 'Intermediário/Avançado',
+        en: 'Intermediate/Advanced',
+        es: 'Intermedio/Avanzado'
       },
       description: {
-        pt: 'Implementação de processos de garantia de qualidade em projetos ágeis.',
-        en: 'Implementation of quality assurance processes in agile projects.',
-        es: 'Implementación de procesos de garantía de calidad en proyectos ágiles.'
+        pt: 'Aplicação de práticas de qualidade em ambientes ágeis e colaboração com equipes de desenvolvimento.',
+        en: 'Application of quality practices in agile environments and collaboration with development teams.',
+        es: 'Aplicación de prácticas de calidad en entornos ágiles y colaboración con equipos de desarrollo.'
       },
-      progress: '80%',
+      progress: '85%',
       icon: 'fas fa-tasks',
       features: {
         pt: [
-          'Metodologias Ágeis',
-          'Bugs Tracking',
-          'Padrões de Qualidade',
-          'Documentação Técnica'
+          'Metodologias Ágeis (Scrum/Kanban)',
+          'Gestão de bugs no Jira & Xray',
+          'Documentação técnica',
+          'Padrões de qualidade'
         ],
         en: [
-          'Agile Methodologies',
-          'Bugs Tracking',
-          'Quality Patterns',
-          'Technical Documentation'
+          'Agile methodologies (Scrum/Kanban)',
+          'Bug management in Jira & Xray',
+          'Technical documentation',
+          'Quality standards'
         ],
         es: [
-          'Metodologías Ágiles',
-          'Seguimiento de Errores',
-          'Patrones de Calidad',
-          'Documentación Técnica'
+          'Metodologías ágiles (Scrum/Kanban)',
+          'Gestión de bugs en Jira & Xray',
+          'Documentación técnica',
+          'Estándares de calidad'
         ]
       }
-    }
+    },
+    {
+  name: {
+    pt: 'API Testing',
+    en: 'API Testing',
+    es: 'Pruebas de API'
+  },
+  level: {
+    pt: 'Avançado',
+    en: 'Advanced',
+    es: 'Avanzado'
+  },
+  description: {
+    pt: 'Validação e automação de APIs REST garantindo integridade e qualidade dos serviços.',
+    en: 'Validation and automation of REST APIs ensuring service integrity and quality.',
+    es: 'Validación y automatización de APIs REST asegurando integridad y calidad de servicios.'
+  },
+  progress: '90%',
+  icon: 'fas fa-plug',
+  features: {
+    pt: [
+      'Testes de API REST',
+      'Validação de JSON',
+      'Status codes HTTP',
+      'Integração com Postman e Newman'
+    ],
+    en: [
+      'REST API testing',
+      'JSON validation',
+      'HTTP status codes',
+      'Postman and Newman integration'
+    ],
+    es: [
+      'Pruebas de API REST',
+      'Validación de JSON',
+      'Códigos HTTP',
+      'Integración con Postman y Newman'
+    ]
+  }
+}
   ];
 
-  constructor(private translationService: TranslationService) {}
+  constructor(private translationService: TranslationService) { }
 
   ngOnInit(): void {
     this.subscription.add(
