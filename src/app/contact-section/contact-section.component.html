@@ -1,0 +1,67 @@
+<section class="contact-section" id="contato-form" aria-labelledby="contact-title">
+  <div class="contact-section__bg-effect" aria-hidden="true"></div>
+
+  <div class="contact-section__container">
+    <div class="contact-section__header">
+      <h2 class="contact-section__title" id="contact-title">{{ label.title }}</h2>
+      <p class="contact-section__subtitle">{{ label.subtitle }}</p>
+    </div>
+
+    <form class="contact-section__form" (ngSubmit)="onSubmit()" #contactForm="ngForm" novalidate>
+
+      <div class="contact-section__field">
+        <label class="contact-section__label" for="contact-name">{{ label.name }}</label>
+        <input
+          id="contact-name"
+          class="contact-section__input"
+          type="text"
+          name="name"
+          [(ngModel)]="formData.name"
+          [placeholder]="label.namePh"
+        />
+      </div>
+
+      <div class="contact-section__field">
+        <label class="contact-section__label" for="contact-email">{{ label.email }}</label>
+        <input
+          id="contact-email"
+          class="contact-section__input"
+          type="email"
+          name="email"
+          [(ngModel)]="formData.email"
+          [placeholder]="label.emailPh"
+        />
+      </div>
+
+      <div class="contact-section__field">
+        <label class="contact-section__label" for="contact-message">{{ label.message }}</label>
+        <textarea
+          id="contact-message"
+          class="contact-section__textarea"
+          name="message"
+          [(ngModel)]="formData.message"
+          [placeholder]="label.messagePh"
+          rows="5"
+        ></textarea>
+      </div>
+
+      <div class="contact-section__feedback" *ngIf="formStatus === 'success'" role="alert">
+        <i class="fas fa-check-circle"></i> {{ label.success }}
+      </div>
+      <div class="contact-section__feedback contact-section__feedback--error" *ngIf="formStatus === 'error'" role="alert">
+        <i class="fas fa-exclamation-circle"></i> {{ label.error }}
+      </div>
+
+      <button
+        class="contact-section__btn"
+        type="submit"
+        [disabled]="formStatus === 'sending'"
+      >
+        <i class="fas fa-paper-plane" *ngIf="formStatus !== 'sending'"></i>
+        <i class="fas fa-spinner fa-spin" *ngIf="formStatus === 'sending'"></i>
+        {{ formStatus === 'sending' ? label.sending : label.send }}
+      </button>
+
+    </form>
+  </div>
+</section>

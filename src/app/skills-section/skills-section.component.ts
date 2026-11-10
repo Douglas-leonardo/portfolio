@@ -339,22 +339,25 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
       icon: 'fab fa-python',
       features: {
         pt: [
-          'Automação de testes',
-          'Criação de scripts',
-          'Manipulação de dados',
-          'Integração com ferramentas QA'
+          'Frameworks de automação de testes',
+          'Simulação de agentes de IA (IBM Watson Orchestrate)',
+          'Integração com Langfuse',
+          'Scripts e manipulação de dados',
+          'Relatórios e evidências automáticas'
         ],
         en: [
-          'Test automation',
-          'Script creation',
-          'Data manipulation',
-          'Integration with QA tools'
+          'Test automation frameworks',
+          'AI agent simulation (IBM Watson Orchestrate)',
+          'Langfuse integration',
+          'Scripting and data manipulation',
+          'Automated reports and evidence'
         ],
         es: [
-          'Automatización de pruebas',
-          'Creación de scripts',
-          'Manipulación de datos',
-          'Integración con herramientas QA'
+          'Frameworks de automatización de pruebas',
+          'Simulación de agentes de IA (IBM Watson Orchestrate)',
+          'Integración con Langfuse',
+          'Scripts y manipulación de datos',
+          'Informes y evidencias automáticas'
         ]
       }
     },

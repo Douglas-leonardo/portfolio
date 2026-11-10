@@ -87,6 +87,18 @@ a:focus-visible {
   }
 }
 
+/* Fade-in on scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .particulas {
   pointer-events: none;
   position: fixed !important;

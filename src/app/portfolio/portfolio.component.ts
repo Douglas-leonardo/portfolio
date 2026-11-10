@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { ParticulasComponent } from '../particulas/particulas.component';
@@ -11,15 +11,16 @@ import { FooterComponent } from "../footer/footer.component";
 import { SkillsSectionComponent } from '../skills-section/skills-section.component';
 import { LanguageSwitcherComponent } from '../components/language-switcher/language-switcher.component';
 import { TranslationService, Language } from '../services/translation.service';
+import { ContactSectionComponent } from '../contact-section/contact-section.component';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, ParticulasComponent, AboutSectionComponent, CertificatesSectionComponent, HomeSectionComponent, ProjectSectionComponent, HeaderComponent, FooterComponent, SkillsSectionComponent, LanguageSwitcherComponent],
+  imports: [CommonModule, ParticulasComponent, AboutSectionComponent, CertificatesSectionComponent, HomeSectionComponent, ProjectSectionComponent, HeaderComponent, FooterComponent, SkillsSectionComponent, LanguageSwitcherComponent, ContactSectionComponent],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
 })
-export class PortfolioComponent implements OnInit, OnDestroy {
+export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
 
   showAll = false;
   isMenuActive = false;
@@ -36,6 +37,21 @@ export class PortfolioComponent implements OnInit, OnDestroy {
         document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
       })
     );
+  }
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
   }
 
   ngOnDestroy(): void {
