@@ -150,145 +150,83 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
     {
       company: 'Contmatic Phoenix',
       period: {
-        pt: '2021 - Jul/2026',
-        en: '2021 - Jul/2026',
-        es: '2021 - Jul/2026'
+        pt: 'Fev/2021 – Mar/2026',
+        en: 'Feb/2021 – Mar/2026',
+        es: 'Feb/2021 – Mar/2026'
       },
       roles: [
         {
           period: {
-            pt: '2021 - 2023',
-            en: '2021 - 2023',
-            es: '2021 - 2023'
+            pt: 'Fev/2021 – Mar/2026',
+            en: 'Feb/2021 – Mar/2026',
+            es: 'Feb/2021 – Mar/2026'
           },
           title: {
-            pt: 'QA Engineer Júnior',
-            en: 'Junior QA Engineer',
-            es: 'QA Engineer Junior'
+            pt: 'Quality Assurance Engineer',
+            en: 'Quality Assurance Engineer',
+            es: 'Quality Assurance Engineer'
           },
           description: {
             pt: `
-          • Atuei no processo de garantia de qualidade em aplicações web e desktop, executando testes para validação de novas funcionalidades antes dos releases, garantindo estabilidade e qualidade das entregas.<br><br>
+          • Atuei no desenho, manutenção e evolução de frameworks de automação, ampliando a cobertura e a eficiência do processo de testes.<br><br>
 
-          • Desenvolvi e mantive testes automatizados utilizando Cypress, Selenium e Playwright, cobrindo fluxos críticos de usuário, regressão e comportamento da aplicação.<br><br>
+          • Desenvolvi testes automatizados de regressão para aplicações desktop, reduzindo o tempo manual e aumentando a previsibilidade das validações.<br><br>
 
-          • Contribuí para a evolução de frameworks de automação utilizando Python, JavaScript e Java, auxiliando na padronização e escalabilidade das práticas de QA no time.<br><br>
+          • Estruturei pipelines de CI/CD para execução da suíte automatizada e publicação de resultados em servidor Linux com Nginx.<br><br>
 
-          • Realizei testes de APIs REST utilizando Postman, validando integrações, contratos e respostas de serviços.<br><br>
+          • Criei ferramentas em Python para configuração automatizada de ambientes de teste em máquinas virtuais.<br><br>
 
-          • Identifiquei, documentei e acompanhei defeitos ao longo do ciclo de desenvolvimento, colaborando com desenvolvedores na reprodução e resolução de problemas.<br><br>
+          • Executei testes funcionais, exploratórios, smoke e regressivos, garantindo qualidade contínua nas entregas.<br><br>
 
-          • Atuei na automação de regressão de aplicações desktop, ampliando a cobertura de testes e reduzindo esforço manual em cenários críticos.<br><br>
+          • Realizei testes de APIs REST com Postman e Newman, validando integrações, contratos e respostas de serviços.<br><br>
 
-          • Participei ativamente de rotinas ágeis (Scrum), apoiando planejamento de sprints, refinamento de histórias e validação contínua das entregas.<br><br>
+          • Utilizei stack diversificado de automação: Cypress, Selenium, Playwright, Robot Framework, Appium e TestComplete.<br><br>
 
-          • Contribuí para a melhoria contínua da cultura de qualidade, incluindo práticas de CI/CD, automação de testes e suporte ao time de QA.`,
+          • Implementei dashboards e relatórios com Allure Reports, melhorando a visibilidade e o debug das execuções.<br><br>
+
+          • Apoiei a adoção da automação por outros QA engineers, contribuindo com treinamento, framework e padronização técnica.<br><br>
+
+          • Atuei em ambiente ágil (Scrum), colaborando com desenvolvedores e produto para prevenir defeitos desde as fases iniciais.`,
             en: `
-          • Worked in quality assurance for web and desktop applications, executing tests to validate new features before releases and ensuring stability and delivery quality.<br><br>
+          • Designed, maintained, and evolved test automation frameworks, increasing test coverage and process efficiency.<br><br>
 
-          • Developed and maintained automated tests using Cypress, Selenium, and Playwright, covering critical user flows, regression suites, and application behavior.<br><br>
+          • Developed regression automated tests for desktop applications, reducing manual effort and improving validation predictability.<br><br>
 
-          • Contributed to the evolution of test automation frameworks using Python, JavaScript, and Java, helping standardize and scale QA practices within the team.<br><br>
+          • Built CI/CD pipelines for automated test suite execution and result publishing on a Linux server with Nginx.<br><br>
 
-          • Performed REST API testing using Postman, validating integrations, contracts, and service responses.<br><br>
+          • Created Python tools for automated test environment setup on virtual machines.<br><br>
 
-          • Identified, documented, and tracked defects throughout the development lifecycle, collaborating closely with developers to reproduce and resolve issues.<br><br>
+          • Executed functional, exploratory, smoke, and regression tests, ensuring continuous quality across deliveries.<br><br>
 
-          • Worked on desktop application regression automation, increasing test coverage and reducing manual effort in critical scenarios.<br><br>
+          • Performed REST API testing with Postman and Newman, validating integrations, contracts, and service responses.<br><br>
 
-          • Participated in Agile (Scrum) ceremonies, supporting sprint planning, backlog refinement, and continuous validation of deliverables.<br><br>
+          • Used a diverse automation stack: Cypress, Selenium, Playwright, Robot Framework, Appium, and TestComplete.<br><br>
 
-          • Contributed to continuous improvement of QA practices, including CI/CD adoption, test automation, and team support initiatives.`,
+          • Implemented dashboards and reports with Allure Reports, improving test visibility and debugging.<br><br>
+
+          • Supported QA automation adoption by other engineers through training, framework design, and technical standardization.<br><br>
+
+          • Worked in Agile (Scrum) environments, collaborating with developers and product teams to prevent defects early.`,
             es: `
-          • Trabajé en el proceso de aseguramiento de calidad en aplicaciones web y de escritorio, ejecutando pruebas para validar nuevas funcionalidades antes de los releases, garantizando estabilidad y calidad en las entregas.<br><br>
+          • Diseñé, mantuve y evolucé frameworks de automatización de pruebas, ampliando la cobertura y la eficiencia del proceso.<br><br>
 
-          • Desarrollé y mantuve pruebas automatizadas utilizando Cypress, Selenium y Playwright, cubriendo flujos críticos de usuario, regresión y comportamiento de la aplicación.<br><br>
+          • Desarrollé pruebas automatizadas de regresión para aplicaciones de escritorio, reduciendo el esfuerzo manual y mejorando la previsibilidad.<br><br>
 
-          • Contribuí a la evolución de frameworks de automatización utilizando Python, JavaScript y Java, ayudando a estandarizar y escalar las prácticas de QA dentro del equipo.<br><br>
+          • Estructuré pipelines de CI/CD para ejecución de la suite automatizada y publicación de resultados en servidor Linux con Nginx.<br><br>
 
-          • Realicé pruebas de APIs REST utilizando Postman, validando integraciones, contratos y respuestas de servicios.<br><br>
+          • Creé herramientas en Python para configuración automatizada de entornos de prueba en máquinas virtuales.<br><br>
 
-          • Identifiqué, documenté y realicé seguimiento de defectos durante todo el ciclo de desarrollo, colaborando estrechamente con desarrolladores en la reproducción y resolución de problemas.<br><br>
+          • Ejecuté pruebas funcionales, exploratorias, smoke y de regresión, garantizando calidad continua en las entregas.<br><br>
 
-          • Trabajé en la automatización de regresión de aplicaciones de escritorio, aumentando la cobertura de pruebas y reduciendo el esfuerzo manual en escenarios críticos.<br><br>
+          • Realicé pruebas de APIs REST con Postman y Newman, validando integraciones, contratos y respuestas de servicios.<br><br>
 
-          • Participé activamente en ceremonias ágiles (Scrum), apoyando la planificación de sprints, refinamiento del backlog y validación continua de entregas.<br><br>
+          • Utilicé un stack diverso de automatización: Cypress, Selenium, Playwright, Robot Framework, Appium y TestComplete.<br><br>
 
-          • Contribuí a la mejora continua de las prácticas de QA, incluyendo adopción de CI/CD, automatización de pruebas y soporte al equipo.`
-          }
-        },
-        {
-          period: {
-            pt: '2023 - Jul/2026',
-            en: '2023 - Jul/2026',
-            es: '2023 - Jul/2026'
-          },
-          title: {
-            pt: 'QA Engineer Pleno',
-            en: 'Mid-Level QA Engineer',
-            es: 'QA Engineer Semi-Senior'
-          },
-          description: {
-            pt: `
-      • Assumi responsabilidade pela automação de testes, desenvolvendo e evoluindo frameworks que tornaram o processo de QA mais rápido, confiável e escalável.<br><br>
+          • Implementé dashboards e informes con Allure Reports, mejorando la visibilidad y el debugging de ejecuciones.<br><br>
 
-      • Transformei o processo de regressão ao automatizar fluxos críticos, reduzindo o tempo de execução de horas para cerca de 1 hora, acelerando ciclos de release.<br><br>
+          • Apoyé la adopción de la automatización por otros QA engineers mediante capacitación, diseño de framework y estandarización técnica.<br><br>
 
-      • Integrei testes automatizados em pipelines de CI/CD, tornando a qualidade parte contínua do processo de entrega.<br><br>
-
-      • Melhorei a visibilidade dos testes e o debug ao implementar relatórios estruturados com Allure Reports.<br><br>
-
-      • Desenvolvi ferramentas internas em Python para facilitar setup de ambientes e reduzir fricção na execução dos testes.<br><br>
-
-      • Atuei em diferentes camadas da aplicação (web, APIs e desktop/mobile), garantindo cobertura end-to-end da qualidade.<br><br>
-
-      • Realizei validações de serviços backend via testes de API (Postman/Newman), garantindo estabilidade e consistência das integrações.<br><br>
-
-      • Utilizei um stack diversificado de automação (Cypress, Selenium, Playwright, Robot Framework e Appium), escolhendo a melhor ferramenta para cada contexto.<br><br>
-
-      • Atuei em ambiente ágil (Scrum), colaborando com desenvolvedores e produto para prevenir defeitos e melhorar a qualidade desde cedo.<br><br>
-
-      • Contribuí ativamente para a cultura de automação no time, apoiando outros QA engineers e promovendo boas práticas de qualidade.`,
-            en: `
-      • Took ownership of test automation by designing and evolving frameworks that improved speed, reliability, and scalability of QA processes.<br><br>
-
-      • Transformed regression testing by automating critical flows, reducing execution time from hours to approximately 1 hour, enabling faster release cycles.<br><br>
-
-      • Integrated automated tests into CI/CD pipelines, making quality a continuous and embedded part of the delivery process.<br><br>
-
-      • Improved test visibility and debugging by implementing structured reporting using Allure dashboards.<br><br>
-
-      • Developed internal Python tools to simplify environment setup and reduce friction in test execution.<br><br>
-
-      • Worked across multiple application layers (web, API, desktop/mobile), ensuring end-to-end quality coverage.<br><br>
-
-      • Validated backend services through API testing (Postman/Newman), ensuring stable and reliable system integrations.<br><br>
-
-      • Used a diverse automation stack (Cypress, Selenium, Playwright, Robot Framework, and Appium), selecting the most suitable tool for each scenario.<br><br>
-
-      • Actively contributed in Agile (Scrum) environments, collaborating closely with developers and product teams to prevent issues early in the lifecycle.<br><br>
-
-      • Helped drive a strong automation culture within the team, supporting QA peers and promoting best practices.`,
-            es: `
-      • Asumí la responsabilidad de la automatización de pruebas, diseñando y evolucionando frameworks que mejoraron la velocidad, confiabilidad y escalabilidad de los procesos de QA.<br><br>
-
-      • Transformé el proceso de regresión al automatizar flujos críticos, reduciendo el tiempo de ejecución de horas a aproximadamente 1 hora, acelerando los ciclos de entrega.<br><br>
-
-      • Integré pruebas automatizadas en pipelines de CI/CD, convirtiendo la calidad en una parte continua del proceso de entrega.<br><br>
-
-      • Mejoré la visibilidad de las pruebas y el debugging mediante la implementación de reportes estructurados con Allure.<br><br>
-
-      • Desarrollé herramientas internas en Python para simplificar la configuración de entornos y reducir la fricción en la ejecución de pruebas.<br><br>
-
-      • Trabajé en múltiples capas de la aplicación (web, APIs y desktop/mobile), garantizando cobertura end-to-end.<br><br>
-
-      • Realicé validaciones de servicios backend mediante pruebas de API (Postman/Newman), asegurando integraciones estables entre sistemas.<br><br>
-
-      • Utilicé un stack diverso de automatización (Cypress, Selenium, Playwright, Robot Framework y Appium), seleccionando la mejor herramienta para cada contexto.<br><br>
-
-      • Participé activamente en entornos ágiles (Scrum), colaborando estrechamente con desarrolladores y producto para prevenir defectos desde etapas tempranas.<br><br>
-
-      • Contribuí al fortalecimiento de la cultura de automatización en el equipo, apoyando a otros QA y promoviendo buenas prácticas.`
+          • Trabajé en entornos ágiles (Scrum), colaborando con desarrolladores y producto para prevenir defectos desde etapas tempranas.`
           }
         }
       ]

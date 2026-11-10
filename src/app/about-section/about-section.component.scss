@@ -403,6 +403,48 @@ $text-muted: rgba(255, 255, 255, 0.7);
     }
   }
 
+  &__extra {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  &__extra-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex: 1;
+    min-width: 260px;
+    background: rgba(20, 20, 20, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 18px 20px;
+
+    i {
+      font-size: 1.4rem;
+      color: $primary-color;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    strong {
+      display: block;
+      color: #e0f7fa;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    p {
+      color: $text-muted;
+      font-size: 0.88rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
   @media (max-width: 992px) {
     .about-section__timeline-dot {
       left: unset;

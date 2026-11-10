@@ -605,6 +605,54 @@ export class SkillsSectionComponent implements OnInit, AfterViewInit, OnDestroy 
           'Trazabilidad de pruebas'
         ]
       }
+    },
+    {
+      name: {
+        pt: 'DevOps & CI/CD',
+        en: 'DevOps & CI/CD',
+        es: 'DevOps & CI/CD'
+      },
+      level: {
+        pt: 'Intermediário',
+        en: 'Intermediate',
+        es: 'Intermedio'
+      },
+      description: {
+        pt: 'Estruturação de pipelines de CI/CD, publicação automatizada de resultados e gerenciamento de ambientes.',
+        en: 'CI/CD pipeline setup, automated result publishing, and environment management.',
+        es: 'Configuración de pipelines CI/CD, publicación automatizada de resultados y gestión de entornos.'
+      },
+      progress: '70%',
+      icon: 'fas fa-infinity',
+      features: {
+        pt: ['Jenkins', 'Bitbucket Pipelines', 'Linux & Nginx', 'Docker', 'Publicação de resultados automatizada'],
+        en: ['Jenkins', 'Bitbucket Pipelines', 'Linux & Nginx', 'Docker', 'Automated result publishing'],
+        es: ['Jenkins', 'Bitbucket Pipelines', 'Linux & Nginx', 'Docker', 'Publicación automatizada de resultados']
+      }
+    },
+    {
+      name: {
+        pt: 'Allure Reports',
+        en: 'Allure Reports',
+        es: 'Allure Reports'
+      },
+      level: {
+        pt: 'Avançado',
+        en: 'Advanced',
+        es: 'Avanzado'
+      },
+      description: {
+        pt: 'Geração de dashboards e relatórios estruturados para visibilidade e rastreabilidade das execuções de testes.',
+        en: 'Dashboard and structured report generation for test execution visibility and traceability.',
+        es: 'Generación de dashboards e informes estructurados para visibilidad y trazabilidad de ejecuciones.'
+      },
+      progress: '85%',
+      icon: 'fas fa-chart-bar',
+      features: {
+        pt: ['Dashboards de resultados', 'Histórico de execuções', 'Integração com CI/CD', 'Evidências e screenshots'],
+        en: ['Result dashboards', 'Execution history', 'CI/CD integration', 'Evidence and screenshots'],
+        es: ['Dashboards de resultados', 'Historial de ejecuciones', 'Integración CI/CD', 'Evidencias y capturas']
+      }
     }
   ];
 

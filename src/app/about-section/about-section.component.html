@@ -56,8 +56,26 @@
 
         </details>
 
-
       </div>
     </div>
+
+    <!-- Formação e Idiomas -->
+    <div class="about-section__extra">
+      <div class="about-section__extra-item">
+        <i class="fas fa-graduation-cap"></i>
+        <div>
+          <strong>{{ currentLanguage === 'pt' ? 'Formação' : currentLanguage === 'en' ? 'Education' : 'Formación' }}</strong>
+          <p>{{ currentLanguage === 'pt' ? 'Bacharelado em Sistemas de Informação – Uninove (2018–2022)' : currentLanguage === 'en' ? 'Bachelor\'s in Information Systems – Uninove (2018–2022)' : 'Licenciatura en Sistemas de Información – Uninove (2018–2022)' }}</p>
+        </div>
+      </div>
+      <div class="about-section__extra-item">
+        <i class="fas fa-language"></i>
+        <div>
+          <strong>{{ currentLanguage === 'pt' ? 'Idiomas' : currentLanguage === 'en' ? 'Languages' : 'Idiomas' }}</strong>
+          <p>{{ currentLanguage === 'pt' ? 'Português – Nativo | Inglês – Intermediário' : currentLanguage === 'en' ? 'Portuguese – Native | English – Intermediate' : 'Portugués – Nativo | Inglés – Intermedio' }}</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
