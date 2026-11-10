@@ -1,37 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<app-particulas></app-particulas>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio Profissional</title>
-</head>
+<!-- Language Switcher Global -->
+<app-language-switcher></app-language-switcher>
 
-<body>
-  <app-particulas></app-particulas>
+<app-header></app-header>
 
-  <!-- Language Switcher Global -->
-  <app-language-switcher></app-language-switcher>
-
-  <app-header></app-header>
-
-  <main id="main-content">
-    <app-home-section></app-home-section>
-
+<main id="main-content">
+  <app-home-section></app-home-section>
   <app-about-section></app-about-section>
-
   <app-skills-section></app-skills-section>
-
   <app-certificates-section></app-certificates-section>
+  <app-project-section></app-project-section>
+</main>
 
-    <app-project-section></app-project-section>
-  </main>
+<button [class.scroll-to-top--visible]="showScrollButton" (click)="scrollToTop()" class="scroll-to-top"
+  aria-label="Voltar ao topo">
+</button>
 
-  <button [class.scroll-to-top--visible]="showScrollButton" (click)="scrollToTop()" class="scroll-to-top"
-    aria-label="Voltar ao topo">
-  </button>
-
-  <app-footer></app-footer>
-</body>
-
-</html>
+<app-footer></app-footer>

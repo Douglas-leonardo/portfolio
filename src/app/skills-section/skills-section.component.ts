@@ -326,16 +326,16 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
         es: 'Python'
       },
       level: {
-        pt: 'Intermediário',
-        en: 'Intermediate',
-        es: 'Intermedio'
+        pt: 'Avançado',
+        en: 'Advanced',
+        es: 'Avanzado'
       },
       description: {
-        pt: 'Utilizado para automação de testes, criação de scripts e melhoria de processos em qualidade de software.',
-        en: 'Used for test automation, scripting, and process improvements in software quality.',
-        es: 'Utilizado para automatización de pruebas, creación de scripts y mejora de procesos de calidad de software.'
+        pt: 'Utilizado para automação de testes, desenvolvimento de frameworks, criação de scripts e melhoria de processos em qualidade de software.',
+        en: 'Used for test automation, framework development, scripting, and process improvements in software quality.',
+        es: 'Utilizado para automatización de pruebas, desarrollo de frameworks, creación de scripts y mejora de procesos de calidad de software.'
       },
-      progress: '75%',
+      progress: '85%',
       icon: 'fab fa-python',
       features: {
         pt: [
@@ -730,44 +730,86 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
       }
     },
     {
-  name: {
-    pt: 'API Testing',
-    en: 'API Testing',
-    es: 'Pruebas de API'
-  },
-  level: {
-    pt: 'Avançado',
-    en: 'Advanced',
-    es: 'Avanzado'
-  },
-  description: {
-    pt: 'Validação e automação de APIs REST garantindo integridade e qualidade dos serviços.',
-    en: 'Validation and automation of REST APIs ensuring service integrity and quality.',
-    es: 'Validación y automatización de APIs REST asegurando integridad y calidad de servicios.'
-  },
-  progress: '90%',
-  icon: 'fas fa-plug',
-  features: {
-    pt: [
-      'Testes de API REST',
-      'Validação de JSON',
-      'Status codes HTTP',
-      'Integração com Postman e Newman'
-    ],
-    en: [
-      'REST API testing',
-      'JSON validation',
-      'HTTP status codes',
-      'Postman and Newman integration'
-    ],
-    es: [
-      'Pruebas de API REST',
-      'Validación de JSON',
-      'Códigos HTTP',
-      'Integración con Postman y Newman'
-    ]
-  }
-}
+      name: {
+        pt: 'API Testing',
+        en: 'API Testing',
+        es: 'Pruebas de API'
+      },
+      level: {
+        pt: 'Avançado',
+        en: 'Advanced',
+        es: 'Avanzado'
+      },
+      description: {
+        pt: 'Validação e automação de APIs REST garantindo integridade e qualidade dos serviços.',
+        en: 'Validation and automation of REST APIs ensuring service integrity and quality.',
+        es: 'Validación y automatización de APIs REST asegurando integridad y calidad de servicios.'
+      },
+      progress: '90%',
+      icon: 'fas fa-plug',
+      features: {
+        pt: [
+          'Testes de API REST',
+          'Validação de JSON',
+          'Status codes HTTP',
+          'Integração com Postman e Newman'
+        ],
+        en: [
+          'REST API testing',
+          'JSON validation',
+          'HTTP status codes',
+          'Postman and Newman integration'
+        ],
+        es: [
+          'Pruebas de API REST',
+          'Validación de JSON',
+          'Códigos HTTP',
+          'Integración con Postman y Newman'
+        ]
+      }
+    },
+    {
+      name: {
+        pt: 'IA & LLM Testing',
+        en: 'AI & LLM Testing',
+        es: 'Pruebas de IA & LLM'
+      },
+      level: {
+        pt: 'Intermediário/Avançado',
+        en: 'Intermediate/Advanced',
+        es: 'Intermedio/Avanzado'
+      },
+      description: {
+        pt: 'Testes de agentes de IA conversacionais, LLMs e pipelines RAG com IBM Watson Orchestrate e Langfuse.',
+        en: 'Testing of conversational AI agents, LLMs, and RAG pipelines using IBM Watson Orchestrate and Langfuse.',
+        es: 'Pruebas de agentes de IA conversacionales, LLMs y pipelines RAG con IBM Watson Orchestrate y Langfuse.'
+      },
+      progress: '80%',
+      icon: 'fas fa-robot',
+      features: {
+        pt: [
+          'IBM Watson Orchestrate (wxO)',
+          'LLM Judge & avaliação semântica',
+          'RAG (Retrieval-Augmented Generation)',
+          'Langfuse (rastreabilidade e observabilidade)',
+          'Automação multicanal CHAT & VOZ'
+        ],
+        en: [
+          'IBM Watson Orchestrate (wxO)',
+          'LLM Judge & semantic evaluation',
+          'RAG (Retrieval-Augmented Generation)',
+          'Langfuse (traceability & observability)',
+          'Multichannel automation CHAT & VOICE'
+        ],
+        es: [
+          'IBM Watson Orchestrate (wxO)',
+          'LLM Judge & evaluación semántica',
+          'RAG (Retrieval-Augmented Generation)',
+          'Langfuse (trazabilidad y observabilidad)',
+          'Automatización multicanal CHAT & VOZ'
+        ]
+      }
+    }
   ];
 
   constructor(private translationService: TranslationService) { }

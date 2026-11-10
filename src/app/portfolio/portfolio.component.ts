@@ -1,5 +1,6 @@
-import { Component, HostListener, Injectable } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
 import { ParticulasComponent } from '../particulas/particulas.component';
 import { AboutSectionComponent } from '../about-section/about-section.component';
 import { CertificatesSectionComponent } from '../certificates-section/certificates-section.component';
@@ -9,8 +10,7 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from "../footer/footer.component";
 import { SkillsSectionComponent } from '../skills-section/skills-section.component';
 import { LanguageSwitcherComponent } from '../components/language-switcher/language-switcher.component';
-
-@Injectable({ providedIn: 'root' })
+import { TranslationService, Language } from '../services/translation.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -19,10 +19,28 @@ import { LanguageSwitcherComponent } from '../components/language-switcher/langu
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements OnInit, OnDestroy {
 
   showAll = false;
   isMenuActive = false;
+  showScrollButton = false;
+  currentLanguage: Language = 'pt';
+  private subscription = new Subscription();
+
+  constructor(private translationService: TranslationService) {}
+
+  ngOnInit(): void {
+    this.subscription.add(
+      this.translationService.currentLanguage$.subscribe(lang => {
+        this.currentLanguage = lang;
+        document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   toggleShowAll() {
     this.showAll = !this.showAll;
@@ -31,8 +49,6 @@ export class PortfolioComponent {
   toggleMenu() {
     this.isMenuActive = !this.isMenuActive;
   }
-
-  showScrollButton = false;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

@@ -73,14 +73,14 @@ export class TranslationService {
     pt: {
       home: {
         name: 'Douglas Leonardo',
-        profession: 'Desenvolvedor Front End & QA',
+        profession: 'QA Automation Engineer',
         viewProjects: 'Ver Projetos',
         contact: 'Contato'
       },
       about: {
         title: '// Sobre mim',
-        tagline: 'QA Engineer & Desenvolvedor Front-end com visão de qualidade de ponta a ponta',
-        bio1: 'QA Engineer com experiência em testes manuais e automatizados, focado em garantir a qualidade de sistemas por meio da validação de regras de negócio, testes funcionais, regressão e API. Também possuo experiência com automação de testes e participação em processos ágeis, contribuindo para a entrega de produtos mais estáveis, escaláveis e com melhor experiência para o usuário.',
+        tagline: 'QA Automation Engineer especializado em testes de software e agentes de IA',
+        bio1: 'QA Automation Engineer com experiência em testes manuais, automatizados e de agentes de IA conversacionais. Atuei na IBM em Quality Assurance de soluções com LLMs, RAG e IBM Watson Orchestrate. Sólida vivência em validação de regras de negócio, testes funcionais, regressão, API e desenvolvimento de frameworks de automação em Python e JavaScript.',
         quote: 'Acredito que qualidade não é uma fase, mas sim um processo contínuo que conecta desenvolvimento, testes e experiência do usuário.'
       },
       skills: {
@@ -115,14 +115,14 @@ export class TranslationService {
     en: {
       home: {
         name: 'Douglas Leonardo',
-        profession: 'Front End Developer & QA',
+        profession: 'QA Automation Engineer',
         viewProjects: 'View Projects',
         contact: 'Contact'
       },
       about: {
         title: '// About me',
-        tagline: 'QA Engineer & Front-end Developer with a holistic quality mindset',
-        bio1: 'QA Engineer with experience in manual and automated testing, focused on ensuring system quality through business rules validation, functional, regression, and API testing. I also have experience with test automation and participation in agile processes, contributing to the delivery of more stable, scalable products with a better user experience.',
+        tagline: 'QA Automation Engineer specialized in software testing and AI agents',
+        bio1: 'QA Automation Engineer with experience in manual, automated, and AI conversational agent testing. Worked at IBM on Quality Assurance for LLM-based solutions, RAG pipelines, and IBM Watson Orchestrate. Strong background in business rules validation, functional, regression, and API testing, with expertise in building automation frameworks in Python and JavaScript.',
         quote: 'I believe that well-written and well-tested code is the foundation for exceptional digital experiences.'
       },
       skills: {
@@ -157,14 +157,14 @@ export class TranslationService {
     es: {
       home: {
         name: 'Douglas Leonardo',
-        profession: 'Desarrollador Front End & QA',
+        profession: 'QA Automation Engineer',
         viewProjects: 'Ver Proyectos',
         contact: 'Contacto'
       },
       about: {
         title: '// Sobre mí',
-        tagline: 'QA Engineer y Desarrollador Front-end con visión holística de calidad',
-        bio1: 'QA Engineer con experiencia en pruebas manuales y automatizadas, enfocado en garantizar la calidad de sistemas mediante la validación de reglas de negocio, pruebas funcionales, regresión y API. También tengo experiencia en automatización de pruebas y participación en procesos ágiles, contribuyendo a la entrega de productos más estables, escalables y con mejor experiencia para el usuario.',
+        tagline: 'QA Automation Engineer especializado en pruebas de software y agentes de IA',
+        bio1: 'QA Automation Engineer con experiencia en pruebas manuales, automatizadas y de agentes de IA conversacionales. Trabajé en IBM en Quality Assurance de soluciones con LLMs, RAG e IBM Watson Orchestrate. Sólida experiencia en validación de reglas de negocio, pruebas funcionales, regresión, API y desarrollo de frameworks de automatización en Python y JavaScript.',
         quote: 'Creo que un código bien escrito y bien probado es la base para experiencias digitales excepcionales.'
       },
       skills: {

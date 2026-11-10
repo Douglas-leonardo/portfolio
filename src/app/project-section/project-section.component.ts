@@ -37,7 +37,7 @@ export class ProjectSectionComponent implements OnInit, OnDestroy {
 
   projects: Project[] = [
     {
-      id: 1,
+      id: 3,
       title: {
         pt: 'Doceria Delícia',
         en: 'Doceria Delícia',
@@ -55,7 +55,7 @@ export class ProjectSectionComponent implements OnInit, OnDestroy {
       featured: true
     },
     {
-      id: 2,
+      id: 3,
       title: {
         pt: 'InDecor',
         en: 'InDecor',
