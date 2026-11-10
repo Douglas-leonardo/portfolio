@@ -76,6 +76,10 @@ a:focus-visible {
 }
 
 /* Reduced Motion */
+html {
+  scroll-behavior: smooth;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

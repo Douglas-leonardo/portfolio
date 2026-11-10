@@ -29,9 +29,9 @@
         </div>
         <a [href]="certificado.linkCertificado" target="_blank" class="certificates-section__see-certificate"
           rel="noopener noreferrer"
-          [attr.aria-label]="(currentLanguage === 'pt' ? 'Ver Certificado: ' : 'View Certificate: ') + certificado.titulo[currentLanguage]">
-          {{ currentLanguage === 'pt' ? 'Ver Certificado' : 'View Certificate' }} <i class="fas fa-external-link-alt"
-            aria-hidden="true"></i>
+          [attr.aria-label]="(currentLanguage === 'pt' ? 'Ver Certificado: ' : currentLanguage === 'en' ? 'View Certificate: ' : 'Ver Certificado: ') + certificado.titulo[currentLanguage]">
+          {{ currentLanguage === 'pt' ? 'Ver Certificado' : currentLanguage === 'en' ? 'View Certificate' : 'Ver Certificado' }}
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
         </a>
       </article>
     </div>
