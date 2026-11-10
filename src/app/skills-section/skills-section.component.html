@@ -67,7 +67,7 @@
             {{ skill.description[currentLanguage] }}
           </div>
           <div class="progress-container">
-            <div class="progress-bar" [style.width]="skill.progress"></div>
+            <div class="progress-bar" [style.--target-width]="skill.progress"></div>
           </div>
           <div class="skill-features">
             <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">
@@ -98,7 +98,7 @@
             {{ skill.description[currentLanguage] }}
           </div>
           <div class="progress-container">
-            <div class="progress-bar" [style.width]="skill.progress"></div>
+            <div class="progress-bar" [style.--target-width]="skill.progress"></div>
           </div>
           <div class="skill-features">
             <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">
@@ -129,7 +129,7 @@
             {{ skill.description[currentLanguage] }}
           </div>
           <div class="progress-container">
-            <div class="progress-bar" [style.width]="skill.progress"></div>
+            <div class="progress-bar" [style.--target-width]="skill.progress"></div>
           </div>
           <div class="skill-features">
             <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">
@@ -160,7 +160,7 @@
             {{ skill.description[currentLanguage] }}
           </div>
           <div class="progress-container">
-            <div class="progress-bar" [style.width]="skill.progress"></div>
+            <div class="progress-bar" [style.--target-width]="skill.progress"></div>
           </div>
           <div class="skill-features">
             <div class="feature-item" *ngFor="let feature of skill.features[currentLanguage]">

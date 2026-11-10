@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TranslationService, Language } from '../services/translation.service';
 
@@ -36,7 +36,7 @@ interface Skill {
   templateUrl: './skills-section.component.html',
   styleUrls: ['./skills-section.component.scss']
 })
-export class SkillsSectionComponent implements OnInit, OnDestroy {
+export class SkillsSectionComponent implements OnInit, AfterViewInit, OnDestroy {
   activeTab: string = 'frontend';
   currentLanguage: Language = 'pt';
   translations: any;
@@ -826,12 +826,37 @@ export class SkillsSectionComponent implements OnInit, OnDestroy {
     );
   }
 
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.animateBars();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    const el = document.querySelector('.skills-section');
+    if (el) observer.observe(el);
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
   changeTab(tab: string): void {
     this.activeTab = tab;
+    setTimeout(() => this.animateBars(), 80);
+  }
+
+  animateBars(): void {
+    document.querySelectorAll('.progress-bar').forEach(bar => {
+      bar.classList.remove('animated');
+      void (bar as HTMLElement).offsetWidth; // força reflow para resetar transição
+      bar.classList.add('animated');
+    });
   }
 
   getLevelClass(level: string): string {

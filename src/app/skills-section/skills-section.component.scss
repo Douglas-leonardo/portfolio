@@ -262,6 +262,12 @@
   background: linear-gradient(90deg, var(--primary), var(--primary-light));
   border-radius: 4px;
   position: relative;
+  width: 0 !important;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.animated {
+    width: var(--target-width) !important;
+  }
 
   [data-tab="qa"] & {
     background: linear-gradient(90deg, var(--primary), #ba68c8);

@@ -2,18 +2,27 @@
   <div class="home-hero__background" aria-hidden="true"></div>
   <div class="container">
     <div class="home-hero__content">
+
+      <!-- Badge disponível -->
+      <div class="home-hero__available" aria-label="Disponível para oportunidades">
+        <span class="home-hero__available-dot"></span>
+        <span class="home-hero__available-text">
+          {{ currentLanguage === 'pt' ? 'Disponível para oportunidades' : currentLanguage === 'en' ? 'Open to opportunities' : 'Disponible para oportunidades' }}
+        </span>
+      </div>
+
       <h1 class="home-hero__title" id="home-title">
         <span class="home-hero__name">{{ translations?.home?.name }}</span>
         <span class="home-hero__profession">{{ translations?.home?.profession }}</span>
       </h1>
 
       <div class="home-hero__tech-stack" aria-label="Tecnologias principais">
-        <span class="home-hero__tech-pill" aria-label="Angular">Angular</span>
-        <span class="home-hero__tech-pill" aria-label="TypeScript">TypeScript</span>
-        <span class="home-hero__tech-pill" aria-label="JavaScript">JavaScript</span>
-        <span class="home-hero__tech-pill" aria-label="HTML/CSS">HTML/CSS</span>
-        <span class="home-hero__tech-pill" aria-label="Cypress">Cypress</span>
-        <span class="home-hero__tech-pill" aria-label="Jest">Jest</span>
+        <span class="home-hero__tech-pill">Python</span>
+        <span class="home-hero__tech-pill">Cypress</span>
+        <span class="home-hero__tech-pill">Playwright</span>
+        <span class="home-hero__tech-pill">IBM Watson Orchestrate</span>
+        <span class="home-hero__tech-pill">APIs REST</span>
+        <span class="home-hero__tech-pill">LLM & RAG</span>
       </div>
 
       <div class="home-hero__cta">
@@ -26,6 +35,38 @@
           {{ translations?.home?.contact }}
         </a>
       </div>
+
+      <!-- Stats -->
+      <div class="home-hero__stats" aria-label="Estatísticas">
+        <div class="home-hero__stat">
+          <span class="home-hero__stat-number">{{ stats.years }}+</span>
+          <span class="home-hero__stat-label">
+            {{ currentLanguage === 'pt' ? 'Anos de experiência' : currentLanguage === 'en' ? 'Years of experience' : 'Años de experiencia' }}
+          </span>
+        </div>
+        <div class="home-hero__stat-divider" aria-hidden="true"></div>
+        <div class="home-hero__stat">
+          <span class="home-hero__stat-number">{{ stats.companies }}</span>
+          <span class="home-hero__stat-label">
+            {{ currentLanguage === 'pt' ? 'Empresas' : currentLanguage === 'en' ? 'Companies' : 'Empresas' }}
+          </span>
+        </div>
+        <div class="home-hero__stat-divider" aria-hidden="true"></div>
+        <div class="home-hero__stat">
+          <span class="home-hero__stat-number">{{ stats.certificates }}+</span>
+          <span class="home-hero__stat-label">
+            {{ currentLanguage === 'pt' ? 'Certificados' : currentLanguage === 'en' ? 'Certificates' : 'Certificados' }}
+          </span>
+        </div>
+        <div class="home-hero__stat-divider" aria-hidden="true"></div>
+        <div class="home-hero__stat">
+          <span class="home-hero__stat-number">{{ stats.automations }}+</span>
+          <span class="home-hero__stat-label">
+            {{ currentLanguage === 'pt' ? 'Testes automatizados' : currentLanguage === 'en' ? 'Automated tests' : 'Pruebas automatizadas' }}
+          </span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
