@@ -52,11 +52,107 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
 
   timelineItems: TimelineCompany[] = [
     {
+      company: 'IBM',
+      period: {
+        pt: 'Jul/2026 - Nov/2026',
+        en: 'Jul/2026 - Nov/2026',
+        es: 'Jul/2026 - Nov/2026'
+      },
+      roles: [
+        {
+          period: {
+            pt: 'Julho/2026 – Novembro/2026',
+            en: 'July/2026 – November/2026',
+            es: 'Julio/2026 – Noviembre/2026'
+          },
+          title: {
+            pt: 'QA Automation Engineer – Projeto Vivo',
+            en: 'QA Automation Engineer – Vivo Project',
+            es: 'QA Automation Engineer – Proyecto Vivo'
+          },
+          description: {
+            pt: `
+          • Atuação em Quality Assurance de agentes conversacionais baseados em Inteligência Artificial, realizando testes manuais e automatizados para garantir a qualidade, o comportamento e a confiabilidade das jornadas de atendimento nos canais CHAT e VOZ.<br><br>
+
+          • Execução de testes funcionais, exploratórios, regressivos e end-to-end em agentes de IA utilizando IBM Watson Orchestrate.<br><br>
+
+          • Validação de intenções, contexto, jornadas conversacionais, integrações e regras de negócio.<br><br>
+
+          • Avaliação de respostas de LLMs por meio de LLM Judge, critérios semânticos e validações funcionais.<br><br>
+
+          • Testes de RAG (Retrieval-Augmented Generation), verificando a recuperação de informações e a aderência às bases de conhecimento.<br><br>
+
+          • Desenvolvimento e evolução de framework de automação de testes em Python, com simulação de interações reais entre usuários e agentes de IA.<br><br>
+
+          • Automação de cenários multicanais (CHAT e VOZ), incluindo envio de mensagens, captura de respostas e validação dos resultados esperados.<br><br>
+
+          • Validação de integrações por meio de APIs REST.<br><br>
+
+          • Integração com IBM Watson Orchestrate e Langfuse para coleta de dados, rastreabilidade e observabilidade das execuções.<br><br>
+
+          • Geração automatizada de relatórios, evidências e indicadores de qualidade.<br><br>
+
+          • Análise de logs, identificação de falhas e acompanhamento de defeitos utilizando Jira.<br><br>
+
+          <strong>Tecnologias:</strong> Python, JSON, APIs REST, IBM Watson Orchestrate (wxO), Langfuse, LLMs, RAG, LLM Judge, Git e Jira.`,
+            en: `
+          • Worked in Quality Assurance for AI-based conversational agents, performing manual and automated testing to ensure quality, behavior, and reliability of customer service journeys across CHAT and VOICE channels.<br><br>
+
+          • Executed functional, exploratory, regression, and end-to-end tests on AI agents using IBM Watson Orchestrate.<br><br>
+
+          • Validated intents, context, conversational journeys, integrations, and business rules.<br><br>
+
+          • Evaluated LLM responses through LLM Judge, semantic criteria, and functional validations.<br><br>
+
+          • Performed RAG (Retrieval-Augmented Generation) testing, verifying information retrieval and adherence to knowledge bases.<br><br>
+
+          • Developed and evolved a Python-based test automation framework simulating real interactions between users and AI agents.<br><br>
+
+          • Automated multichannel scenarios (CHAT and VOICE), including message sending, response capture, and expected result validation.<br><br>
+
+          • Validated integrations through REST APIs.<br><br>
+
+          • Integrated with IBM Watson Orchestrate and Langfuse for data collection, traceability, and observability of test executions.<br><br>
+
+          • Automated generation of reports, evidence, and quality indicators.<br><br>
+
+          • Analyzed logs, identified failures, and tracked defects using Jira.<br><br>
+
+          <strong>Technologies:</strong> Python, JSON, REST APIs, IBM Watson Orchestrate (wxO), Langfuse, LLMs, RAG, LLM Judge, Git and Jira.`,
+            es: `
+          • Trabajo en Quality Assurance de agentes conversacionales basados en Inteligencia Artificial, realizando pruebas manuales y automatizadas para garantizar la calidad, el comportamiento y la confiabilidad de los recorridos de atención en los canales CHAT y VOZ.<br><br>
+
+          • Ejecución de pruebas funcionales, exploratorias, de regresión y end-to-end en agentes de IA utilizando IBM Watson Orchestrate.<br><br>
+
+          • Validación de intenciones, contexto, recorridos conversacionales, integraciones y reglas de negocio.<br><br>
+
+          • Evaluación de respuestas de LLMs mediante LLM Judge, criterios semánticos y validaciones funcionales.<br><br>
+
+          • Pruebas de RAG (Retrieval-Augmented Generation), verificando la recuperación de información y la adherencia a las bases de conocimiento.<br><br>
+
+          • Desarrollo y evolución de framework de automatización de pruebas en Python, con simulación de interacciones reales entre usuarios y agentes de IA.<br><br>
+
+          • Automatización de escenarios multicanal (CHAT y VOZ), incluyendo envío de mensajes, captura de respuestas y validación de resultados esperados.<br><br>
+
+          • Validación de integraciones mediante APIs REST.<br><br>
+
+          • Integración con IBM Watson Orchestrate y Langfuse para recolección de datos, trazabilidad y observabilidad de las ejecuciones.<br><br>
+
+          • Generación automatizada de informes, evidencias e indicadores de calidad.<br><br>
+
+          • Análisis de logs, identificación de fallas y seguimiento de defectos utilizando Jira.<br><br>
+
+          <strong>Tecnologías:</strong> Python, JSON, APIs REST, IBM Watson Orchestrate (wxO), Langfuse, LLMs, RAG, LLM Judge, Git y Jira.`
+          }
+        }
+      ]
+    },
+    {
       company: 'Contmatic Phoenix',
       period: {
-        pt: '2021 - 2026',
-        en: '2021 - 2026',
-        es: '2021 - 2026'
+        pt: '2021 - Jul/2026',
+        en: '2021 - Jul/2026',
+        es: '2021 - Jul/2026'
       },
       roles: [
         {
@@ -123,9 +219,9 @@ export class AboutSectionComponent implements OnInit, OnDestroy {
         },
         {
           period: {
-            pt: '2023 - 2026',
-            en: '2023 - 2026',
-            es: '2023 - 2026'
+            pt: '2023 - Jul/2026',
+            en: '2023 - Jul/2026',
+            es: '2023 - Jul/2026'
           },
           title: {
             pt: 'QA Engineer Pleno',
